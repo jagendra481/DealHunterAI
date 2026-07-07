@@ -1,26 +1,37 @@
-from engine.comparator import DealResult
-
-
 class DealScorer:
 
     @staticmethod
-    def calculate(result: DealResult):
+    def calculate(old_price, new_price):
 
-        score = 0
+        if old_price <= 0:
+            return 0
 
-        if result.is_price_drop:
-            score += 30
+        drop = old_price - new_price
 
-        if result.percentage >= 10:
-            score += 20
+        if drop <= 0:
+            return 0
 
-        if result.percentage >= 20:
-            score += 20
+        percentage = (drop / old_price) * 100
 
-        if result.difference >= 1000:
-            score += 15
+        if percentage >= 50:
+            return 100
 
-        if result.difference >= 5000:
-            score += 15
+        elif percentage >= 40:
+            return 90
 
-        return min(score, 100)
+        elif percentage >= 30:
+            return 80
+
+        elif percentage >= 20:
+            return 70
+
+        elif percentage >= 10:
+            return 60
+
+        elif percentage >= 5:
+            return 40
+
+        elif percentage >= 2:
+            return 20
+
+        return 10

@@ -1,4 +1,6 @@
 from engine.product_service import ProductService
+from engine.price_comparator import PriceComparator
+from engine.deal_scorer import DealScorer
 
 
 class DealEngine:
@@ -12,18 +14,31 @@ class DealEngine:
 
         products = self.product_service.get_all_products()
 
-        print(f"Products Found : {len(products)}\n")
-
         if not products:
-            print("No products available.")
+            print("No Products Found")
             return
 
         for product in products:
 
-            print("------------------------------")
-            print("Name   :", product["name"])
-            print("Price  :", product["current_price"])
-            print("Source :", product["source"])
-            print("------------------------------")
+            old_price = product["current_price"]
 
-        self.product_service.close()
+            # Temporary simulation
+            new_price = old_price - 5000
+
+            status = PriceComparator.compare(
+                old_price,
+                new_price
+            )
+
+            score = DealScorer.calculate(
+                old_price,
+                new_price
+            )
+
+            print("-----------------------------")
+            print("Product :", product["name"])
+            print("Old Price :", old_price)
+            print("New Price :", new_price)
+            print("Status :", status)
+            print("Deal Score :", score)
+            print("-----------------------------")
