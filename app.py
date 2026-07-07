@@ -1,9 +1,12 @@
-from sources.source_manager import SourceManager
+from engine.comparator import PriceComparator
+from engine.deal_scorer import DealScorer
 
-url = "https://www.amazon.in/test"
+result = PriceComparator.compare(
+    old_price=80000,
+    new_price=68000
+)
 
-source = SourceManager.get_source(url)
+score = DealScorer.calculate(result)
 
-product = source.fetch_product(url)
-
-print(product)
+print(result)
+print(f"Deal Score = {score}/100")
