@@ -4,14 +4,14 @@ from sources.base_source import BaseSource
 
 class AmazonSource(BaseSource):
 
-    def get_product(self, url):
+    def fetch_product(self, url):
 
         return Product(
-            name="Sample Amazon Product",
+            name="Samsung Galaxy S25",
             url=url,
-            current_price=59999,
-            previous_price=64999,
-            lowest_price=54999,
-            highest_price=69999,
+            current_price=69999,
+            previous_price=74999,
+            lowest_price=68999,
+            highest_price=79999,
             source="Amazon"
         )

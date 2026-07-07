@@ -1,11 +1,9 @@
 from abc import ABC, abstractmethod
+from database.models import Product
 
 
 class BaseSource(ABC):
 
     @abstractmethod
-    def get_product(self, url):
-        """
-        Return a Product object.
-        """
+    def fetch_product(self, url: str) -> Product:
         pass

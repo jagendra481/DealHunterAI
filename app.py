@@ -1,25 +1,9 @@
-from database.models import Product
-from engine.scanner import Scanner
+from sources.source_manager import SourceManager
 
-old_product = Product(
-    name="Samsung Galaxy S25",
-    url="https://amazon.in/test",
-    current_price=79999,
-    source="Amazon"
-)
+url = "https://www.amazon.in/test"
 
-new_product = Product(
-    name="Samsung Galaxy S25",
-    url="https://amazon.in/test",
-    current_price=69999,
-    source="Amazon"
-)
+source = SourceManager.get_source(url)
 
-scanner = Scanner()
+product = source.fetch_product(url)
 
-message = scanner.process(
-    old_product,
-    new_product
-)
-
-print(message)
+print(product)
