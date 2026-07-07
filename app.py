@@ -1,8 +1,25 @@
-from engine.comparator import PriceComparator
+from database.models import Product
+from engine.scanner import Scanner
 
-result = PriceComparator.compare(
-    old_price=79999,
-    new_price=69999
+old_product = Product(
+    name="Samsung Galaxy S25",
+    url="https://amazon.in/test",
+    current_price=79999,
+    source="Amazon"
 )
 
-print(result)
+new_product = Product(
+    name="Samsung Galaxy S25",
+    url="https://amazon.in/test",
+    current_price=69999,
+    source="Amazon"
+)
+
+scanner = Scanner()
+
+message = scanner.process(
+    old_product,
+    new_product
+)
+
+print(message)
