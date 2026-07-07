@@ -8,59 +8,76 @@ from utils.logger import logger
 class Database:
 
     def __init__(self):
+
         os.makedirs("data", exist_ok=True)
 
-        self.connection = sqlite3.connect(DATABASE_PATH)
+        self.connection = sqlite3.connect(
+            DATABASE_PATH,
+            check_same_thread=False
+        )
+
         self.connection.row_factory = sqlite3.Row
+
         self.cursor = self.connection.cursor()
 
-        logger.info("Database Connected.")
+        self.create_tables()
+
+        logger.info("Database Connected")
 
     def create_tables(self):
+
         self.cursor.execute("""
-            CREATE TABLE IF NOT EXISTS products (
+        CREATE TABLE IF NOT EXISTS products(
 
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-                name TEXT NOT NULL,
+            name TEXT NOT NULL,
 
-                url TEXT UNIQUE NOT NULL,
+            url TEXT UNIQUE NOT NULL,
 
-                current_price REAL,
+            current_price REAL NOT NULL,
 
-                previous_price REAL,
+            previous_price REAL DEFAULT 0,
 
-                lowest_price REAL,
+            lowest_price REAL DEFAULT 0,
 
-                highest_price REAL,
+            highest_price REAL DEFAULT 0,
 
-                source TEXT,
+            source TEXT,
 
-                last_checked TEXT,
+            active INTEGER DEFAULT 1,
 
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            last_checked TEXT,
 
-            )
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+        )
         """)
 
         self.connection.commit()
 
-        logger.info("Products table created.")
-
     def add_product(self, product):
+
         self.cursor.execute("""
-            INSERT OR IGNORE INTO products (
-                name,
-                url,
-                current_price,
-                previous_price,
-                lowest_price,
-                highest_price,
-                source,
-                last_checked
-            )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+
+        INSERT OR IGNORE INTO products(
+
+            name,
+            url,
+            current_price,
+            previous_price,
+            lowest_price,
+            highest_price,
+            source,
+            active,
+            last_checked
+
+        )
+
+        VALUES(?,?,?,?,?,?,?,?,?)
+
         """, (
+
             product.name,
             product.url,
             product.current_price,
@@ -68,64 +85,27 @@ class Database:
             product.lowest_price,
             product.highest_price,
             product.source,
+            1,
             product.last_checked
+
         ))
 
         self.connection.commit()
 
-        logger.info(f"Product Added: {product.name}")
-
-    def get_product(self, url):
-        self.cursor.execute(
-            "SELECT * FROM products WHERE url = ?",
-            (url,)
-        )
-
-        return self.cursor.fetchone()
-
     def get_all_products(self):
-        self.cursor.execute(
-            "SELECT * FROM products"
-        )
+
+        self.cursor.execute("""
+
+        SELECT *
+
+        FROM products
+
+        WHERE active = 1
+
+        """)
 
         return self.cursor.fetchall()
 
-    def update_product(self, product):
-        self.cursor.execute("""
-            UPDATE products
-            SET
-
-                current_price = ?,
-                previous_price = ?,
-                lowest_price = ?,
-                highest_price = ?,
-                last_checked = ?
-
-            WHERE url = ?
-        """, (
-            product.current_price,
-            product.previous_price,
-            product.lowest_price,
-            product.highest_price,
-            product.last_checked,
-            product.url
-        ))
-
-        self.connection.commit()
-
-        logger.info(f"Updated Product: {product.name}")
-
-    def delete_product(self, url):
-        self.cursor.execute(
-            "DELETE FROM products WHERE url = ?",
-            (url,)
-        )
-
-        self.connection.commit()
-
-        logger.info("Product Deleted")
-
     def close(self):
-        self.connection.close()
 
-        logger.info("Database Closed.")
+        self.connection.close()

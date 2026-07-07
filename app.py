@@ -1,12 +1,13 @@
-from engine.comparator import PriceComparator
-from engine.deal_scorer import DealScorer
+from scheduler.scheduler import DealScheduler
 
-result = PriceComparator.compare(
-    old_price=80000,
-    new_price=68000
-)
 
-score = DealScorer.calculate(result)
+def main():
 
-print(result)
-print(f"Deal Score = {score}/100")
+    scheduler = DealScheduler()
+
+    scheduler.start()
+
+
+if __name__ == "__main__":
+
+    main()
