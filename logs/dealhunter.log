@@ -1,0 +1,12 @@
+2026-07-06 23:49:57,419 | INFO | Application Started
+2026-07-06 23:53:41,828 | INFO | Application Started
+2026-07-06 23:53:43,506 | INFO | Telegram message sent successfully.
+2026-07-06 23:57:13,110 | INFO | Application Started
+2026-07-06 23:57:18,337 | INFO | Telegram message sent successfully.
+2026-07-07 00:02:28,502 | INFO | Database Connected.
+2026-07-07 00:02:28,518 | INFO | Products table created.
+2026-07-07 00:02:28,519 | INFO | Database Closed.
+2026-07-07 09:45:03,949 | INFO | Database Connected.
+2026-07-07 09:45:03,956 | INFO | Products table created.
+2026-07-07 09:45:03,964 | INFO | Product Added: iPhone 16
+2026-07-07 09:45:03,965 | INFO | Database Closed.

@@ -1,20 +1,8 @@
-import requests
-from config.config import BOT_TOKEN, CHAT_ID
+from engine.comparator import PriceComparator
 
-message = """
-🚀 Hello Everyone!
-
-My Telegram bot is working successfully! ✅
-"""
-
-url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-
-response = requests.post(
-    url,
-    data={
-        "chat_id": CHAT_ID,
-        "text": message
-    }
+result = PriceComparator.compare(
+    old_price=79999,
+    new_price=69999
 )
 
-print(response.text)
+print(result)
