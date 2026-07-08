@@ -17,7 +17,6 @@ class Database:
         )
 
         self.connection.row_factory = sqlite3.Row
-
         self.cursor = self.connection.cursor()
 
         self.create_tables()
@@ -33,7 +32,11 @@ class Database:
 
             name TEXT NOT NULL,
 
-            url TEXT UNIQUE NOT NULL,
+            asin TEXT,
+
+            product_url TEXT UNIQUE NOT NULL,
+
+            affiliate_url TEXT NOT NULL,
 
             current_price REAL NOT NULL,
 
@@ -58,53 +61,89 @@ class Database:
 
     def add_product(self, product):
 
-        self.cursor.execute("""
+        self.cursor.execute(
+            """
+            INSERT OR IGNORE INTO products(
 
-        INSERT OR IGNORE INTO products(
+                name,
+                asin,
+                product_url,
+                affiliate_url,
+                current_price,
+                previous_price,
+                lowest_price,
+                highest_price,
+                source,
+                active,
+                last_checked
 
-            name,
-            url,
-            current_price,
-            previous_price,
-            lowest_price,
-            highest_price,
-            source,
-            active,
-            last_checked
+            )
 
+            VALUES(?,?,?,?,?,?,?,?,?,?,?)
+            """,
+            (
+                product.name,
+                product.asin,
+                product.product_url,
+                product.affiliate_url,
+                product.current_price,
+                product.previous_price,
+                product.lowest_price,
+                product.highest_price,
+                product.source,
+                1,
+                product.last_checked
+            )
         )
-
-        VALUES(?,?,?,?,?,?,?,?,?)
-
-        """, (
-
-            product.name,
-            product.url,
-            product.current_price,
-            product.previous_price,
-            product.lowest_price,
-            product.highest_price,
-            product.source,
-            1,
-            product.last_checked
-
-        ))
 
         self.connection.commit()
 
     def get_all_products(self):
 
         self.cursor.execute("""
-
-        SELECT *
-
-        FROM products
-
-        WHERE active = 1
-
+            SELECT *
+            FROM products
+            WHERE active = 1
         """)
 
         return self.cursor.fetchall()
+
+    def update_product(self, product):
+
+        self.cursor.execute(
+            """
+            UPDATE products
+            SET
+                previous_price = ?,
+                current_price = ?,
+                lowest_price = ?,
+                highest_price = ?,
+                last_checked = ?
+            WHERE product_url = ?
+            """,
+            (
+                product.previous_price,
+                product.current_price,
+                product.lowest_price,
+                product.highest_price,
+                product.last_checked,
+                product.product_url,
+            ),
+        )
+
+        self.connection.commit()
+
+    def delete_product(self, product_id):
+
+        self.cursor.execute(
+            """
+            DELETE FROM products
+            WHERE id = ?
+            """,
+            (product_id,)
+        )
+
+        self.connection.commit()
 
     def close(self):
 

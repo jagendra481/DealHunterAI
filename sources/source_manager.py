@@ -9,10 +9,10 @@ class SourceManager:
 
         url = url.lower()
 
-        if "amazon" in url:
+        if any(domain in url for domain in ["amazon.", "amzn."]):
             return AmazonSource()
 
         if "flipkart" in url:
             return FlipkartSource()
 
-        raise ValueError("Unsupported website")
+        raise ValueError(f"Unsupported website: {url}")

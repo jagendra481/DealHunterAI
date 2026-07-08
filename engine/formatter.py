@@ -1,19 +1,29 @@
-from database.models import Product
-
-
-class TelegramFormatter:
+class DealFormatter:
 
     @staticmethod
-    def format(product):
+    def format(product, old_price, score):
 
-        return f"""
-🔥 <b>PRICE DROP ALERT</b>
+        savings = old_price - product.current_price
 
-📦 <b>{product.name}</b>
+        message = f"""
+🔥 <b>DEAL ALERT</b> 🔥
 
-💰 Price: ₹{product.current_price}
+📱 <b>{product.name}</b>
 
-🏪 Store: {product.source}
+💰 Old Price: ₹{old_price}
 
-🔗 {product.url}
+💵 New Price: ₹{product.current_price}
+
+💸 You Save: ₹{savings}
+
+⭐ Deal Score: {score}/100
+
+🏪 {product.source}
+
+🛒 Buy Now:
+{product.url}
+
+#DealHunterAI
 """
+
+        return message.strip()
