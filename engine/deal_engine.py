@@ -93,7 +93,11 @@ class DealEngine:
                             score
                         )
 
-                        TelegramService.send_message(message)
+                        TelegramService.send_photo(
+                            latest_product,
+                            product["current_price"],
+                            score
+                        )
 
                         print("✅ Telegram Notification Sent")
 

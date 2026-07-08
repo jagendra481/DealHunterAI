@@ -1,0 +1,89 @@
+<div class="row mt-4">
+
+{% for product in products %}
+
+<div class="col-lg-4 col-md-6 mb-4">
+
+<div class="card h-100 shadow">
+
+<img src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/300x300?text=No+Image' }}"
+     class="card-img-top product-image">
+
+<div class="card-body">
+
+<h5 class="card-title">
+
+{{ product["name"] }}
+
+</h5>
+
+<p>
+
+⭐ {{ product["rating"] }}
+({{ product["reviews"] }} Reviews)
+
+</p>
+
+<h4 class="text-success">
+
+₹ {{ product["current_price"] }}
+
+</h4>
+
+<p>
+
+{% if product["prime"] %}
+
+<span class="badge bg-success">
+
+Prime
+
+</span>
+
+{% endif %}
+
+</p>
+
+<p>
+
+{{ product["availability"] }}
+
+</p>
+
+</div>
+
+<div class="card-footer bg-white">
+
+<div class="d-grid gap-2">
+
+<button class="btn btn-primary">
+
+🔄 Refresh
+
+</button>
+
+<button class="btn btn-danger">
+
+🗑 Delete
+
+</button>
+
+<a class="btn btn-warning"
+   href="{{ product['affiliate_url'] }}"
+   target="_blank">
+
+🛒 Buy
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>

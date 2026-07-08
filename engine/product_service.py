@@ -15,7 +15,14 @@ class ProductService:
     def update_product(self, product):
         self.db.update_product(product)
 
-    def close(self):
-        self.db.close()
+    def update_metadata(self, product):
+        self.db.update_metadata(product)
+
     def delete_product(self, product_id):
         self.db.delete_product(product_id)
+
+    def get_product_by_asin(self, asin):
+        return self.db.get_product_by_asin(asin)
+
+    def close(self):
+        self.db.close()

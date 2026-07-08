@@ -219,3 +219,32 @@ class Database:
     def close(self):
 
         self.connection.close()
+
+    def update_metadata(self, product):
+
+        self.cursor.execute(
+            """
+            UPDATE products
+            SET
+                name = ?,
+                affiliate_url = ?,
+                image = ?,
+                rating = ?,
+                reviews = ?,
+                availability = ?,
+                prime = ?
+            WHERE asin = ?
+            """,
+            (
+                product.name,
+                product.affiliate_url,
+                product.image,
+                product.rating,
+                product.reviews,
+                product.availability,
+                int(product.prime),
+                product.asin
+            )
+        )
+
+        self.connection.commit()

@@ -12314,3 +12314,135 @@ sqlite3.ProgrammingError: Error binding parameter 6: type 'sqlite3.Row' is not s
 2026-07-08 20:06:15,238 | INFO | Database Connected
 2026-07-08 20:10:35,288 | INFO | Database Connected
 2026-07-08 20:55:13,019 | INFO | Database Connected
+2026-07-08 23:39:40,119 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 23:39:40,120 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-08 23:39:40,124 | INFO |  * Restarting with stat
+2026-07-08 23:39:40,559 | WARNING |  * Debugger is active!
+2026-07-08 23:39:40,562 | INFO |  * Debugger PIN: 564-549-531
+2026-07-08 23:40:59,361 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 23:40:59,361 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-08 23:40:59,363 | INFO |  * Restarting with stat
+2026-07-08 23:40:59,734 | WARNING |  * Debugger is active!
+2026-07-08 23:40:59,736 | INFO |  * Debugger PIN: 564-549-531
+2026-07-08 23:43:02,784 | INFO | Database Connected
+2026-07-08 23:43:02,806 | INFO | 127.0.0.1 - - [08/Jul/2026 23:43:02] "GET / HTTP/1.1" 200 -
+2026-07-08 23:43:03,241 | INFO | 127.0.0.1 - - [08/Jul/2026 23:43:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:10:51,610 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 00:10:51,773 | INFO |  * Restarting with stat
+2026-07-09 00:20:04,996 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:20:04,997 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 00:20:04,999 | INFO |  * Restarting with stat
+2026-07-09 00:20:05,461 | WARNING |  * Debugger is active!
+2026-07-09 00:20:05,464 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 00:20:12,509 | INFO | Database Connected
+2026-07-09 00:20:12,535 | INFO | 127.0.0.1 - - [09/Jul/2026 00:20:12] "GET / HTTP/1.1" 200 -
+2026-07-09 00:20:18,998 | INFO | Database Connected
+2026-07-09 00:20:19,000 | INFO | 127.0.0.1 - - [09/Jul/2026 00:20:19] "GET / HTTP/1.1" 200 -
+2026-07-09 00:20:20,754 | INFO | Database Connected
+2026-07-09 00:20:20,757 | INFO | 127.0.0.1 - - [09/Jul/2026 00:20:20] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:39,298 | INFO | Database Connected
+2026-07-09 00:21:39,301 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:39] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:39,400 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:40,606 | INFO | Database Connected
+2026-07-09 00:21:40,612 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:40] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:40,716 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:40,893 | INFO | Database Connected
+2026-07-09 00:21:40,896 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:40] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:40,982 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:41,117 | INFO | Database Connected
+2026-07-09 00:21:41,121 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:41] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:41,207 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:41,359 | INFO | Database Connected
+2026-07-09 00:21:41,361 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:41] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:41,441 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:42,697 | INFO | Database Connected
+2026-07-09 00:21:42,699 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:42] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:42,786 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:43,223 | INFO | Database Connected
+2026-07-09 00:21:43,225 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:43,311 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:43,391 | INFO | Database Connected
+2026-07-09 00:21:43,393 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:43,557 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:43,598 | INFO | Database Connected
+2026-07-09 00:21:43,600 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:43,828 | INFO | Database Connected
+2026-07-09 00:21:43,831 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:43,843 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:43,932 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:44,066 | INFO | Database Connected
+2026-07-09 00:21:44,068 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:44,142 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:44,293 | INFO | Database Connected
+2026-07-09 00:21:44,295 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:44,375 | INFO | Database Connected
+2026-07-09 00:21:44,378 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:44,470 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:44,603 | INFO | Database Connected
+2026-07-09 00:21:44,605 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:44,686 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:44,688 | INFO | Database Connected
+2026-07-09 00:21:44,693 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:44,955 | INFO | Database Connected
+2026-07-09 00:21:44,957 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:44] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:45,032 | INFO | Database Connected
+2026-07-09 00:21:45,033 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:45,137 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:45,270 | INFO | Database Connected
+2026-07-09 00:21:45,272 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:45,357 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:45,489 | INFO | Database Connected
+2026-07-09 00:21:45,491 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:45,581 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:45,663 | INFO | Database Connected
+2026-07-09 00:21:45,665 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:45,796 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:45,936 | INFO | Database Connected
+2026-07-09 00:21:45,937 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:45] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:46,018 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:21:46,156 | INFO | Database Connected
+2026-07-09 00:21:46,164 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:46] "GET / HTTP/1.1" 200 -
+2026-07-09 00:21:46,237 | INFO | 127.0.0.1 - - [09/Jul/2026 00:21:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 00:22:32,361 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:22:32,361 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 00:22:32,362 | INFO |  * Restarting with stat
+2026-07-09 00:22:32,849 | WARNING |  * Debugger is active!
+2026-07-09 00:22:32,852 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 00:22:38,469 | INFO | Database Connected
+2026-07-09 00:22:38,493 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:38] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:39,340 | INFO | Database Connected
+2026-07-09 00:22:39,343 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:39] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:39,509 | INFO | Database Connected
+2026-07-09 00:22:39,512 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:39] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:39,650 | INFO | Database Connected
+2026-07-09 00:22:39,661 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:39] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:39,855 | INFO | Database Connected
+2026-07-09 00:22:39,858 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:39] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:40,110 | INFO | Database Connected
+2026-07-09 00:22:40,113 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:40] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:40,324 | INFO | Database Connected
+2026-07-09 00:22:40,326 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:40] "GET / HTTP/1.1" 200 -
+2026-07-09 00:22:56,173 | INFO | Database Connected
+2026-07-09 00:22:56,175 | INFO | 127.0.0.1 - - [09/Jul/2026 00:22:56] "GET / HTTP/1.1" 200 -
+2026-07-09 00:26:22,800 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:26:22,801 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 00:26:22,802 | INFO |  * Restarting with stat
+2026-07-09 00:26:23,633 | WARNING |  * Debugger is active!
+2026-07-09 00:26:23,635 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 00:26:27,432 | INFO | Database Connected
+2026-07-09 00:26:27,606 | INFO | 127.0.0.1 - - [09/Jul/2026 00:26:27] "GET / HTTP/1.1" 200 -
+2026-07-09 00:26:27,799 | INFO | 127.0.0.1 - - [09/Jul/2026 00:26:27] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 00:26:35,605 | INFO | 127.0.0.1 - - [09/Jul/2026 00:26:35] "[33mGET /analytics HTTP/1.1[0m" 404 -
+2026-07-09 00:34:41,288 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:34:41,288 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 00:34:41,290 | INFO |  * Restarting with stat
+2026-07-09 00:34:41,775 | WARNING |  * Debugger is active!
+2026-07-09 00:34:41,777 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 00:34:46,216 | INFO | Database Connected
+2026-07-09 00:34:46,325 | INFO | 127.0.0.1 - - [09/Jul/2026 00:34:46] "GET / HTTP/1.1" 200 -

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DealHunterAI</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Sidebar -->
+
+        <div class="col-md-2 bg-dark text-white vh-100 p-4">
+
+            <h3 class="mb-4">
+                🚀 DealHunterAI
+            </h3>
+
+            <div class="list-group">
+
+                <a href="/"
+                   class="list-group-item list-group-item-action">
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="/products"
+                   class="list-group-item list-group-item-action">
+
+                    <i class="bi bi-box"></i>
+
+                    Products
+
+                </a>
+
+                <a href="/add-product"
+                   class="list-group-item list-group-item-action">
+
+                    <i class="bi bi-plus-circle"></i>
+
+                    Add Product
+
+                </a>
+
+                <a href="/analytics"
+                   class="list-group-item list-group-item-action">
+
+                    <i class="bi bi-graph-up"></i>
+
+                    Analytics
+
+                </a>
+
+                <a href="/settings"
+                   class="list-group-item list-group-item-action">
+
+                    <i class="bi bi-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="col-md-10">
+
+            <nav class="navbar navbar-light bg-white shadow-sm mb-4">
+
+                <div class="container-fluid">
+
+                    <span class="navbar-brand mb-0 h4">
+
+                        DealHunterAI Dashboard
+
+                    </span>
+
+                </div>
+
+            </nav>
+
+            <div class="container">
+
+                {% block content %}
+
+                {% endblock %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
