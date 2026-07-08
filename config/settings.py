@@ -18,3 +18,5 @@ if RAINFOREST_API_KEY is None:
 
 DATABASE_NAME = "products.db"
 DATABASE_PATH = os.path.join("data", DATABASE_NAME)
+# Scheduler
+CHECK_INTERVAL_MINUTES = 60

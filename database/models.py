@@ -22,9 +22,10 @@ class Product:
 
     source: str = ""
 
+    # New fields
     image: str = ""
 
-    rating: float = 0
+    rating: float = 0.0
 
     reviews: int = 0
 

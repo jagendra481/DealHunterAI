@@ -1,51 +1,45 @@
 from database.models import Product
 from engine.product_service import ProductService
+from providers.amazon_provider import AmazonProvider
 from services.affiliate_service import AffiliateService
-from utils.amazon_helper import AmazonHelper
 
 
 def add_product():
 
-    print("\nADD NEW PRODUCT\n")
+    print("\n==============================")
+    print("     ADD NEW PRODUCT")
+    print("==============================\n")
 
-    name = input("Product Name : ").strip()
+    product_url = input("Paste Amazon Product URL : ").strip()
 
-    product_url = input("Product URL : ").strip()
+    try:
 
-    current_price = float(input("Current Price : "))
+        print("\n🔍 Fetching Product Details...\n")
 
-    source = input("Source (Amazon/Flipkart): ").strip()
+        # Fetch LIVE product
+        product = AmazonProvider.get_product(product_url)
 
-    # Generate affiliate link
-    affiliate_url = AffiliateService.generate_amazon_link(product_url)
+        # Generate Affiliate Link
+        product.affiliate_url = AffiliateService.generate_amazon_link(
+            product.product_url
+        )
 
-    # Extract ASIN only for Amazon
-    asin = ""
+        print("✅ Product Found")
+        print("--------------------------------")
+        print("Name  :", product.name)
+        print("Price :", product.current_price)
+        print("ASIN  :", product.asin)
+        print("--------------------------------")
 
-    if "amazon" in product_url or "amzn" in product_url:
-        try:
-            expanded = AmazonHelper.expand_url(product_url)
-            asin = AmazonHelper.extract_asin(expanded)
-        except Exception:
-            print("⚠️ Could not extract ASIN.")
+        service = ProductService()
 
-    product = Product(
-        name=name,
-        product_url=product_url,
-        affiliate_url=affiliate_url,
-        asin=asin,
-        current_price=current_price,
-        previous_price=current_price,
-        lowest_price=current_price,
-        highest_price=current_price,
-        source=source,
-        last_checked=""
-    )
+        service.add_product(product)
 
-    service = ProductService()
+        service.close()
 
-    service.add_product(product)
+        print("\n✅ Product Added Successfully")
 
-    service.close()
+    except Exception as e:
 
-    print("\n✅ Product Added Successfully")
+        print("\n❌ Failed to Add Product")
+        print(e)

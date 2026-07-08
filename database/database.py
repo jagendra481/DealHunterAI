@@ -59,44 +59,91 @@ class Database:
 
         self.connection.commit()
 
-    def add_product(self, product):
+        # -------------------------------
+        # Database Migration (v2)
+        # -------------------------------
 
-        self.cursor.execute(
-            """
-            INSERT OR IGNORE INTO products(
+        columns = [
 
-                name,
-                asin,
-                product_url,
-                affiliate_url,
-                current_price,
-                previous_price,
-                lowest_price,
-                highest_price,
-                source,
-                active,
-                last_checked
+            ("image", "TEXT DEFAULT ''"),
 
-            )
+            ("rating", "REAL DEFAULT 0"),
 
-            VALUES(?,?,?,?,?,?,?,?,?,?,?)
-            """,
-            (
-                product.name,
-                product.asin,
-                product.product_url,
-                product.affiliate_url,
-                product.current_price,
-                product.previous_price,
-                product.lowest_price,
-                product.highest_price,
-                product.source,
-                1,
-                product.last_checked
-            )
-        )
+            ("reviews", "INTEGER DEFAULT 0"),
+
+            ("availability", "TEXT DEFAULT ''"),
+
+            ("prime", "INTEGER DEFAULT 0")
+
+        ]
+
+        for column_name, column_type in columns:
+
+            try:
+
+                self.cursor.execute(
+                    f"ALTER TABLE products ADD COLUMN {column_name} {column_type}"
+                )
+
+            except sqlite3.OperationalError:
+                # Column already exists
+                pass
 
         self.connection.commit()
+
+    def add_product(self, product):
+
+        try:
+
+            self.cursor.execute(
+                """
+                INSERT INTO products(
+
+                    name,
+                    asin,
+                    product_url,
+                    affiliate_url,
+                    current_price,
+                    previous_price,
+                    lowest_price,
+                    highest_price,
+                    source,
+                    image,
+                    rating,
+                    reviews,
+                    availability,
+                    prime,
+                    active,
+                    last_checked
+
+                )
+
+                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                """,
+                (
+                    product.name,
+                    product.asin,
+                    product.product_url,
+                    product.affiliate_url,
+                    product.current_price,
+                    product.previous_price,
+                    product.lowest_price,
+                    product.highest_price,
+                    product.source,
+                    product.image,
+                    product.rating,
+                    product.reviews,
+                    product.availability,
+                    int(product.prime),
+                    1,
+                    product.last_checked
+                )
+            )
+
+            self.connection.commit()
+
+        except sqlite3.IntegrityError:
+            raise Exception("This product is already being tracked.")
 
     def get_all_products(self):
 
@@ -104,9 +151,23 @@ class Database:
             SELECT *
             FROM products
             WHERE active = 1
+            ORDER BY id
         """)
 
         return self.cursor.fetchall()
+
+    def get_product_by_asin(self, asin):
+
+        self.cursor.execute(
+            """
+            SELECT *
+            FROM products
+            WHERE asin = ?
+            """,
+            (asin,)
+        )
+
+        return self.cursor.fetchone()
 
     def update_product(self, product):
 
@@ -118,6 +179,11 @@ class Database:
                 current_price = ?,
                 lowest_price = ?,
                 highest_price = ?,
+                image = ?,
+                rating = ?,
+                reviews = ?,
+                availability = ?,
+                prime = ?,
                 last_checked = ?
             WHERE product_url = ?
             """,
@@ -126,9 +192,14 @@ class Database:
                 product.current_price,
                 product.lowest_price,
                 product.highest_price,
+                product.image,
+                product.rating,
+                product.reviews,
+                product.availability,
+                int(product.prime),
                 product.last_checked,
-                product.product_url,
-            ),
+                product.product_url
+            )
         )
 
         self.connection.commit()
