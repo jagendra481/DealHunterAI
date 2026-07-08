@@ -1,18 +1,22 @@
 from sources.base_source import BaseSource
-from database.models import Product
+from providers.amazon_provider import AmazonProvider
 
 
 class AmazonSource(BaseSource):
 
     def fetch_product(self, product):
 
-        return Product(
-            name=product["name"],
-            url=product["url"],
-            current_price=50000,          # Fake price for now
-            previous_price=product["previous_price"],
-            lowest_price=product["lowest_price"],
-            highest_price=product["highest_price"],
-            source=product["source"],
-            last_checked=product["last_checked"]
+        print(f"🌐 Fetching Live Amazon Data: {product['name']}")
+
+        live_product = AmazonProvider.get_product(
+            product["product_url"]
         )
+
+        # Preserve database values
+        live_product.previous_price = product["previous_price"]
+        live_product.lowest_price = product["lowest_price"]
+        live_product.highest_price = product["highest_price"]
+        live_product.last_checked = product["last_checked"]
+        live_product.source = product["source"]
+
+        return live_product

@@ -1,30 +1,45 @@
 from database.models import Product
 from engine.product_service import ProductService
 from services.affiliate_service import AffiliateService
+from utils.amazon_helper import AmazonHelper
 
 
 def add_product():
 
     print("\nADD NEW PRODUCT\n")
 
-    name = input("Product Name : ")
+    name = input("Product Name : ").strip()
 
-    url = input("Product URL : ")
+    product_url = input("Product URL : ").strip()
 
-    price = float(input("Current Price : "))
+    current_price = float(input("Current Price : "))
 
-    source = input("Source (Amazon/Flipkart): ")
+    source = input("Source (Amazon/Flipkart): ").strip()
 
-    affiliate_url = AffiliateService.generate_amazon_link(url)
+    # Generate affiliate link
+    affiliate_url = AffiliateService.generate_amazon_link(product_url)
+
+    # Extract ASIN only for Amazon
+    asin = ""
+
+    if "amazon" in product_url or "amzn" in product_url:
+        try:
+            expanded = AmazonHelper.expand_url(product_url)
+            asin = AmazonHelper.extract_asin(expanded)
+        except Exception:
+            print("⚠️ Could not extract ASIN.")
 
     product = Product(
         name=name,
-        url=affiliate_url,
-        current_price=price,
-        previous_price=price,
-        lowest_price=price,
-        highest_price=price,
-        source=source
+        product_url=product_url,
+        affiliate_url=affiliate_url,
+        asin=asin,
+        current_price=current_price,
+        previous_price=current_price,
+        lowest_price=current_price,
+        highest_price=current_price,
+        source=source,
+        last_checked=""
     )
 
     service = ProductService()

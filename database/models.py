@@ -6,7 +6,11 @@ class Product:
 
     name: str
 
-    url: str
+    product_url: str
+
+    affiliate_url: str
+
+    asin: str
 
     current_price: float
 
@@ -18,8 +22,14 @@ class Product:
 
     source: str = ""
 
-    affiliate_url: str = ""
+    image: str = ""
 
-    asin: str = ""
+    rating: float = 0
+
+    reviews: int = 0
+
+    availability: str = ""
+
+    prime: bool = False
 
     last_checked: str = ""

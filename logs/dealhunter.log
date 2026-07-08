@@ -11898,3 +11898,416 @@ sqlite3.ProgrammingError: Error binding parameter 6: type 'sqlite3.Row' is not s
 2026-07-08 14:15:07,184 | INFO | Database Connected
 2026-07-08 14:29:52,855 | INFO | Database Connected
 2026-07-08 14:30:07,544 | INFO | Database Connected
+2026-07-08 17:25:48,985 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-08 17:25:48,989 | INFO | Added job "DealScheduler.run" to job store "default"
+2026-07-08 17:25:48,989 | INFO | Scheduler started
+2026-07-08 17:25:53,994 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:25:53 IST)" (scheduled at 2026-07-08 17:25:53.985677+05:30)
+2026-07-08 17:25:54,004 | INFO | Database Connected
+2026-07-08 17:25:54,005 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:25:58 IST)" executed successfully
+2026-07-08 17:25:58,986 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:03 IST)" (scheduled at 2026-07-08 17:25:58.985677+05:30)
+2026-07-08 17:25:58,989 | INFO | Database Connected
+2026-07-08 17:25:58,992 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:03 IST)" executed successfully
+2026-07-08 17:26:03,995 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:08 IST)" (scheduled at 2026-07-08 17:26:03.985677+05:30)
+2026-07-08 17:26:03,997 | INFO | Database Connected
+2026-07-08 17:26:03,998 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:08 IST)" executed successfully
+2026-07-08 17:26:08,998 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:13 IST)" (scheduled at 2026-07-08 17:26:08.985677+05:30)
+2026-07-08 17:26:09,002 | INFO | Database Connected
+2026-07-08 17:26:09,006 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:13 IST)" executed successfully
+2026-07-08 17:26:14,014 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:18 IST)" (scheduled at 2026-07-08 17:26:13.985677+05:30)
+2026-07-08 17:26:14,019 | INFO | Database Connected
+2026-07-08 17:26:14,025 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:18 IST)" executed successfully
+2026-07-08 17:26:18,994 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:23 IST)" (scheduled at 2026-07-08 17:26:18.985677+05:30)
+2026-07-08 17:26:18,996 | INFO | Database Connected
+2026-07-08 17:26:18,998 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:23 IST)" executed successfully
+2026-07-08 17:26:23,994 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:28 IST)" (scheduled at 2026-07-08 17:26:23.985677+05:30)
+2026-07-08 17:26:23,997 | INFO | Database Connected
+2026-07-08 17:26:24,019 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:28 IST)" executed successfully
+2026-07-08 17:26:28,998 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:33 IST)" (scheduled at 2026-07-08 17:26:28.985677+05:30)
+2026-07-08 17:26:29,003 | INFO | Database Connected
+2026-07-08 17:26:29,095 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:33 IST)" executed successfully
+2026-07-08 17:26:34,004 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:38 IST)" (scheduled at 2026-07-08 17:26:33.985677+05:30)
+2026-07-08 17:26:34,022 | INFO | Database Connected
+2026-07-08 17:26:34,074 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:38 IST)" executed successfully
+2026-07-08 17:26:38,989 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:43 IST)" (scheduled at 2026-07-08 17:26:38.985677+05:30)
+2026-07-08 17:26:38,991 | INFO | Database Connected
+2026-07-08 17:26:38,993 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:43 IST)" executed successfully
+2026-07-08 17:26:43,994 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:48 IST)" (scheduled at 2026-07-08 17:26:43.985677+05:30)
+2026-07-08 17:26:43,997 | INFO | Database Connected
+2026-07-08 17:26:44,264 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:48 IST)" executed successfully
+2026-07-08 17:26:48,995 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:53 IST)" (scheduled at 2026-07-08 17:26:48.985677+05:30)
+2026-07-08 17:26:49,003 | INFO | Database Connected
+2026-07-08 17:26:49,501 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:53 IST)" executed successfully
+2026-07-08 17:26:53,990 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:58 IST)" (scheduled at 2026-07-08 17:26:53.985677+05:30)
+2026-07-08 17:26:53,995 | INFO | Database Connected
+2026-07-08 17:26:54,518 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:26:58 IST)" executed successfully
+2026-07-08 17:26:58,994 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:27:03 IST)" (scheduled at 2026-07-08 17:26:58.985677+05:30)
+2026-07-08 17:26:58,996 | INFO | Database Connected
+2026-07-08 17:26:58,997 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:27:03 IST)" executed successfully
+2026-07-08 17:27:04,002 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:27:08 IST)" (scheduled at 2026-07-08 17:27:03.985677+05:30)
+2026-07-08 17:27:04,005 | INFO | Database Connected
+2026-07-08 17:27:04,007 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 17:27:08 IST)" executed successfully
+2026-07-08 18:01:29,488 | INFO | Database Connected
+2026-07-08 18:02:31,131 | INFO | Database Connected
+2026-07-08 18:08:36,782 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-08 18:08:36,788 | INFO | Added job "DealScheduler.run" to job store "default"
+2026-07-08 18:08:36,789 | INFO | Scheduler started
+2026-07-08 18:08:41,811 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:08:41 IST)" (scheduled at 2026-07-08 18:08:41.781879+05:30)
+2026-07-08 18:08:41,816 | INFO | Database Connected
+2026-07-08 18:08:41,822 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:08:46 IST)" executed successfully
+2026-07-08 18:08:46,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:08:51 IST)" (scheduled at 2026-07-08 18:08:46.781879+05:30)
+2026-07-08 18:08:46,788 | INFO | Database Connected
+2026-07-08 18:08:46,791 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:08:51 IST)" executed successfully
+2026-07-08 18:08:51,797 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:08:56 IST)" (scheduled at 2026-07-08 18:08:51.781879+05:30)
+2026-07-08 18:08:51,803 | INFO | Database Connected
+2026-07-08 18:08:51,810 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:08:56 IST)" executed successfully
+2026-07-08 18:08:56,787 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:01 IST)" (scheduled at 2026-07-08 18:08:56.781879+05:30)
+2026-07-08 18:08:56,792 | INFO | Database Connected
+2026-07-08 18:08:56,795 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:01 IST)" executed successfully
+2026-07-08 18:09:01,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:06 IST)" (scheduled at 2026-07-08 18:09:01.781879+05:30)
+2026-07-08 18:09:01,793 | INFO | Database Connected
+2026-07-08 18:09:01,797 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:06 IST)" executed successfully
+2026-07-08 18:09:06,794 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:11 IST)" (scheduled at 2026-07-08 18:09:06.781879+05:30)
+2026-07-08 18:09:06,797 | INFO | Database Connected
+2026-07-08 18:09:06,800 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:11 IST)" executed successfully
+2026-07-08 18:09:11,787 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:16 IST)" (scheduled at 2026-07-08 18:09:11.781879+05:30)
+2026-07-08 18:09:11,791 | INFO | Database Connected
+2026-07-08 18:09:11,793 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:16 IST)" executed successfully
+2026-07-08 18:09:16,786 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:21 IST)" (scheduled at 2026-07-08 18:09:16.781879+05:30)
+2026-07-08 18:09:16,791 | INFO | Database Connected
+2026-07-08 18:09:16,793 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:21 IST)" executed successfully
+2026-07-08 18:09:21,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:26 IST)" (scheduled at 2026-07-08 18:09:21.781879+05:30)
+2026-07-08 18:09:21,797 | INFO | Database Connected
+2026-07-08 18:09:21,800 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:26 IST)" executed successfully
+2026-07-08 18:09:26,786 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:31 IST)" (scheduled at 2026-07-08 18:09:26.781879+05:30)
+2026-07-08 18:09:26,790 | INFO | Database Connected
+2026-07-08 18:09:26,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:31 IST)" executed successfully
+2026-07-08 18:09:31,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:36 IST)" (scheduled at 2026-07-08 18:09:31.781879+05:30)
+2026-07-08 18:09:31,789 | INFO | Database Connected
+2026-07-08 18:09:31,797 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:36 IST)" executed successfully
+2026-07-08 18:09:36,791 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:41 IST)" (scheduled at 2026-07-08 18:09:36.781879+05:30)
+2026-07-08 18:09:36,796 | INFO | Database Connected
+2026-07-08 18:09:36,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:41 IST)" executed successfully
+2026-07-08 18:09:41,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:46 IST)" (scheduled at 2026-07-08 18:09:41.781879+05:30)
+2026-07-08 18:09:41,796 | INFO | Database Connected
+2026-07-08 18:09:41,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:46 IST)" executed successfully
+2026-07-08 18:09:46,791 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:51 IST)" (scheduled at 2026-07-08 18:09:46.781879+05:30)
+2026-07-08 18:09:46,796 | INFO | Database Connected
+2026-07-08 18:09:46,803 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:51 IST)" executed successfully
+2026-07-08 18:09:51,786 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:56 IST)" (scheduled at 2026-07-08 18:09:51.781879+05:30)
+2026-07-08 18:09:51,791 | INFO | Database Connected
+2026-07-08 18:09:51,794 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:09:56 IST)" executed successfully
+2026-07-08 18:09:56,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:01 IST)" (scheduled at 2026-07-08 18:09:56.781879+05:30)
+2026-07-08 18:09:56,796 | INFO | Database Connected
+2026-07-08 18:09:56,804 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:01 IST)" executed successfully
+2026-07-08 18:10:01,791 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:06 IST)" (scheduled at 2026-07-08 18:10:01.781879+05:30)
+2026-07-08 18:10:01,796 | INFO | Database Connected
+2026-07-08 18:10:01,812 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:06 IST)" executed successfully
+2026-07-08 18:10:06,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:11 IST)" (scheduled at 2026-07-08 18:10:06.781879+05:30)
+2026-07-08 18:10:06,794 | INFO | Database Connected
+2026-07-08 18:10:06,800 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:11 IST)" executed successfully
+2026-07-08 18:10:11,782 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:16 IST)" (scheduled at 2026-07-08 18:10:11.781879+05:30)
+2026-07-08 18:10:11,786 | INFO | Database Connected
+2026-07-08 18:10:11,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:16 IST)" executed successfully
+2026-07-08 18:10:16,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:21 IST)" (scheduled at 2026-07-08 18:10:16.781879+05:30)
+2026-07-08 18:10:16,794 | INFO | Database Connected
+2026-07-08 18:10:16,797 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:21 IST)" executed successfully
+2026-07-08 18:10:21,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:26 IST)" (scheduled at 2026-07-08 18:10:21.781879+05:30)
+2026-07-08 18:10:21,793 | INFO | Database Connected
+2026-07-08 18:10:21,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:26 IST)" executed successfully
+2026-07-08 18:10:26,787 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:31 IST)" (scheduled at 2026-07-08 18:10:26.781879+05:30)
+2026-07-08 18:10:26,792 | INFO | Database Connected
+2026-07-08 18:10:26,794 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:31 IST)" executed successfully
+2026-07-08 18:10:31,787 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:36 IST)" (scheduled at 2026-07-08 18:10:31.781879+05:30)
+2026-07-08 18:10:31,791 | INFO | Database Connected
+2026-07-08 18:10:31,794 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:36 IST)" executed successfully
+2026-07-08 18:10:36,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:41 IST)" (scheduled at 2026-07-08 18:10:36.781879+05:30)
+2026-07-08 18:10:36,800 | INFO | Database Connected
+2026-07-08 18:10:36,812 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:41 IST)" executed successfully
+2026-07-08 18:10:41,791 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:46 IST)" (scheduled at 2026-07-08 18:10:41.781879+05:30)
+2026-07-08 18:10:41,795 | INFO | Database Connected
+2026-07-08 18:10:41,797 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:46 IST)" executed successfully
+2026-07-08 18:10:46,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:51 IST)" (scheduled at 2026-07-08 18:10:46.781879+05:30)
+2026-07-08 18:10:46,789 | INFO | Database Connected
+2026-07-08 18:10:46,794 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:51 IST)" executed successfully
+2026-07-08 18:10:51,788 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:56 IST)" (scheduled at 2026-07-08 18:10:51.781879+05:30)
+2026-07-08 18:10:51,792 | INFO | Database Connected
+2026-07-08 18:10:51,812 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:10:56 IST)" executed successfully
+2026-07-08 18:10:56,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:01 IST)" (scheduled at 2026-07-08 18:10:56.781879+05:30)
+2026-07-08 18:10:56,793 | INFO | Database Connected
+2026-07-08 18:10:56,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:01 IST)" executed successfully
+2026-07-08 18:11:01,783 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:06 IST)" (scheduled at 2026-07-08 18:11:01.781879+05:30)
+2026-07-08 18:11:01,787 | INFO | Database Connected
+2026-07-08 18:11:01,792 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:06 IST)" executed successfully
+2026-07-08 18:11:06,791 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:11 IST)" (scheduled at 2026-07-08 18:11:06.781879+05:30)
+2026-07-08 18:11:06,796 | INFO | Database Connected
+2026-07-08 18:11:06,805 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:11 IST)" executed successfully
+2026-07-08 18:11:11,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:16 IST)" (scheduled at 2026-07-08 18:11:11.781879+05:30)
+2026-07-08 18:11:11,791 | INFO | Database Connected
+2026-07-08 18:11:11,798 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:16 IST)" executed successfully
+2026-07-08 18:11:16,786 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:21 IST)" (scheduled at 2026-07-08 18:11:16.781879+05:30)
+2026-07-08 18:11:16,790 | INFO | Database Connected
+2026-07-08 18:11:16,799 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:21 IST)" executed successfully
+2026-07-08 18:11:21,788 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:26 IST)" (scheduled at 2026-07-08 18:11:21.781879+05:30)
+2026-07-08 18:11:21,792 | INFO | Database Connected
+2026-07-08 18:11:21,807 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:26 IST)" executed successfully
+2026-07-08 18:11:26,793 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:31 IST)" (scheduled at 2026-07-08 18:11:26.781879+05:30)
+2026-07-08 18:11:26,797 | INFO | Database Connected
+2026-07-08 18:11:26,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:31 IST)" executed successfully
+2026-07-08 18:11:31,788 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:36 IST)" (scheduled at 2026-07-08 18:11:31.781879+05:30)
+2026-07-08 18:11:31,792 | INFO | Database Connected
+2026-07-08 18:11:31,807 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:36 IST)" executed successfully
+2026-07-08 18:11:36,786 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:41 IST)" (scheduled at 2026-07-08 18:11:36.781879+05:30)
+2026-07-08 18:11:36,791 | INFO | Database Connected
+2026-07-08 18:11:36,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:41 IST)" executed successfully
+2026-07-08 18:11:41,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:46 IST)" (scheduled at 2026-07-08 18:11:41.781879+05:30)
+2026-07-08 18:11:41,793 | INFO | Database Connected
+2026-07-08 18:11:41,799 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:46 IST)" executed successfully
+2026-07-08 18:11:46,794 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:51 IST)" (scheduled at 2026-07-08 18:11:46.781879+05:30)
+2026-07-08 18:11:46,798 | INFO | Database Connected
+2026-07-08 18:11:46,801 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:51 IST)" executed successfully
+2026-07-08 18:11:51,793 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:56 IST)" (scheduled at 2026-07-08 18:11:51.781879+05:30)
+2026-07-08 18:11:51,797 | INFO | Database Connected
+2026-07-08 18:11:51,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:11:56 IST)" executed successfully
+2026-07-08 18:11:56,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:12:01 IST)" (scheduled at 2026-07-08 18:11:56.781879+05:30)
+2026-07-08 18:11:56,800 | INFO | Database Connected
+2026-07-08 18:11:56,804 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:12:01 IST)" executed successfully
+2026-07-08 18:12:01,788 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:12:06 IST)" (scheduled at 2026-07-08 18:12:01.781879+05:30)
+2026-07-08 18:12:01,791 | INFO | Database Connected
+2026-07-08 18:12:01,797 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:12:06 IST)" executed successfully
+2026-07-08 18:12:06,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:12:11 IST)" (scheduled at 2026-07-08 18:12:06.781879+05:30)
+2026-07-08 18:12:06,788 | INFO | Database Connected
+2026-07-08 18:12:06,790 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:12:11 IST)" executed successfully
+2026-07-08 18:15:24,535 | WARNING | Run time of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:15:26 IST)" was missed by 0:00:02.753475
+2026-07-08 18:15:26,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:15:31 IST)" (scheduled at 2026-07-08 18:15:26.781879+05:30)
+2026-07-08 18:15:26,801 | INFO | Database Connected
+2026-07-08 18:15:26,803 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 18:15:31 IST)" executed successfully
+2026-07-08 19:40:21,198 | WARNING | Run time of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:21 IST)" was missed by 0:00:04.416395
+2026-07-08 19:40:21,794 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:26 IST)" (scheduled at 2026-07-08 19:40:21.781879+05:30)
+2026-07-08 19:40:21,797 | INFO | Database Connected
+2026-07-08 19:40:21,799 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:26 IST)" executed successfully
+2026-07-08 19:40:26,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:31 IST)" (scheduled at 2026-07-08 19:40:26.781879+05:30)
+2026-07-08 19:40:26,793 | INFO | Database Connected
+2026-07-08 19:40:26,795 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:31 IST)" executed successfully
+2026-07-08 19:40:31,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:36 IST)" (scheduled at 2026-07-08 19:40:31.781879+05:30)
+2026-07-08 19:40:31,793 | INFO | Database Connected
+2026-07-08 19:40:31,794 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:36 IST)" executed successfully
+2026-07-08 19:40:36,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:41 IST)" (scheduled at 2026-07-08 19:40:36.781879+05:30)
+2026-07-08 19:40:36,794 | INFO | Database Connected
+2026-07-08 19:40:36,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:41 IST)" executed successfully
+2026-07-08 19:40:41,788 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:46 IST)" (scheduled at 2026-07-08 19:40:41.781879+05:30)
+2026-07-08 19:40:41,795 | INFO | Database Connected
+2026-07-08 19:40:41,798 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:46 IST)" executed successfully
+2026-07-08 19:40:46,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:51 IST)" (scheduled at 2026-07-08 19:40:46.781879+05:30)
+2026-07-08 19:40:46,791 | INFO | Database Connected
+2026-07-08 19:40:46,792 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:51 IST)" executed successfully
+2026-07-08 19:40:51,786 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:56 IST)" (scheduled at 2026-07-08 19:40:51.781879+05:30)
+2026-07-08 19:40:51,789 | INFO | Database Connected
+2026-07-08 19:40:51,791 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:40:56 IST)" executed successfully
+2026-07-08 19:40:56,794 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:01 IST)" (scheduled at 2026-07-08 19:40:56.781879+05:30)
+2026-07-08 19:40:56,803 | INFO | Database Connected
+2026-07-08 19:40:56,952 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:01 IST)" executed successfully
+2026-07-08 19:41:01,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:06 IST)" (scheduled at 2026-07-08 19:41:01.781879+05:30)
+2026-07-08 19:41:01,799 | INFO | Database Connected
+2026-07-08 19:41:01,804 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:06 IST)" executed successfully
+2026-07-08 19:41:08,186 | WARNING | Run time of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:11 IST)" was missed by 0:00:01.404540
+2026-07-08 19:41:11,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:16 IST)" (scheduled at 2026-07-08 19:41:11.781879+05:30)
+2026-07-08 19:41:11,787 | INFO | Database Connected
+2026-07-08 19:41:11,789 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:16 IST)" executed successfully
+2026-07-08 19:41:16,798 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:21 IST)" (scheduled at 2026-07-08 19:41:16.781879+05:30)
+2026-07-08 19:41:16,800 | INFO | Database Connected
+2026-07-08 19:41:16,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:21 IST)" executed successfully
+2026-07-08 19:41:21,817 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:26 IST)" (scheduled at 2026-07-08 19:41:21.781879+05:30)
+2026-07-08 19:41:21,819 | INFO | Database Connected
+2026-07-08 19:41:21,821 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:26 IST)" executed successfully
+2026-07-08 19:41:26,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:31 IST)" (scheduled at 2026-07-08 19:41:26.781879+05:30)
+2026-07-08 19:41:26,786 | INFO | Database Connected
+2026-07-08 19:41:26,787 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:31 IST)" executed successfully
+2026-07-08 19:41:31,783 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:36 IST)" (scheduled at 2026-07-08 19:41:31.781879+05:30)
+2026-07-08 19:41:31,787 | INFO | Database Connected
+2026-07-08 19:41:31,790 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:36 IST)" executed successfully
+2026-07-08 19:41:36,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:41 IST)" (scheduled at 2026-07-08 19:41:36.781879+05:30)
+2026-07-08 19:41:36,808 | INFO | Database Connected
+2026-07-08 19:41:36,810 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:41 IST)" executed successfully
+2026-07-08 19:41:41,800 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:46 IST)" (scheduled at 2026-07-08 19:41:41.781879+05:30)
+2026-07-08 19:41:41,802 | INFO | Database Connected
+2026-07-08 19:41:41,804 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:46 IST)" executed successfully
+2026-07-08 19:41:46,793 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:51 IST)" (scheduled at 2026-07-08 19:41:46.781879+05:30)
+2026-07-08 19:41:46,796 | INFO | Database Connected
+2026-07-08 19:41:46,798 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:51 IST)" executed successfully
+2026-07-08 19:41:51,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:56 IST)" (scheduled at 2026-07-08 19:41:51.781879+05:30)
+2026-07-08 19:41:51,793 | INFO | Database Connected
+2026-07-08 19:41:51,795 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:41:56 IST)" executed successfully
+2026-07-08 19:41:56,782 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:01 IST)" (scheduled at 2026-07-08 19:41:56.781879+05:30)
+2026-07-08 19:41:56,791 | INFO | Database Connected
+2026-07-08 19:41:56,792 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:01 IST)" executed successfully
+2026-07-08 19:42:01,789 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:06 IST)" (scheduled at 2026-07-08 19:42:01.781879+05:30)
+2026-07-08 19:42:01,793 | INFO | Database Connected
+2026-07-08 19:42:01,795 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:06 IST)" executed successfully
+2026-07-08 19:42:06,797 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:11 IST)" (scheduled at 2026-07-08 19:42:06.781879+05:30)
+2026-07-08 19:42:06,799 | INFO | Database Connected
+2026-07-08 19:42:06,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:11 IST)" executed successfully
+2026-07-08 19:42:11,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:16 IST)" (scheduled at 2026-07-08 19:42:11.781879+05:30)
+2026-07-08 19:42:11,787 | INFO | Database Connected
+2026-07-08 19:42:11,789 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:16 IST)" executed successfully
+2026-07-08 19:42:16,783 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:21 IST)" (scheduled at 2026-07-08 19:42:16.781879+05:30)
+2026-07-08 19:42:16,788 | INFO | Database Connected
+2026-07-08 19:42:16,789 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:21 IST)" executed successfully
+2026-07-08 19:42:21,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:26 IST)" (scheduled at 2026-07-08 19:42:21.781879+05:30)
+2026-07-08 19:42:21,800 | INFO | Database Connected
+2026-07-08 19:42:21,803 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:26 IST)" executed successfully
+2026-07-08 19:42:26,795 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:31 IST)" (scheduled at 2026-07-08 19:42:26.781879+05:30)
+2026-07-08 19:42:26,798 | INFO | Database Connected
+2026-07-08 19:42:26,799 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:31 IST)" executed successfully
+2026-07-08 19:42:31,794 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:36 IST)" (scheduled at 2026-07-08 19:42:31.781879+05:30)
+2026-07-08 19:42:31,795 | INFO | Database Connected
+2026-07-08 19:42:31,797 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:36 IST)" executed successfully
+2026-07-08 19:42:36,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:41 IST)" (scheduled at 2026-07-08 19:42:36.781879+05:30)
+2026-07-08 19:42:36,795 | INFO | Database Connected
+2026-07-08 19:42:36,798 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:41 IST)" executed successfully
+2026-07-08 19:42:41,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:46 IST)" (scheduled at 2026-07-08 19:42:41.781879+05:30)
+2026-07-08 19:42:41,799 | INFO | Database Connected
+2026-07-08 19:42:41,801 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:46 IST)" executed successfully
+2026-07-08 19:42:46,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:51 IST)" (scheduled at 2026-07-08 19:42:46.781879+05:30)
+2026-07-08 19:42:46,792 | INFO | Database Connected
+2026-07-08 19:42:46,793 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:51 IST)" executed successfully
+2026-07-08 19:42:51,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:56 IST)" (scheduled at 2026-07-08 19:42:51.781879+05:30)
+2026-07-08 19:42:51,786 | INFO | Database Connected
+2026-07-08 19:42:51,789 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:42:56 IST)" executed successfully
+2026-07-08 19:42:56,795 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:01 IST)" (scheduled at 2026-07-08 19:42:56.781879+05:30)
+2026-07-08 19:42:56,799 | INFO | Database Connected
+2026-07-08 19:42:56,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:01 IST)" executed successfully
+2026-07-08 19:43:01,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:06 IST)" (scheduled at 2026-07-08 19:43:01.781879+05:30)
+2026-07-08 19:43:01,787 | INFO | Database Connected
+2026-07-08 19:43:01,789 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:06 IST)" executed successfully
+2026-07-08 19:43:06,798 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:11 IST)" (scheduled at 2026-07-08 19:43:06.781879+05:30)
+2026-07-08 19:43:06,800 | INFO | Database Connected
+2026-07-08 19:43:06,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:11 IST)" executed successfully
+2026-07-08 19:43:11,783 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:16 IST)" (scheduled at 2026-07-08 19:43:11.781879+05:30)
+2026-07-08 19:43:11,785 | INFO | Database Connected
+2026-07-08 19:43:11,786 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:16 IST)" executed successfully
+2026-07-08 19:43:16,794 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:21 IST)" (scheduled at 2026-07-08 19:43:16.781879+05:30)
+2026-07-08 19:43:16,797 | INFO | Database Connected
+2026-07-08 19:43:16,798 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:21 IST)" executed successfully
+2026-07-08 19:43:21,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:26 IST)" (scheduled at 2026-07-08 19:43:21.781879+05:30)
+2026-07-08 19:43:21,787 | INFO | Database Connected
+2026-07-08 19:43:21,788 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:26 IST)" executed successfully
+2026-07-08 19:43:26,798 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:31 IST)" (scheduled at 2026-07-08 19:43:26.781879+05:30)
+2026-07-08 19:43:26,800 | INFO | Database Connected
+2026-07-08 19:43:26,801 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:31 IST)" executed successfully
+2026-07-08 19:43:31,797 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:36 IST)" (scheduled at 2026-07-08 19:43:31.781879+05:30)
+2026-07-08 19:43:31,799 | INFO | Database Connected
+2026-07-08 19:43:31,801 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:36 IST)" executed successfully
+2026-07-08 19:43:36,791 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:41 IST)" (scheduled at 2026-07-08 19:43:36.781879+05:30)
+2026-07-08 19:43:36,793 | INFO | Database Connected
+2026-07-08 19:43:36,795 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:41 IST)" executed successfully
+2026-07-08 19:43:41,797 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:46 IST)" (scheduled at 2026-07-08 19:43:41.781879+05:30)
+2026-07-08 19:43:41,799 | INFO | Database Connected
+2026-07-08 19:43:41,800 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:46 IST)" executed successfully
+2026-07-08 19:43:46,782 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:51 IST)" (scheduled at 2026-07-08 19:43:46.781879+05:30)
+2026-07-08 19:43:46,784 | INFO | Database Connected
+2026-07-08 19:43:46,785 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:51 IST)" executed successfully
+2026-07-08 19:43:51,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:56 IST)" (scheduled at 2026-07-08 19:43:51.781879+05:30)
+2026-07-08 19:43:51,799 | INFO | Database Connected
+2026-07-08 19:43:51,800 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:43:56 IST)" executed successfully
+2026-07-08 19:43:56,782 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:01 IST)" (scheduled at 2026-07-08 19:43:56.781879+05:30)
+2026-07-08 19:43:56,785 | INFO | Database Connected
+2026-07-08 19:43:56,786 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:01 IST)" executed successfully
+2026-07-08 19:44:01,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:06 IST)" (scheduled at 2026-07-08 19:44:01.781879+05:30)
+2026-07-08 19:44:01,788 | INFO | Database Connected
+2026-07-08 19:44:01,789 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:06 IST)" executed successfully
+2026-07-08 19:44:06,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:11 IST)" (scheduled at 2026-07-08 19:44:06.781879+05:30)
+2026-07-08 19:44:06,799 | INFO | Database Connected
+2026-07-08 19:44:06,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:11 IST)" executed successfully
+2026-07-08 19:44:11,796 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:16 IST)" (scheduled at 2026-07-08 19:44:11.781879+05:30)
+2026-07-08 19:44:11,799 | INFO | Database Connected
+2026-07-08 19:44:11,801 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:16 IST)" executed successfully
+2026-07-08 19:44:16,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:21 IST)" (scheduled at 2026-07-08 19:44:16.781879+05:30)
+2026-07-08 19:44:16,788 | INFO | Database Connected
+2026-07-08 19:44:16,790 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:21 IST)" executed successfully
+2026-07-08 19:44:21,798 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:26 IST)" (scheduled at 2026-07-08 19:44:21.781879+05:30)
+2026-07-08 19:44:21,802 | INFO | Database Connected
+2026-07-08 19:44:21,803 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:26 IST)" executed successfully
+2026-07-08 19:44:26,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:31 IST)" (scheduled at 2026-07-08 19:44:26.781879+05:30)
+2026-07-08 19:44:26,792 | INFO | Database Connected
+2026-07-08 19:44:26,793 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:31 IST)" executed successfully
+2026-07-08 19:44:31,795 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:36 IST)" (scheduled at 2026-07-08 19:44:31.781879+05:30)
+2026-07-08 19:44:31,797 | INFO | Database Connected
+2026-07-08 19:44:31,799 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:36 IST)" executed successfully
+2026-07-08 19:44:36,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:41 IST)" (scheduled at 2026-07-08 19:44:36.781879+05:30)
+2026-07-08 19:44:36,799 | INFO | Database Connected
+2026-07-08 19:44:36,801 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:41 IST)" executed successfully
+2026-07-08 19:44:41,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:46 IST)" (scheduled at 2026-07-08 19:44:41.781879+05:30)
+2026-07-08 19:44:41,787 | INFO | Database Connected
+2026-07-08 19:44:41,788 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:46 IST)" executed successfully
+2026-07-08 19:44:46,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:51 IST)" (scheduled at 2026-07-08 19:44:46.781879+05:30)
+2026-07-08 19:44:46,794 | INFO | Database Connected
+2026-07-08 19:44:46,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:51 IST)" executed successfully
+2026-07-08 19:44:51,793 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:56 IST)" (scheduled at 2026-07-08 19:44:51.781879+05:30)
+2026-07-08 19:44:51,795 | INFO | Database Connected
+2026-07-08 19:44:51,796 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:44:56 IST)" executed successfully
+2026-07-08 19:44:56,798 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:01 IST)" (scheduled at 2026-07-08 19:44:56.781879+05:30)
+2026-07-08 19:44:56,801 | INFO | Database Connected
+2026-07-08 19:44:56,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:01 IST)" executed successfully
+2026-07-08 19:45:01,792 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:06 IST)" (scheduled at 2026-07-08 19:45:01.781879+05:30)
+2026-07-08 19:45:01,796 | INFO | Database Connected
+2026-07-08 19:45:01,799 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:06 IST)" executed successfully
+2026-07-08 19:45:06,790 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:11 IST)" (scheduled at 2026-07-08 19:45:06.781879+05:30)
+2026-07-08 19:45:06,793 | INFO | Database Connected
+2026-07-08 19:45:06,794 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:11 IST)" executed successfully
+2026-07-08 19:45:11,782 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:16 IST)" (scheduled at 2026-07-08 19:45:11.781879+05:30)
+2026-07-08 19:45:11,783 | INFO | Database Connected
+2026-07-08 19:45:11,785 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:16 IST)" executed successfully
+2026-07-08 19:45:16,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:21 IST)" (scheduled at 2026-07-08 19:45:16.781879+05:30)
+2026-07-08 19:45:16,786 | INFO | Database Connected
+2026-07-08 19:45:16,788 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:21 IST)" executed successfully
+2026-07-08 19:45:21,782 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:26 IST)" (scheduled at 2026-07-08 19:45:21.781879+05:30)
+2026-07-08 19:45:21,784 | INFO | Database Connected
+2026-07-08 19:45:21,785 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:26 IST)" executed successfully
+2026-07-08 19:45:26,799 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:31 IST)" (scheduled at 2026-07-08 19:45:26.781879+05:30)
+2026-07-08 19:45:26,804 | INFO | Database Connected
+2026-07-08 19:45:26,807 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:31 IST)" executed successfully
+2026-07-08 19:45:31,783 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:36 IST)" (scheduled at 2026-07-08 19:45:31.781879+05:30)
+2026-07-08 19:45:31,785 | INFO | Database Connected
+2026-07-08 19:45:31,786 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:36 IST)" executed successfully
+2026-07-08 19:45:36,793 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:41 IST)" (scheduled at 2026-07-08 19:45:36.781879+05:30)
+2026-07-08 19:45:36,796 | INFO | Database Connected
+2026-07-08 19:45:36,798 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:41 IST)" executed successfully
+2026-07-08 19:45:41,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:46 IST)" (scheduled at 2026-07-08 19:45:41.781879+05:30)
+2026-07-08 19:45:41,789 | INFO | Database Connected
+2026-07-08 19:45:41,795 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:46 IST)" executed successfully
+2026-07-08 19:45:46,784 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:51 IST)" (scheduled at 2026-07-08 19:45:46.781879+05:30)
+2026-07-08 19:45:46,786 | INFO | Database Connected
+2026-07-08 19:45:46,787 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:51 IST)" executed successfully
+2026-07-08 19:45:51,785 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:56 IST)" (scheduled at 2026-07-08 19:45:51.781879+05:30)
+2026-07-08 19:45:51,788 | INFO | Database Connected
+2026-07-08 19:45:51,790 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:45:56 IST)" executed successfully
+2026-07-08 19:46:02,966 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-08 19:46:02,971 | INFO | Added job "DealScheduler.run" to job store "default"
+2026-07-08 19:46:02,971 | INFO | Scheduler started
+2026-07-08 19:46:07,977 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:07 IST)" (scheduled at 2026-07-08 19:46:07.966472+05:30)
+2026-07-08 19:46:07,980 | INFO | Database Connected
+2026-07-08 19:46:26,945 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-08 19:46:26,947 | INFO | Added job "DealScheduler.run" to job store "default"
+2026-07-08 19:46:26,948 | INFO | Scheduler started
+2026-07-08 19:46:31,951 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:31 IST)" (scheduled at 2026-07-08 19:46:31.945542+05:30)
+2026-07-08 19:46:31,953 | INFO | Database Connected
+2026-07-08 19:46:36,948 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:36 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:46:41,948 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:41 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:46:44,167 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:46 IST)" executed successfully
+2026-07-08 19:46:46,952 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:51 IST)" (scheduled at 2026-07-08 19:46:46.945542+05:30)
+2026-07-08 19:46:46,955 | INFO | Database Connected
+2026-07-08 19:46:51,949 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:51 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:46:56,802 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:46:56 IST)" executed successfully
+2026-07-08 19:46:56,954 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:01 IST)" (scheduled at 2026-07-08 19:46:56.945542+05:30)
+2026-07-08 19:46:56,957 | INFO | Database Connected
+2026-07-08 19:47:01,949 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:01 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:47:06,954 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:06 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:47:09,722 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:11 IST)" executed successfully
+2026-07-08 19:47:11,952 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:16 IST)" (scheduled at 2026-07-08 19:47:11.945542+05:30)
+2026-07-08 19:47:11,954 | INFO | Database Connected
+2026-07-08 19:47:16,952 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:16 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:47:21,952 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:21 IST)" skipped: maximum number of running instances reached (1)
+2026-07-08 19:47:22,972 | INFO | Job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:26 IST)" executed successfully
+2026-07-08 19:47:26,951 | INFO | Running job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:31 IST)" (scheduled at 2026-07-08 19:47:26.945542+05:30)
+2026-07-08 19:47:26,953 | INFO | Database Connected
+2026-07-08 19:47:31,959 | WARNING | Execution of job "DealScheduler.run (trigger: interval[0:00:05], next run at: 2026-07-08 19:47:31 IST)" skipped: maximum number of running instances reached (1)
