@@ -27,6 +27,12 @@ class ProductService:
 
     def get_product_by_id(self, product_id):
         return self.db.get_product_by_id(product_id)
+    def search_products(self, user_id, search):
+
+     return self.db.search_products(
+        user_id,
+        search
+    )
 
     def refresh_product(self, product_id):
 

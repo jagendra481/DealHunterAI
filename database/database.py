@@ -40,7 +40,7 @@ class Database:
             is_admin INTEGER DEFAULT 0,
 
             is_active INTEGER DEFAULT 1,
-                        
+
 
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
@@ -358,5 +358,25 @@ VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         )
 
         self.connection.commit()
+
+    def search_products(self, user_id, search):
+        self.cursor.execute(
+            """
+            SELECT *
+            FROM products
+
+            WHERE active = 1
+            AND user_id = ?
+            AND name LIKE ?
+
+            ORDER BY id DESC
+            """,
+            (
+                user_id,
+                f"%{search}%"
+            )
+        )
+
+        return self.cursor.fetchall()
 
 

@@ -13348,3 +13348,104 @@ sqlite3.ProgrammingError: Error binding parameter 6: type 'sqlite3.Row' is not s
 2026-07-09 23:23:12,823 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:12] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
 2026-07-09 23:23:12,830 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:12] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
 2026-07-09 23:23:15,947 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:15] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-10 00:08:50,604 | INFO | Database Connected
+2026-07-10 00:19:14,415 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-10 00:19:14,416 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-10 00:19:14,417 | INFO |  * Restarting with stat
+2026-07-10 00:19:15,236 | WARNING |  * Debugger is active!
+2026-07-10 00:19:15,238 | INFO |  * Debugger PIN: 564-549-531
+2026-07-10 00:19:20,037 | INFO | Database Connected
+2026-07-10 00:19:20,044 | INFO | Database Connected
+2026-07-10 00:19:20,502 | INFO | 127.0.0.1 - - [10/Jul/2026 00:19:20] "GET / HTTP/1.1" 200 -
+2026-07-10 00:19:20,581 | INFO | 127.0.0.1 - - [10/Jul/2026 00:19:20] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:19:21,158 | INFO | 127.0.0.1 - - [10/Jul/2026 00:19:21] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-07-10 00:19:29,296 | INFO | Database Connected
+2026-07-10 00:19:29,806 | INFO | Database Connected
+2026-07-10 00:19:30,143 | INFO | 127.0.0.1 - - [10/Jul/2026 00:19:30] "GET /products HTTP/1.1" 200 -
+2026-07-10 00:19:30,236 | INFO | 127.0.0.1 - - [10/Jul/2026 00:19:30] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:19:30,297 | INFO | 127.0.0.1 - - [10/Jul/2026 00:19:30] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:20:53,447 | INFO | Database Connected
+2026-07-10 00:20:53,450 | INFO | Database Connected
+2026-07-10 00:20:53,465 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:53] "GET /products HTTP/1.1" 200 -
+2026-07-10 00:20:53,500 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:53] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:20:53,509 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:53] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:20:54,608 | INFO | Database Connected
+2026-07-10 00:20:54,611 | INFO | Database Connected
+2026-07-10 00:20:54,616 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:54] "GET /products HTTP/1.1" 200 -
+2026-07-10 00:20:54,669 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:54] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:20:54,773 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:54] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:20:55,032 | INFO | Database Connected
+2026-07-10 00:20:55,035 | INFO | Database Connected
+2026-07-10 00:20:55,044 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:55] "GET /products HTTP/1.1" 200 -
+2026-07-10 00:20:55,096 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:55] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:20:55,194 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:55] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:20:55,336 | INFO | Database Connected
+2026-07-10 00:20:55,340 | INFO | Database Connected
+2026-07-10 00:20:55,345 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:55] "GET /products HTTP/1.1" 200 -
+2026-07-10 00:20:55,432 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:55] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:20:55,450 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:55] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:20:57,578 | INFO | Database Connected
+2026-07-10 00:20:57,634 | INFO | Database Connected
+2026-07-10 00:20:57,652 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:57] "GET / HTTP/1.1" 200 -
+2026-07-10 00:20:57,709 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:57] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:20:57,813 | INFO | 127.0.0.1 - - [10/Jul/2026 00:20:57] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:21:26,348 | INFO | Database Connected
+2026-07-10 00:21:26,356 | INFO | Database Connected
+2026-07-10 00:21:26,360 | INFO | 127.0.0.1 - - [10/Jul/2026 00:21:26] "GET / HTTP/1.1" 200 -
+2026-07-10 00:21:26,386 | INFO | 127.0.0.1 - - [10/Jul/2026 00:21:26] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:21:26,393 | INFO | 127.0.0.1 - - [10/Jul/2026 00:21:26] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:21:27,122 | INFO | Database Connected
+2026-07-10 00:21:27,124 | INFO | Database Connected
+2026-07-10 00:21:27,127 | INFO | 127.0.0.1 - - [10/Jul/2026 00:21:27] "GET / HTTP/1.1" 200 -
+2026-07-10 00:21:27,157 | INFO | 127.0.0.1 - - [10/Jul/2026 00:21:27] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:21:27,175 | INFO | 127.0.0.1 - - [10/Jul/2026 00:21:27] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:22:21,903 | INFO | Database Connected
+2026-07-10 00:22:21,905 | INFO | Database Connected
+2026-07-10 00:22:21,908 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:21] "GET / HTTP/1.1" 200 -
+2026-07-10 00:22:21,968 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:21] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:22:21,991 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:21] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:22:22,931 | INFO | Database Connected
+2026-07-10 00:22:22,982 | INFO | Database Connected
+2026-07-10 00:22:22,997 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:22] "GET / HTTP/1.1" 200 -
+2026-07-10 00:22:23,066 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:23] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:22:23,133 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:23] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:22:25,381 | INFO | Database Connected
+2026-07-10 00:22:25,640 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:25] "GET /add-product HTTP/1.1" 200 -
+2026-07-10 00:22:25,689 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:25] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:22:25,706 | INFO | 127.0.0.1 - - [10/Jul/2026 00:22:25] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:23:09,917 | INFO | Database Connected
+2026-07-10 00:23:10,124 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-07-10 00:23:10,573 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:10] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2026-07-10 00:23:10,637 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:10] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-10 00:23:10,638 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:10] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-10 00:23:10,711 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:10] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=UPwZbH5Ukh1ybBfCGmMB HTTP/1.1" 200 -
+2026-07-10 00:23:10,752 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:10] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-10 00:23:17,791 | INFO | Database Connected
+2026-07-10 00:23:17,863 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:17] "[35m[1mPOST /login?next=/ HTTP/1.1[0m" 500 -
+2026-07-10 00:23:17,906 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:17] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-10 00:23:17,938 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:17] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-10 00:23:17,969 | INFO | 127.0.0.1 - - [10/Jul/2026 00:23:17] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=UPwZbH5Ukh1ybBfCGmMB HTTP/1.1[0m" 304 -
+2026-07-10 00:23:25,043 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\admin\\add_product.py', reloading
+2026-07-10 00:23:25,149 | INFO |  * Restarting with stat
+2026-07-10 00:23:25,676 | WARNING |  * Debugger is active!
+2026-07-10 00:23:25,678 | INFO |  * Debugger PIN: 564-549-531
+2026-07-10 00:23:57,367 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-10 00:23:57,368 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-10 00:23:57,370 | INFO |  * Restarting with stat
+2026-07-10 00:23:58,119 | WARNING |  * Debugger is active!
+2026-07-10 00:23:58,121 | INFO |  * Debugger PIN: 564-549-531
+2026-07-10 00:24:02,000 | INFO | 127.0.0.1 - - [10/Jul/2026 00:24:02] "GET /login HTTP/1.1" 200 -
+2026-07-10 00:24:02,034 | INFO | 127.0.0.1 - - [10/Jul/2026 00:24:02] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-10 00:24:09,718 | INFO | Database Connected
+2026-07-10 00:24:09,993 | INFO | 127.0.0.1 - - [10/Jul/2026 00:24:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-10 00:24:10,005 | INFO | Database Connected
+2026-07-10 00:24:10,008 | INFO | Database Connected
+2026-07-10 00:24:10,033 | INFO | 127.0.0.1 - - [10/Jul/2026 00:24:10] "GET / HTTP/1.1" 200 -
+2026-07-10 00:24:10,094 | INFO | 127.0.0.1 - - [10/Jul/2026 00:24:10] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-10 00:24:10,228 | INFO | 127.0.0.1 - - [10/Jul/2026 00:24:10] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-10 00:25:14,396 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\models\\product.py', reloading
+2026-07-10 00:25:14,522 | INFO |  * Restarting with stat
+2026-07-10 00:25:15,217 | WARNING |  * Debugger is active!
+2026-07-10 00:25:15,219 | INFO |  * Debugger PIN: 564-549-531

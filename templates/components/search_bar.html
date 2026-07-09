@@ -1,14 +1,17 @@
-<div class="card border-0 shadow-sm mb-4">
+<form method="GET"
+      action="/products">
+
+<div class="card shadow-sm border-0 mb-4">
 
     <div class="card-body">
 
         <div class="row">
 
-            <div class="col-md-8">
+            <div class="col-md-10">
 
                 <div class="input-group">
 
-                    <span class="input-group-text bg-white">
+                    <span class="input-group-text">
 
                         <i class="bi bi-search"></i>
 
@@ -16,22 +19,23 @@
 
                     <input
                         type="text"
+                        name="search"
                         class="form-control"
-                        placeholder="Search your products...">
+                        value="{{ search }}"
+                        placeholder="Search products...">
 
                 </div>
 
             </div>
 
-            <div class="col-md-4 mt-3 mt-md-0">
+            <div class="col-md-2">
 
-                <select class="form-select">
+                <button
+                    class="btn btn-primary w-100">
 
-                    <option>Newest First</option>
-                    <option>Lowest Price</option>
-                    <option>Highest Rating</option>
+                    Search
 
-                </select>
+                </button>
 
             </div>
 
@@ -40,3 +44,5 @@
     </div>
 
 </div>
+
+</form>
