@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, url_for, flash
+from flask_login import login_user, logout_user, login_required
 
 from services.user_service import UserService
 
@@ -48,6 +49,8 @@ def register_auth_routes(app):
 
             if user:
 
+                login_user(user)
+
                 flash("Login Successful!", "success")
 
                 return redirect(url_for("dashboard"))
@@ -55,3 +58,13 @@ def register_auth_routes(app):
             flash("Invalid Email or Password", "danger")
 
         return render_template("login.html")
+
+    @app.route("/logout")
+    @login_required
+    def logout():
+
+        logout_user()
+
+        flash("Logged out successfully.", "success")
+
+        return redirect(url_for("login"))

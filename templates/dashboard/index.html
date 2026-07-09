@@ -1,0 +1,191 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+
+    <h1 class="fw-bold">
+
+        👋 Welcome back, {{ current_user.name }}
+
+    </h1>
+
+    <p class="text-muted">
+
+        Here's what's happening with your tracked deals today.
+
+    </p>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="col-lg-3">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Products
+
+                </h6>
+
+                <h2 class="fw-bold">
+
+                    {{ total_products }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Average Rating
+
+                </h6>
+
+                <h2 class="fw-bold">
+
+                    ⭐ {{ avg_rating }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Average Price
+
+                </h6>
+
+                <h2 class="fw-bold">
+
+                    ₹ {{ "{:,.0f}".format(avg_price) }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Price Drops
+
+                </h6>
+
+                <h2 class="fw-bold text-success">
+
+                    Coming Soon
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row mt-5">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h4>
+
+                    📈 Analytics
+
+                </h4>
+
+                <hr>
+
+                <div
+                    style="height:250px;"
+                    class="d-flex align-items-center justify-content-center text-muted">
+
+                    Charts Coming Soon...
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-4">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h4>
+
+                    ⚡ Quick Actions
+
+                </h4>
+
+                <hr>
+
+                <a href="/add-product"
+                   class="btn btn-primary w-100 mb-3">
+
+                    ➕ Add Product
+
+                </a>
+
+                <a href="/products"
+                   class="btn btn-outline-primary w-100">
+
+                    📦 View Products
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

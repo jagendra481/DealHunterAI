@@ -10,8 +10,8 @@ class ProductService:
     def add_product(self, product):
         self.db.add_product(product)
 
-    def get_all_products(self):
-        return self.db.get_all_products()
+    def get_all_products(self, user_id):
+     return self.db.get_all_products(user_id)
 
     def update_product(self, product):
         self.db.update_product(product)

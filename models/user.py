@@ -1,10 +1,11 @@
 from dataclasses import dataclass
+from flask_login import UserMixin
 
 
 @dataclass
-class User:
+class User(UserMixin):
 
-    id: int | None = None
+    id: int = None
 
     name: str = ""
 
@@ -14,4 +15,6 @@ class User:
 
     telegram_chat_id: str = ""
 
-    created_at: str = ""
+    is_admin: bool = False
+
+    is_active: bool = True

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        {% block title %}DealHunterAI{% endblock %}
+
+    </title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <!-- App CSS -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/app.css') }}">
+
+    <!-- Extra CSS -->
+
+    {% block css %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- ================= Sidebar ================= -->
+
+        {% include "components/sidebar.html" %}
+
+        <!-- ================= Main ================= -->
+
+        <main class="col-lg-10 col-md-9 col-12 ms-sm-auto px-md-4">
+
+            <!-- Navbar -->
+
+            {% include "components/navbar.html" %}
+
+            <!-- Flash Messages -->
+
+            {% include "components/flash_messages.html" %}
+
+            <!-- Page Content -->
+
+            <div class="pt-4">
+
+                {% block content %}
+
+                {% endblock %}
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- App JS -->
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<!-- Extra JS -->
+
+{% block scripts %}
+
+{% endblock %}
+
+</body>
+
+</html>

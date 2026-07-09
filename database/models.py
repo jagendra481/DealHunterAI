@@ -4,25 +4,26 @@ from dataclasses import dataclass
 @dataclass
 class Product:
 
-    name: str
+    user_id: int = 0
 
-    product_url: str
+    name: str = ""
 
-    affiliate_url: str
+    product_url: str = ""
 
-    asin: str
+    affiliate_url: str = ""
 
-    current_price: float
+    asin: str = ""
 
-    previous_price: float = 0
+    current_price: float = 0.0
 
-    lowest_price: float = 0
+    previous_price: float = 0.0
 
-    highest_price: float = 0
+    lowest_price: float = 0.0
+
+    highest_price: float = 0.0
 
     source: str = ""
 
-    # New fields
     image: str = ""
 
     rating: float = 0.0

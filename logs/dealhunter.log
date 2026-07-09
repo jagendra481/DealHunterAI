@@ -12633,3 +12633,718 @@ sqlite3.ProgrammingError: Error binding parameter 6: type 'sqlite3.Row' is not s
 2026-07-09 13:38:45,961 | INFO | Database Connected
 2026-07-09 13:38:45,967 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:45] "GET / HTTP/1.1" 200 -
 2026-07-09 13:38:46,079 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:46] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:02,800 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 17:06:02,801 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 17:06:02,804 | INFO |  * Restarting with stat
+2026-07-09 17:06:03,783 | WARNING |  * Debugger is active!
+2026-07-09 17:06:03,787 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:06:09,921 | INFO | Database Connected
+2026-07-09 17:06:09,966 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:09] "GET /products HTTP/1.1" 200 -
+2026-07-09 17:06:10,084 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:10] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:15,683 | INFO | Database Connected
+2026-07-09 17:06:15,744 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:15] "GET / HTTP/1.1" 200 -
+2026-07-09 17:06:15,847 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:15] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:18,961 | INFO | Database Connected
+2026-07-09 17:06:18,968 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:18] "GET / HTTP/1.1" 200 -
+2026-07-09 17:06:19,065 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:19] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:19,757 | INFO | Database Connected
+2026-07-09 17:06:19,763 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:19] "GET / HTTP/1.1" 200 -
+2026-07-09 17:06:19,839 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:19] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:20,131 | INFO | Database Connected
+2026-07-09 17:06:20,136 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:20] "GET / HTTP/1.1" 200 -
+2026-07-09 17:06:20,174 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:20] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:20,240 | INFO | Database Connected
+2026-07-09 17:06:20,243 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:20] "GET / HTTP/1.1" 200 -
+2026-07-09 17:06:20,306 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:20] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:06:20,584 | INFO | Database Connected
+2026-07-09 17:06:20,589 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:20] "GET / HTTP/1.1" 200 -
+2026-07-09 17:06:20,649 | INFO | 127.0.0.1 - - [09/Jul/2026 17:06:20] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:07:19,630 | INFO | Database Connected
+2026-07-09 17:07:19,636 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:19] "GET / HTTP/1.1" 200 -
+2026-07-09 17:07:19,761 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:19] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:07:29,275 | INFO | Database Connected
+2026-07-09 17:07:29,280 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:29] "GET / HTTP/1.1" 200 -
+2026-07-09 17:07:29,373 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:29] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:07:32,625 | INFO | Database Connected
+2026-07-09 17:07:32,630 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:32] "GET /products HTTP/1.1" 200 -
+2026-07-09 17:07:32,720 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:32] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:07:37,114 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:37] "[33mGET /analytics HTTP/1.1[0m" 404 -
+2026-07-09 17:07:40,470 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:40] "[33mGET /settings HTTP/1.1[0m" 404 -
+2026-07-09 17:07:56,133 | INFO | Database Connected
+2026-07-09 17:07:56,201 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:56] "GET / HTTP/1.1" 200 -
+2026-07-09 17:07:56,286 | INFO | 127.0.0.1 - - [09/Jul/2026 17:07:56] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:22:11,985 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 17:22:12,172 | INFO |  * Restarting with stat
+2026-07-09 17:22:13,397 | WARNING |  * Debugger is active!
+2026-07-09 17:22:13,401 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:24:47,596 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\auth\\auth_routes.py', reloading
+2026-07-09 17:24:47,729 | INFO |  * Restarting with stat
+2026-07-09 17:24:48,727 | WARNING |  * Debugger is active!
+2026-07-09 17:24:48,731 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:26:43,564 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\services\\user_service.py', reloading
+2026-07-09 17:26:43,837 | INFO |  * Restarting with stat
+2026-07-09 17:26:44,848 | WARNING |  * Debugger is active!
+2026-07-09 17:26:44,852 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:41:46,353 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 17:41:46,354 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 17:41:46,356 | INFO |  * Restarting with stat
+2026-07-09 17:41:46,902 | WARNING |  * Debugger is active!
+2026-07-09 17:41:46,905 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:41:51,631 | INFO | 127.0.0.1 - - [09/Jul/2026 17:41:51] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-09 17:41:51,694 | INFO | 127.0.0.1 - - [09/Jul/2026 17:41:51] "GET /login?next=/ HTTP/1.1" 200 -
+2026-07-09 17:41:51,737 | INFO | 127.0.0.1 - - [09/Jul/2026 17:41:51] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:41:53,240 | INFO | 127.0.0.1 - - [09/Jul/2026 17:41:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 17:42:00,612 | INFO | Database Connected
+2026-07-09 17:42:00,619 | INFO | 127.0.0.1 - - [09/Jul/2026 17:42:00] "POST /login?next=/ HTTP/1.1" 200 -
+2026-07-09 17:42:00,653 | INFO | 127.0.0.1 - - [09/Jul/2026 17:42:00] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:43:00,788 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:00] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-09 17:43:00,796 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:00] "GET /login?next=/ HTTP/1.1" 200 -
+2026-07-09 17:43:00,835 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:00] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:43:02,957 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:02] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-09 17:43:02,968 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:02] "GET /login?next=/ HTTP/1.1" 200 -
+2026-07-09 17:43:02,998 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:02] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:43:04,191 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:04] "[32mGET /products HTTP/1.1[0m" 302 -
+2026-07-09 17:43:04,201 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:04] "GET /login?next=/products HTTP/1.1" 200 -
+2026-07-09 17:43:04,234 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:04] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:43:05,948 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:05] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-09 17:43:05,958 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:05] "GET /login?next=/ HTTP/1.1" 200 -
+2026-07-09 17:43:05,985 | INFO | 127.0.0.1 - - [09/Jul/2026 17:43:05] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:44:11,065 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:11] "GET /register HTTP/1.1" 200 -
+2026-07-09 17:44:11,104 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:11] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:44:24,882 | INFO | Database Connected
+2026-07-09 17:44:25,066 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:25] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-07-09 17:44:25,073 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:25] "GET /login HTTP/1.1" 200 -
+2026-07-09 17:44:25,099 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:25] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:44:36,143 | INFO | Database Connected
+2026-07-09 17:44:36,339 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-09 17:44:36,350 | INFO | Database Connected
+2026-07-09 17:44:36,352 | INFO | Database Connected
+2026-07-09 17:44:36,400 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:36] "GET / HTTP/1.1" 200 -
+2026-07-09 17:44:36,434 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:36] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:44:48,752 | INFO | Database Connected
+2026-07-09 17:44:48,755 | INFO | Database Connected
+2026-07-09 17:44:48,758 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:48] "GET / HTTP/1.1" 200 -
+2026-07-09 17:44:48,778 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:48] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:44:51,880 | INFO | Database Connected
+2026-07-09 17:44:51,883 | INFO | Database Connected
+2026-07-09 17:44:51,923 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:51] "GET /products HTTP/1.1" 200 -
+2026-07-09 17:44:51,951 | INFO | 127.0.0.1 - - [09/Jul/2026 17:44:51] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:49:46,935 | INFO | 127.0.0.1 - - [09/Jul/2026 17:49:46] "[33mGET /settings HTTP/1.1[0m" 404 -
+2026-07-09 17:51:18,399 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 17:51:18,491 | INFO |  * Restarting with stat
+2026-07-09 17:51:19,027 | WARNING |  * Debugger is active!
+2026-07-09 17:51:19,029 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:51:20,067 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 17:51:20,129 | INFO |  * Restarting with stat
+2026-07-09 17:51:20,585 | WARNING |  * Debugger is active!
+2026-07-09 17:51:20,589 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:53:42,445 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\models.py', reloading
+2026-07-09 17:53:42,523 | INFO |  * Restarting with stat
+2026-07-09 17:59:35,144 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 17:59:35,145 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 17:59:35,148 | INFO |  * Restarting with stat
+2026-07-09 17:59:35,697 | WARNING |  * Debugger is active!
+2026-07-09 17:59:35,700 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 17:59:39,146 | INFO | Database Connected
+2026-07-09 17:59:39,305 | INFO | 127.0.0.1 - - [09/Jul/2026 17:59:39] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2026-07-09 17:59:39,313 | INFO | Database Connected
+2026-07-09 17:59:39,315 | INFO | Database Connected
+2026-07-09 17:59:39,335 | INFO | 127.0.0.1 - - [09/Jul/2026 17:59:39] "GET / HTTP/1.1" 200 -
+2026-07-09 17:59:39,366 | INFO | 127.0.0.1 - - [09/Jul/2026 17:59:39] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:59:48,248 | INFO | Database Connected
+2026-07-09 17:59:48,251 | INFO | Database Connected
+2026-07-09 17:59:48,254 | INFO | 127.0.0.1 - - [09/Jul/2026 17:59:48] "GET / HTTP/1.1" 200 -
+2026-07-09 17:59:48,284 | INFO | 127.0.0.1 - - [09/Jul/2026 17:59:48] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 17:59:50,530 | INFO | Database Connected
+2026-07-09 17:59:50,532 | INFO | 127.0.0.1 - - [09/Jul/2026 17:59:50] "GET /login?next=/products HTTP/1.1" 200 -
+2026-07-09 18:00:04,608 | INFO | Database Connected
+2026-07-09 18:00:04,767 | INFO | 127.0.0.1 - - [09/Jul/2026 18:00:04] "[32mPOST /login?next=/products HTTP/1.1[0m" 302 -
+2026-07-09 18:00:04,774 | INFO | Database Connected
+2026-07-09 18:00:04,776 | INFO | Database Connected
+2026-07-09 18:00:04,778 | INFO | 127.0.0.1 - - [09/Jul/2026 18:00:04] "GET / HTTP/1.1" 200 -
+2026-07-09 18:00:04,813 | INFO | 127.0.0.1 - - [09/Jul/2026 18:00:04] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:01:48,635 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:01:48,711 | INFO |  * Restarting with stat
+2026-07-09 18:08:34,455 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:08:34,456 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 18:08:34,457 | INFO |  * Restarting with stat
+2026-07-09 18:08:34,867 | WARNING |  * Debugger is active!
+2026-07-09 18:08:34,869 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:08:37,410 | INFO | Database Connected
+2026-07-09 18:08:37,411 | INFO | Database Connected
+2026-07-09 18:08:37,424 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:08:37,565 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:08:37,581 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:08:37,633 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:37] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=TNbdD2OGj2vS5DnGQIkW HTTP/1.1" 200 -
+2026-07-09 18:08:37,912 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 18:08:43,231 | INFO | Database Connected
+2026-07-09 18:08:43,233 | INFO | Database Connected
+2026-07-09 18:08:43,238 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:43] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:08:43,257 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:43] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:08:43,260 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:43] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:08:43,279 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:43] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=TNbdD2OGj2vS5DnGQIkW HTTP/1.1[0m" 304 -
+2026-07-09 18:08:43,341 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:43] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:08:46,289 | INFO | Database Connected
+2026-07-09 18:08:46,291 | INFO | Database Connected
+2026-07-09 18:08:46,299 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:46] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:08:46,316 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:46] "GET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:08:46,318 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:46] "GET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:08:46,336 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:46] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=TNbdD2OGj2vS5DnGQIkW HTTP/1.1" 200 -
+2026-07-09 18:08:46,618 | INFO | 127.0.0.1 - - [09/Jul/2026 18:08:46] "GET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 18:11:16,285 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:11:16,340 | INFO |  * Restarting with stat
+2026-07-09 18:11:16,774 | WARNING |  * Debugger is active!
+2026-07-09 18:11:16,776 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:11:17,823 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:11:17,884 | INFO |  * Restarting with stat
+2026-07-09 18:11:18,361 | WARNING |  * Debugger is active!
+2026-07-09 18:11:18,363 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:11:41,344 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:11:41,344 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 18:11:41,345 | INFO |  * Restarting with stat
+2026-07-09 18:11:41,770 | WARNING |  * Debugger is active!
+2026-07-09 18:11:41,772 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:11:45,379 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:45] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:11:45,490 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:45] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:11:45,492 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:45] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:11:45,503 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:45] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:11:45,763 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:45] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,433 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:11:47,458 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,463 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,475 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,532 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,668 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:11:47,689 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,695 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,709 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,777 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,900 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:11:47,924 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,929 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:11:47,945 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,006 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,115 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:11:48,138 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,143 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,160 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,230 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,311 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 18:11:48,361 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,378 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:11:48,428 | INFO | 127.0.0.1 - - [09/Jul/2026 18:11:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:13:12,713 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:12] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:12,750 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:12] "[36mGET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:13:12,758 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:12] "[36mGET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:13:12,769 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:12] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:13:13,038 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:13,041 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,086 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,091 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,103 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,116 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:13,190 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,192 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,224 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,279 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,310 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:13,679 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,684 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,701 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1[0m" 304 -
+2026-07-09 18:13:13,787 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:13] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 18:13:14,890 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:14] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:14,908 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:14] "GET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:13:14,911 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:14] "GET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:13:14,934 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:14] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:13:15,023 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 18:13:15,572 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:15,591 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:13:15,592 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:13:15,608 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:13:15,663 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 18:13:15,774 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:15,793 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:13:15,797 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:13:15,821 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:13:15,938 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 18:13:15,952 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:15,973 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:13:15,975 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:13:15,999 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:15] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:13:16,174 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:16] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 18:13:16,195 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:16] "GET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 18:13:16,200 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:16] "GET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 18:13:16,217 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:16] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=IfJiSyuEpIMIVP4tfSPa HTTP/1.1" 200 -
+2026-07-09 18:13:16,318 | INFO | 127.0.0.1 - - [09/Jul/2026 18:13:16] "GET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 18:14:36,643 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:14:36,732 | INFO |  * Restarting with stat
+2026-07-09 18:14:37,213 | WARNING |  * Debugger is active!
+2026-07-09 18:14:37,215 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:14:46,384 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:14:46,438 | INFO |  * Restarting with stat
+2026-07-09 18:14:46,876 | WARNING |  * Debugger is active!
+2026-07-09 18:14:46,878 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:14:50,970 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:14:51,038 | INFO |  * Restarting with stat
+2026-07-09 18:14:51,530 | WARNING |  * Debugger is active!
+2026-07-09 18:14:51,532 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:14:53,603 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:14:53,686 | INFO |  * Restarting with stat
+2026-07-09 18:14:54,217 | WARNING |  * Debugger is active!
+2026-07-09 18:14:54,219 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:14:55,257 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:14:55,316 | INFO |  * Restarting with stat
+2026-07-09 18:14:55,893 | WARNING |  * Debugger is active!
+2026-07-09 18:14:55,895 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:15:21,483 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:15:21,483 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 18:15:21,486 | INFO |  * Restarting with stat
+2026-07-09 18:15:22,119 | WARNING |  * Debugger is active!
+2026-07-09 18:15:22,122 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:15:25,111 | INFO | Database Connected
+2026-07-09 18:15:25,113 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:25] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-09 18:15:25,129 | INFO | Database Connected
+2026-07-09 18:15:25,136 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:25] "GET /login?next=/ HTTP/1.1" 200 -
+2026-07-09 18:15:25,172 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:25] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:15:25,499 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-09 18:15:31,494 | INFO | Database Connected
+2026-07-09 18:15:31,500 | INFO | Database Connected
+2026-07-09 18:15:31,502 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:31] "POST /login?next=/ HTTP/1.1" 200 -
+2026-07-09 18:15:31,537 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:31] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:15:50,125 | INFO | Database Connected
+2026-07-09 18:15:50,129 | INFO | Database Connected
+2026-07-09 18:15:50,131 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:50] "POST /login?next=/ HTTP/1.1" 200 -
+2026-07-09 18:15:50,174 | INFO | 127.0.0.1 - - [09/Jul/2026 18:15:50] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:17:21,565 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\database\\database.py', reloading
+2026-07-09 18:17:21,634 | INFO |  * Restarting with stat
+2026-07-09 18:17:22,303 | WARNING |  * Debugger is active!
+2026-07-09 18:17:22,306 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:18:07,012 | INFO | Database Connected
+2026-07-09 18:18:07,023 | INFO | Database Connected
+2026-07-09 18:18:07,030 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:07] "POST /login?next=/ HTTP/1.1" 200 -
+2026-07-09 18:18:07,076 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:07] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:18:17,607 | INFO | Database Connected
+2026-07-09 18:18:17,611 | INFO | Database Connected
+2026-07-09 18:18:17,613 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:17] "POST /login?next=/ HTTP/1.1" 200 -
+2026-07-09 18:18:17,654 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:17] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:18:22,172 | INFO | Database Connected
+2026-07-09 18:18:22,176 | INFO | Database Connected
+2026-07-09 18:18:22,179 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:22] "POST /login?next=/ HTTP/1.1" 200 -
+2026-07-09 18:18:22,221 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:22] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:18:30,737 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:18:30,738 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 18:18:30,740 | INFO |  * Restarting with stat
+2026-07-09 18:18:31,318 | WARNING |  * Debugger is active!
+2026-07-09 18:18:31,321 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:18:34,687 | INFO | Database Connected
+2026-07-09 18:18:34,689 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:34] "[32mGET /products HTTP/1.1[0m" 302 -
+2026-07-09 18:18:34,701 | INFO | Database Connected
+2026-07-09 18:18:34,706 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:34] "GET /login?next=/products HTTP/1.1" 200 -
+2026-07-09 18:18:34,734 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:34] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:18:39,292 | INFO | Database Connected
+2026-07-09 18:18:39,298 | INFO | Database Connected
+2026-07-09 18:18:39,300 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:39] "POST /login?next=/products HTTP/1.1" 200 -
+2026-07-09 18:18:39,349 | INFO | 127.0.0.1 - - [09/Jul/2026 18:18:39] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:21:05,444 | INFO | Database Connected
+2026-07-09 18:21:05,446 | INFO | 127.0.0.1 - - [09/Jul/2026 18:21:05] "GET /register HTTP/1.1" 200 -
+2026-07-09 18:21:05,518 | INFO | 127.0.0.1 - - [09/Jul/2026 18:21:05] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:21:19,726 | INFO | Database Connected
+2026-07-09 18:21:19,890 | INFO | Database Connected
+2026-07-09 18:21:19,892 | INFO | 127.0.0.1 - - [09/Jul/2026 18:21:19] "POST /register HTTP/1.1" 200 -
+2026-07-09 18:21:19,935 | INFO | 127.0.0.1 - - [09/Jul/2026 18:21:19] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:25:01,820 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:25:01,821 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 18:25:01,823 | INFO |  * Restarting with stat
+2026-07-09 18:25:02,329 | WARNING |  * Debugger is active!
+2026-07-09 18:25:02,332 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 18:25:08,161 | INFO | Database Connected
+2026-07-09 18:25:08,327 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:08] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-07-09 18:25:08,345 | INFO | Database Connected
+2026-07-09 18:25:08,352 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:08] "GET /login HTTP/1.1" 200 -
+2026-07-09 18:25:08,389 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:08] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:25:14,923 | INFO | Database Connected
+2026-07-09 18:25:14,927 | INFO | Database Connected
+2026-07-09 18:25:14,929 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:14] "POST /login?next=/products HTTP/1.1" 200 -
+2026-07-09 18:25:14,961 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:14] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:25:32,937 | INFO | Database Connected
+2026-07-09 18:25:32,940 | INFO | Database Connected
+2026-07-09 18:25:32,942 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:32] "POST /login HTTP/1.1" 200 -
+2026-07-09 18:25:32,974 | INFO | 127.0.0.1 - - [09/Jul/2026 18:25:32] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:27:34,133 | INFO | Database Connected
+2026-07-09 18:27:34,136 | INFO | 127.0.0.1 - - [09/Jul/2026 18:27:34] "GET /register HTTP/1.1" 200 -
+2026-07-09 18:27:34,175 | INFO | 127.0.0.1 - - [09/Jul/2026 18:27:34] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:27:50,443 | INFO | Database Connected
+2026-07-09 18:27:50,605 | INFO | 127.0.0.1 - - [09/Jul/2026 18:27:50] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-07-09 18:27:50,615 | INFO | Database Connected
+2026-07-09 18:27:50,617 | INFO | 127.0.0.1 - - [09/Jul/2026 18:27:50] "GET /login HTTP/1.1" 200 -
+2026-07-09 18:27:50,650 | INFO | 127.0.0.1 - - [09/Jul/2026 18:27:50] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:28:06,578 | INFO | Database Connected
+2026-07-09 18:28:06,740 | INFO | 127.0.0.1 - - [09/Jul/2026 18:28:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-09 18:28:06,749 | INFO | Database Connected
+2026-07-09 18:28:06,750 | INFO | Database Connected
+2026-07-09 18:28:06,763 | INFO | 127.0.0.1 - - [09/Jul/2026 18:28:06] "GET / HTTP/1.1" 200 -
+2026-07-09 18:28:06,795 | INFO | 127.0.0.1 - - [09/Jul/2026 18:28:06] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 18:33:19,364 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:33:19,364 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 18:33:19,367 | INFO |  * Restarting with stat
+2026-07-09 18:33:20,011 | WARNING |  * Debugger is active!
+2026-07-09 18:33:20,014 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 19:42:38,826 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\auth\\logout.py', reloading
+2026-07-09 19:42:39,003 | INFO |  * Restarting with stat
+2026-07-09 19:42:39,822 | WARNING |  * Debugger is active!
+2026-07-09 19:42:39,825 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 19:45:43,421 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\run_dashboard.py', reloading
+2026-07-09 19:45:43,507 | INFO |  * Restarting with stat
+2026-07-09 19:45:44,763 | WARNING |  * Debugger is active!
+2026-07-09 19:45:44,766 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 19:46:09,851 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\run_dashboard.py', reloading
+2026-07-09 19:46:09,946 | INFO |  * Restarting with stat
+2026-07-09 19:46:10,797 | WARNING |  * Debugger is active!
+2026-07-09 19:46:10,799 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 19:46:38,439 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\run_dashboard.py', reloading
+2026-07-09 19:46:38,505 | INFO |  * Restarting with stat
+2026-07-09 20:07:38,524 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 20:07:38,524 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 20:07:38,526 | INFO |  * Restarting with stat
+2026-07-09 20:07:39,628 | WARNING |  * Debugger is active!
+2026-07-09 20:07:39,631 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 20:07:50,333 | INFO | Database Connected
+2026-07-09 20:07:50,337 | INFO | Database Connected
+2026-07-09 20:07:50,375 | INFO | 127.0.0.1 - - [09/Jul/2026 20:07:50] "GET / HTTP/1.1" 200 -
+2026-07-09 20:07:50,426 | INFO | 127.0.0.1 - - [09/Jul/2026 20:07:50] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:07:52,841 | INFO | Database Connected
+2026-07-09 20:07:52,845 | INFO | 127.0.0.1 - - [09/Jul/2026 20:07:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-07-09 20:07:52,864 | INFO | 127.0.0.1 - - [09/Jul/2026 20:07:52] "GET /login HTTP/1.1" 200 -
+2026-07-09 20:07:53,028 | INFO | 127.0.0.1 - - [09/Jul/2026 20:07:53] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:14:12,411 | INFO | 127.0.0.1 - - [09/Jul/2026 20:14:12] "GET /login HTTP/1.1" 200 -
+2026-07-09 20:14:12,478 | INFO | 127.0.0.1 - - [09/Jul/2026 20:14:12] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:35:42,695 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 20:35:42,696 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 20:35:42,698 | INFO |  * Restarting with stat
+2026-07-09 20:35:43,293 | WARNING |  * Debugger is active!
+2026-07-09 20:35:43,295 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 20:35:47,148 | INFO | 127.0.0.1 - - [09/Jul/2026 20:35:47] "GET /login HTTP/1.1" 200 -
+2026-07-09 20:35:47,192 | INFO | 127.0.0.1 - - [09/Jul/2026 20:35:47] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:36:00,364 | INFO | Database Connected
+2026-07-09 20:36:00,660 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-09 20:36:00,674 | INFO | Database Connected
+2026-07-09 20:36:00,677 | INFO | Database Connected
+2026-07-09 20:36:00,726 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:00] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-09 20:36:01,000 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:00] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 20:36:01,002 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:01] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 20:36:01,048 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:01] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=AeYl53b7xCjVH1rRduyF HTTP/1.1" 200 -
+2026-07-09 20:36:01,097 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:01] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 20:36:21,655 | INFO | Database Connected
+2026-07-09 20:36:21,667 | INFO | Database Connected
+2026-07-09 20:36:21,672 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:21] "POST /login HTTP/1.1" 200 -
+2026-07-09 20:36:21,750 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:21] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:36:25,612 | INFO | Database Connected
+2026-07-09 20:36:25,614 | INFO | Database Connected
+2026-07-09 20:36:25,686 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:25] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 20:36:25,864 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:25] "[36mGET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 20:36:25,888 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:25] "[36mGET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 20:36:25,948 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:25] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=AeYl53b7xCjVH1rRduyF HTTP/1.1" 200 -
+2026-07-09 20:36:25,984 | INFO | 127.0.0.1 - - [09/Jul/2026 20:36:25] "[36mGET /products?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-07-09 20:40:47,605 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 20:40:47,605 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 20:40:47,608 | INFO |  * Restarting with stat
+2026-07-09 20:40:48,130 | WARNING |  * Debugger is active!
+2026-07-09 20:40:48,132 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 20:40:51,682 | INFO | Database Connected
+2026-07-09 20:40:51,686 | INFO | Database Connected
+2026-07-09 20:40:51,737 | INFO | 127.0.0.1 - - [09/Jul/2026 20:40:51] "GET / HTTP/1.1" 200 -
+2026-07-09 20:40:51,783 | INFO | 127.0.0.1 - - [09/Jul/2026 20:40:51] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:41:19,769 | INFO | Database Connected
+2026-07-09 20:41:19,780 | INFO | Database Connected
+2026-07-09 20:41:19,986 | INFO | 127.0.0.1 - - [09/Jul/2026 20:41:19] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2026-07-09 20:41:20,299 | INFO | 127.0.0.1 - - [09/Jul/2026 20:41:20] "[36mGET /products?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 20:41:20,300 | INFO | 127.0.0.1 - - [09/Jul/2026 20:41:20] "[36mGET /products?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 20:41:20,338 | INFO | 127.0.0.1 - - [09/Jul/2026 20:41:20] "GET /products?__debugger__=yes&cmd=resource&f=console.png&s=BT2G1R2s0QePFFPjYSQY HTTP/1.1" 200 -
+2026-07-09 20:41:25,019 | INFO | Database Connected
+2026-07-09 20:41:25,085 | INFO | 127.0.0.1 - - [09/Jul/2026 20:41:25] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 20:47:57,522 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 20:47:57,522 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 20:47:57,523 | INFO |  * Restarting with stat
+2026-07-09 20:47:58,157 | WARNING |  * Debugger is active!
+2026-07-09 20:47:58,159 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 20:48:01,583 | INFO | Database Connected
+2026-07-09 20:48:01,586 | INFO | Database Connected
+2026-07-09 20:48:01,614 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:01] "GET / HTTP/1.1" 200 -
+2026-07-09 20:48:01,657 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:01] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:48:04,476 | INFO | Database Connected
+2026-07-09 20:48:04,480 | INFO | Database Connected
+2026-07-09 20:48:04,484 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:04] "GET / HTTP/1.1" 200 -
+2026-07-09 20:48:04,519 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:04] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:48:05,877 | INFO | Database Connected
+2026-07-09 20:48:05,885 | INFO | Database Connected
+2026-07-09 20:48:05,892 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:05] "GET / HTTP/1.1" 200 -
+2026-07-09 20:48:05,921 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:05] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:48:07,344 | INFO | Database Connected
+2026-07-09 20:48:07,350 | INFO | Database Connected
+2026-07-09 20:48:07,362 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:07] "GET /products HTTP/1.1" 200 -
+2026-07-09 20:48:07,402 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:07] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:48:09,447 | INFO | Database Connected
+2026-07-09 20:48:09,462 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:09] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 20:48:14,067 | INFO | Database Connected
+2026-07-09 20:48:14,119 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:14] "[35m[1mGET /analytics HTTP/1.1[0m" 500 -
+2026-07-09 20:48:14,383 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:14] "GET /analytics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 20:48:14,392 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:14] "GET /analytics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 20:48:14,433 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:14] "GET /analytics?__debugger__=yes&cmd=resource&f=console.png&s=OtPIpOYhJ5WmpDr4ve10 HTTP/1.1" 200 -
+2026-07-09 20:48:14,479 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:14] "GET /analytics?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 20:48:17,405 | INFO | Database Connected
+2026-07-09 20:48:17,453 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:17] "[35m[1mGET /settings HTTP/1.1[0m" 500 -
+2026-07-09 20:48:17,481 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:17] "GET /settings?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-07-09 20:48:17,579 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:17] "GET /settings?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-07-09 20:48:17,629 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:17] "GET /settings?__debugger__=yes&cmd=resource&f=console.png&s=OtPIpOYhJ5WmpDr4ve10 HTTP/1.1" 200 -
+2026-07-09 20:48:17,691 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:17] "GET /settings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-07-09 20:48:22,462 | INFO | Database Connected
+2026-07-09 20:48:22,464 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-07-09 20:48:22,526 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:22] "GET /login HTTP/1.1" 200 -
+2026-07-09 20:48:22,653 | INFO | 127.0.0.1 - - [09/Jul/2026 20:48:22] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 20:50:13,762 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 20:50:13,893 | INFO |  * Restarting with stat
+2026-07-09 22:12:25,844 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 22:12:25,880 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 22:12:25,883 | INFO |  * Restarting with stat
+2026-07-09 22:12:26,517 | WARNING |  * Debugger is active!
+2026-07-09 22:12:26,520 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 22:12:32,670 | INFO | Database Connected
+2026-07-09 22:12:32,727 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:32] "POST /login?next=/products HTTP/1.1" 200 -
+2026-07-09 22:12:32,777 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:32] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:12:41,766 | INFO | Database Connected
+2026-07-09 22:12:42,066 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:42] "[32mPOST /login?next=/products HTTP/1.1[0m" 302 -
+2026-07-09 22:12:42,082 | INFO | Database Connected
+2026-07-09 22:12:42,086 | INFO | Database Connected
+2026-07-09 22:12:42,124 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:42] "GET / HTTP/1.1" 200 -
+2026-07-09 22:12:42,382 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:42] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:12:49,394 | INFO | Database Connected
+2026-07-09 22:12:49,467 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:49] "[35m[1mGET /analytics HTTP/1.1[0m" 500 -
+2026-07-09 22:12:49,722 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:49] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 22:12:49,724 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:49] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 22:12:49,762 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:49] "GET /analytics?__debugger__=yes&cmd=resource&f=console.png&s=iWHv7fZvcJca3YbkSjfl HTTP/1.1" 200 -
+2026-07-09 22:12:56,323 | INFO | Database Connected
+2026-07-09 22:12:56,344 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:56] "[35m[1mGET /settings HTTP/1.1[0m" 500 -
+2026-07-09 22:12:56,375 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:56] "[36mGET /settings?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 22:12:56,504 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:56] "[36mGET /settings?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 22:12:56,550 | INFO | 127.0.0.1 - - [09/Jul/2026 22:12:56] "GET /settings?__debugger__=yes&cmd=resource&f=console.png&s=iWHv7fZvcJca3YbkSjfl HTTP/1.1" 200 -
+2026-07-09 22:13:25,534 | INFO | Database Connected
+2026-07-09 22:13:25,555 | INFO | Database Connected
+2026-07-09 22:13:25,565 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:25] "GET / HTTP/1.1" 200 -
+2026-07-09 22:13:25,614 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:25] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:27,891 | INFO | Database Connected
+2026-07-09 22:13:28,032 | INFO | Database Connected
+2026-07-09 22:13:28,072 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:28] "GET / HTTP/1.1" 200 -
+2026-07-09 22:13:28,117 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:28] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:30,731 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:30] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 22:13:34,095 | INFO | Database Connected
+2026-07-09 22:13:34,126 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:34] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 22:13:38,306 | INFO | Database Connected
+2026-07-09 22:13:38,308 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-07-09 22:13:38,317 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:38] "GET /login HTTP/1.1" 200 -
+2026-07-09 22:13:38,390 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:38] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:45,825 | INFO | Database Connected
+2026-07-09 22:13:46,090 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:46] "POST /login HTTP/1.1" 200 -
+2026-07-09 22:13:46,142 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:46] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:49,101 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:49] "[32mGET /analytics HTTP/1.1[0m" 302 -
+2026-07-09 22:13:49,113 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:49] "GET /login?next=/analytics HTTP/1.1" 200 -
+2026-07-09 22:13:49,216 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:49] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:51,151 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:51] "[32mGET /analytics HTTP/1.1[0m" 302 -
+2026-07-09 22:13:51,283 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:51] "GET /login?next=/analytics HTTP/1.1" 200 -
+2026-07-09 22:13:51,434 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:51] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:51,802 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:51] "[32mGET /settings HTTP/1.1[0m" 302 -
+2026-07-09 22:13:51,818 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:51] "GET /login?next=/settings HTTP/1.1" 200 -
+2026-07-09 22:13:51,859 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:51] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:13:53,414 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:53] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 22:13:56,160 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:56] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-09 22:13:56,756 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:56] "GET /login?next=/ HTTP/1.1" 200 -
+2026-07-09 22:13:56,937 | INFO | 127.0.0.1 - - [09/Jul/2026 22:13:56] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:14:56,707 | INFO | 127.0.0.1 - - [09/Jul/2026 22:14:56] "GET /login HTTP/1.1" 200 -
+2026-07-09 22:14:56,740 | INFO | 127.0.0.1 - - [09/Jul/2026 22:14:56] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:15:03,915 | INFO | Database Connected
+2026-07-09 22:15:04,173 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-09 22:15:04,189 | INFO | Database Connected
+2026-07-09 22:15:04,193 | INFO | Database Connected
+2026-07-09 22:15:04,198 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:04] "GET / HTTP/1.1" 200 -
+2026-07-09 22:15:04,272 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:04] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:15:07,608 | INFO | Database Connected
+2026-07-09 22:15:07,610 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:07] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 22:15:11,899 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:11] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 22:15:18,159 | INFO | Database Connected
+2026-07-09 22:15:18,191 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:18] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 22:15:21,736 | INFO | 127.0.0.1 - - [09/Jul/2026 22:15:21] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 22:19:31,283 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 22:19:31,284 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 22:19:31,287 | INFO |  * Restarting with stat
+2026-07-09 22:19:32,154 | WARNING |  * Debugger is active!
+2026-07-09 22:19:32,160 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 22:19:37,831 | INFO | Database Connected
+2026-07-09 22:19:37,836 | INFO | Database Connected
+2026-07-09 22:19:37,887 | INFO | 127.0.0.1 - - [09/Jul/2026 22:19:37] "GET / HTTP/1.1" 200 -
+2026-07-09 22:19:37,976 | INFO | 127.0.0.1 - - [09/Jul/2026 22:19:37] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:19:49,254 | INFO | Database Connected
+2026-07-09 22:19:49,263 | INFO | Database Connected
+2026-07-09 22:19:49,271 | INFO | 127.0.0.1 - - [09/Jul/2026 22:19:49] "GET / HTTP/1.1" 200 -
+2026-07-09 22:19:49,343 | INFO | 127.0.0.1 - - [09/Jul/2026 22:19:49] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 22:42:14,209 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 22:42:14,210 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 22:42:14,213 | INFO |  * Restarting with stat
+2026-07-09 22:42:14,949 | WARNING |  * Debugger is active!
+2026-07-09 22:42:14,953 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 22:42:23,732 | INFO | 127.0.0.1 - - [09/Jul/2026 22:42:23] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 22:42:27,787 | INFO | Database Connected
+2026-07-09 22:42:27,792 | INFO | Database Connected
+2026-07-09 22:42:27,849 | INFO | 127.0.0.1 - - [09/Jul/2026 22:42:27] "GET / HTTP/1.1" 200 -
+2026-07-09 22:42:27,918 | INFO | 127.0.0.1 - - [09/Jul/2026 22:42:27] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 22:42:28,024 | INFO | 127.0.0.1 - - [09/Jul/2026 22:42:28] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-07-09 22:42:40,784 | INFO | Database Connected
+2026-07-09 22:42:40,790 | INFO | 127.0.0.1 - - [09/Jul/2026 22:42:40] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 22:45:18,799 | INFO | Database Connected
+2026-07-09 22:45:18,802 | INFO | Database Connected
+2026-07-09 22:45:18,806 | INFO | 127.0.0.1 - - [09/Jul/2026 22:45:18] "GET / HTTP/1.1" 200 -
+2026-07-09 22:45:18,875 | INFO | 127.0.0.1 - - [09/Jul/2026 22:45:18] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 22:45:18,877 | INFO | 127.0.0.1 - - [09/Jul/2026 22:45:18] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 22:51:17,761 | INFO | Database Connected
+2026-07-09 22:51:17,765 | INFO | Database Connected
+2026-07-09 22:51:17,768 | INFO | 127.0.0.1 - - [09/Jul/2026 22:51:17] "GET / HTTP/1.1" 200 -
+2026-07-09 22:51:17,810 | INFO | 127.0.0.1 - - [09/Jul/2026 22:51:17] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 22:51:17,822 | INFO | 127.0.0.1 - - [09/Jul/2026 22:51:17] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 22:51:20,287 | INFO | Database Connected
+2026-07-09 22:51:20,289 | INFO | Database Connected
+2026-07-09 22:51:20,290 | INFO | 127.0.0.1 - - [09/Jul/2026 22:51:20] "GET / HTTP/1.1" 200 -
+2026-07-09 22:51:20,330 | INFO | 127.0.0.1 - - [09/Jul/2026 22:51:20] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 22:51:20,331 | INFO | 127.0.0.1 - - [09/Jul/2026 22:51:20] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 22:55:13,010 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 22:55:13,011 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 22:55:13,013 | INFO |  * Restarting with stat
+2026-07-09 22:55:13,505 | WARNING |  * Debugger is active!
+2026-07-09 22:55:13,507 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 22:55:16,037 | INFO | Database Connected
+2026-07-09 22:55:16,040 | INFO | Database Connected
+2026-07-09 22:55:16,179 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:16] "GET / HTTP/1.1" 200 -
+2026-07-09 22:55:16,223 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:16] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 22:55:16,286 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:16] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-07-09 22:55:21,060 | INFO | Database Connected
+2026-07-09 22:55:21,063 | INFO | Database Connected
+2026-07-09 22:55:21,067 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:21] "GET / HTTP/1.1" 200 -
+2026-07-09 22:55:21,096 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:21] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 22:55:21,099 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:21] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 22:55:24,405 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:24] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 22:55:28,402 | INFO | Database Connected
+2026-07-09 22:55:28,605 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:28] "[35m[1mGET /settings HTTP/1.1[0m" 500 -
+2026-07-09 22:55:28,667 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:28] "[36mGET /settings?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 22:55:28,688 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:28] "[36mGET /settings?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 22:55:28,723 | INFO | 127.0.0.1 - - [09/Jul/2026 22:55:28] "GET /settings?__debugger__=yes&cmd=resource&f=console.png&s=RKhSoe9FTYMQO6koxrJS HTTP/1.1" 200 -
+2026-07-09 22:57:32,990 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 22:57:32,990 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 22:57:32,992 | INFO |  * Restarting with stat
+2026-07-09 22:57:33,495 | WARNING |  * Debugger is active!
+2026-07-09 22:57:33,497 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 22:57:34,635 | INFO | Database Connected
+2026-07-09 22:57:34,637 | INFO | 127.0.0.1 - - [09/Jul/2026 22:57:34] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 22:57:38,753 | INFO | Database Connected
+2026-07-09 22:57:38,755 | INFO | 127.0.0.1 - - [09/Jul/2026 22:57:38] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 22:57:44,949 | INFO | Database Connected
+2026-07-09 22:57:44,950 | INFO | 127.0.0.1 - - [09/Jul/2026 22:57:44] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 23:02:46,550 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 23:02:46,636 | INFO |  * Restarting with stat
+2026-07-09 23:02:47,145 | WARNING |  * Debugger is active!
+2026-07-09 23:02:47,147 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 23:03:16,511 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 23:03:16,511 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 23:03:16,512 | INFO |  * Restarting with stat
+2026-07-09 23:03:16,981 | WARNING |  * Debugger is active!
+2026-07-09 23:03:16,983 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 23:03:25,034 | INFO | Database Connected
+2026-07-09 23:03:25,065 | INFO | 127.0.0.1 - - [09/Jul/2026 23:03:25] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 23:03:25,105 | INFO | 127.0.0.1 - - [09/Jul/2026 23:03:25] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:03:25,170 | INFO | 127.0.0.1 - - [09/Jul/2026 23:03:25] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:18:22,866 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 23:18:22,867 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 23:18:22,868 | INFO |  * Restarting with stat
+2026-07-09 23:18:23,663 | WARNING |  * Debugger is active!
+2026-07-09 23:18:23,667 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 23:18:25,268 | INFO | Database Connected
+2026-07-09 23:18:25,279 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:25] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 23:18:25,332 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:25] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:18:25,386 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:25] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:18:27,494 | INFO | Database Connected
+2026-07-09 23:18:27,496 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-07-09 23:18:27,569 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:27] "GET /login HTTP/1.1" 200 -
+2026-07-09 23:18:27,627 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:27] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 23:18:35,266 | INFO | Database Connected
+2026-07-09 23:18:35,431 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-09 23:18:35,441 | INFO | Database Connected
+2026-07-09 23:18:35,444 | INFO | Database Connected
+2026-07-09 23:18:35,453 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:35] "GET / HTTP/1.1" 200 -
+2026-07-09 23:18:35,494 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:35] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:18:35,503 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:35] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:18:42,397 | INFO | Database Connected
+2026-07-09 23:18:42,402 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:42] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 23:18:42,446 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:42] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:18:42,446 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:42] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:18:47,794 | INFO | Database Connected
+2026-07-09 23:18:47,796 | INFO | Database Connected
+2026-07-09 23:18:47,800 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:47] "GET / HTTP/1.1" 200 -
+2026-07-09 23:18:47,851 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:47] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:18:47,854 | INFO | 127.0.0.1 - - [09/Jul/2026 23:18:47] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:19:18,282 | INFO | Database Connected
+2026-07-09 23:19:18,286 | INFO | 127.0.0.1 - - [09/Jul/2026 23:19:18] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 23:19:18,345 | INFO | 127.0.0.1 - - [09/Jul/2026 23:19:18] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:19:18,353 | INFO | 127.0.0.1 - - [09/Jul/2026 23:19:18] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:19:26,165 | INFO | Database Connected
+2026-07-09 23:19:26,168 | INFO | Database Connected
+2026-07-09 23:19:26,171 | INFO | 127.0.0.1 - - [09/Jul/2026 23:19:26] "GET / HTTP/1.1" 200 -
+2026-07-09 23:19:26,217 | INFO | 127.0.0.1 - - [09/Jul/2026 23:19:26] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:19:26,217 | INFO | 127.0.0.1 - - [09/Jul/2026 23:19:26] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:22:09,587 | INFO | Database Connected
+2026-07-09 23:22:09,589 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:09] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 23:22:09,629 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:09] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:22:09,629 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:09] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:22:13,755 | INFO | Database Connected
+2026-07-09 23:22:24,315 | INFO | Database Connected
+2026-07-09 23:22:24,341 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:24] "POST /add-product HTTP/1.1" 200 -
+2026-07-09 23:22:24,394 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:24] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:22:24,395 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:24] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:22:38,636 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:38] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 23:22:44,145 | INFO | Database Connected
+2026-07-09 23:22:53,510 | INFO | Database Connected
+2026-07-09 23:22:53,513 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:53] "POST /add-product HTTP/1.1" 200 -
+2026-07-09 23:22:53,556 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:53] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:22:53,568 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:53] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:22:58,216 | INFO | Database Connected
+2026-07-09 23:22:58,219 | INFO | Database Connected
+2026-07-09 23:22:58,222 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:58] "GET / HTTP/1.1" 200 -
+2026-07-09 23:22:58,261 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:58] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:22:58,269 | INFO | 127.0.0.1 - - [09/Jul/2026 23:22:58] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:23:02,046 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:02] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 23:23:09,770 | INFO | Database Connected
+2026-07-09 23:23:09,802 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:09] "[35m[1mGET /analytics HTTP/1.1[0m" 500 -
+2026-07-09 23:23:09,862 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:09] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-07-09 23:23:09,876 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:09] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-07-09 23:23:09,935 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:09] "GET /analytics?__debugger__=yes&cmd=resource&f=console.png&s=hqL25MZ5E9w29HiJAmwy HTTP/1.1" 200 -
+2026-07-09 23:23:12,769 | INFO | Database Connected
+2026-07-09 23:23:12,772 | INFO | Database Connected
+2026-07-09 23:23:12,775 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:12] "GET / HTTP/1.1" 200 -
+2026-07-09 23:23:12,823 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:12] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-07-09 23:23:12,830 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:12] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2026-07-09 23:23:15,947 | INFO | 127.0.0.1 - - [09/Jul/2026 23:23:15] "[33mGET /products HTTP/1.1[0m" 404 -

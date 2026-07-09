@@ -40,8 +40,10 @@ class Database:
             is_admin INTEGER DEFAULT 0,
 
             is_active INTEGER DEFAULT 1,
+                        
 
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
 
         )
         """)
@@ -50,14 +52,15 @@ class Database:
         CREATE TABLE IF NOT EXISTS products(
 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            user_id INTEGER NOT NULL,
 
             name TEXT NOT NULL,
 
-            asin TEXT UNIQUE NOT NULL,
+            asin TEXT UNIQUE,
 
             product_url TEXT UNIQUE NOT NULL,
 
-            affiliate_url TEXT,
+          affiliate_url TEXT NOT NULL,
 
             current_price REAL,
 
@@ -125,47 +128,51 @@ class Database:
 
             self.cursor.execute(
                 """
-                INSERT INTO products(
+               INSERT INTO products(
 
-                    name,
-                    asin,
-                    product_url,
-                    affiliate_url,
-                    current_price,
-                    previous_price,
-                    lowest_price,
-                    highest_price,
-                    source,
-                    image,
-                    rating,
-                    reviews,
-                    availability,
-                    prime,
-                    active,
-                    last_checked
+    user_id,
+    name,
+    asin,
+    product_url,
+    affiliate_url,
+    current_price,
+    previous_price,
+    lowest_price,
+    highest_price,
+    source,
+    image,
+    rating,
+    reviews,
+    availability,
+    prime,
+    active,
+    last_checked
 
-                )
+)
 
-                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                 """,
                 (
-                    product.name,
-                    product.asin,
-                    product.product_url,
-                    product.affiliate_url,
-                    product.current_price,
-                    product.previous_price,
-                    product.lowest_price,
-                    product.highest_price,
-                    product.source,
-                    product.image,
-                    product.rating,
-                    product.reviews,
-                    product.availability,
-                    int(product.prime),
-                    1,
-                    product.last_checked
-                )
+
+    product.user_id,
+    product.name,
+    product.asin,
+    product.product_url,
+    product.affiliate_url,
+    product.current_price,
+    product.previous_price,
+    product.lowest_price,
+    product.highest_price,
+    product.source,
+    product.image,
+    product.rating,
+    product.reviews,
+    product.availability,
+    int(product.prime),
+    1,
+    product.last_checked
+)
+
             )
 
             self.connection.commit()
@@ -173,16 +180,20 @@ class Database:
         except sqlite3.IntegrityError:
             raise Exception("This product is already being tracked.")
 
-    def get_all_products(self):
+    def get_all_products(self, user_id):
 
-        self.cursor.execute("""
-            SELECT *
-            FROM products
-            WHERE active = 1
-            ORDER BY id
-        """)
+     self.cursor.execute(
+        """
+        SELECT *
+        FROM products
+        WHERE active = 1
+        AND user_id = ?
+        ORDER BY id DESC
+        """,
+        (user_id,)
+    )
 
-        return self.cursor.fetchall()
+     return self.cursor.fetchall()
 
     def get_product_by_asin(self, asin):
 
@@ -293,6 +304,19 @@ class Database:
 
         self.connection.commit()
 
+    def get_user_by_id(self, user_id):
+
+        self.cursor.execute(
+            """
+            SELECT *
+            FROM users
+            WHERE id = ?
+            """,
+            (user_id,)
+        )
+
+        return self.cursor.fetchone()
+
     def close(self):
 
         self.connection.close()
@@ -334,3 +358,5 @@ class Database:
         )
 
         self.connection.commit()
+
+

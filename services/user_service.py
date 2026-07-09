@@ -28,15 +28,23 @@ class UserService:
 
     def login(self, email, password):
 
-        user = self.db.get_user_by_email(email)
+        row = self.db.get_user_by_email(email)
 
-        if user is None:
+        if row is None:
             return None
 
-        if check_password_hash(user["password_hash"], password):
-            return user
+        if not check_password_hash(row["password_hash"], password):
+            return None
 
-        return None
+        return User(
+            id=row["id"],
+            name=row["name"],
+            email=row["email"],
+            password_hash=row["password_hash"],
+            telegram_chat_id=row["telegram_chat_id"],
+            is_admin=bool(row["is_admin"]),
+            is_active=bool(row["is_active"])
+        )
 
     def close(self):
         self.db.close()

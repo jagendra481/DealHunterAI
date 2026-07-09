@@ -1,92 +1,100 @@
-<div class="col-lg-4 col-md-6 mb-4">
+<div class="col-xl-4 col-lg-6 mb-4">
 
-    <div class="card product-card h-100 shadow-sm">
+    <div class="card product-card h-100">
 
-        <img
-            src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/400x300?text=No+Image' }}"
-            class="card-img-top product-image"
-            alt="{{ product['name'] }}"
-        >
+        <div class="position-relative">
+
+            <img
+                src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/600x400?text=DealHunterAI' }}"
+                class="card-img-top product-image">
+
+            {% if product["prime"] %}
+
+            <span class="badge bg-primary position-absolute top-0 end-0 m-3">
+
+                Prime
+
+            </span>
+
+            {% endif %}
+
+        </div>
 
         <div class="card-body">
 
-            <h5 class="card-title">
+            <h5 class="fw-bold">
 
                 {{ product["name"] }}
 
             </h5>
 
-            <p class="rating">
+            <div class="mb-3">
 
                 ⭐ {{ product["rating"] }}
 
-                <small class="text-muted">
+                <span class="text-muted">
 
-                    ({{ product["reviews"] }} Reviews)
+                    ({{ product["reviews"] }})
 
-                </small>
+                </span>
 
-            </p>
+            </div>
 
-            <h3 class="price text-success">
+            <h3 class="fw-bold text-success">
 
                 ₹ {{ "{:,.0f}".format(product["current_price"]) }}
 
             </h3>
 
-            {% if product["prime"] %}
-
-                <span class="badge bg-success">
-
-                    Prime
-
-                </span>
-
-            {% endif %}
-
-            <p class="mt-2 text-muted">
+            <small class="text-muted">
 
                 {{ product["availability"] }}
 
-            </p>
+            </small>
 
         </div>
 
-        <div class="card-footer bg-white">
+        <div class="card-footer border-0 bg-white">
 
             <div class="d-grid gap-2">
-
-                <a
-    href="/refresh-product/{{ product['id'] }}"
-    class="btn btn-primary">
-
-    <i class="bi bi-arrow-clockwise"></i>
-
-    Refresh
-
-</a>
-
-                <a
-                    href="/delete-product/{{ product['id'] }}"
-                    class="btn btn-danger"
-                    onclick="return confirm('Delete this product?');">
-
-                    🗑 <i class="bi bi-trash"></i>
-
- 🗑 Delete
-
-                </a>
 
                 <a
                     href="{{ product['affiliate_url'] }}"
                     target="_blank"
                     class="btn btn-warning">
 
-                    <i class="bi bi-cart-fill"></i>
-
- 🛒 Buy on Amazon
+                    🛒 Buy on Amazon
 
                 </a>
+
+                <div class="row">
+
+                    <div class="col-6">
+
+                        <a
+                            href="/refresh-product/{{ product['id'] }}"
+                            class="btn btn-outline-primary w-100">
+
+                            Refresh
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-6">
+
+                        <a
+                            href="/delete-product/{{ product['id'] }}"
+                            class="btn btn-outline-danger w-100"
+                            onclick="return confirm('Delete Product?')">
+
+                            Delete
+
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
