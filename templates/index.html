@@ -1,89 +1,183 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Dashboard Header -->
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+
+        <h2 class="fw-bold">
+            Dashboard
+        </h2>
+
+        <p class="text-muted">
+            Welcome to DealHunterAI 🚀
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row">
+
+    {% with title="Products", value=total_products, subtitle="Currently Tracking" %}
+        {% include "components/stat_card.html" %}
+    {% endwith %}
+
+    {% with title="Amazon", value=total_products, subtitle="Products" %}
+        {% include "components/stat_card.html" %}
+    {% endwith %}
+
+    {% with title="Average Rating", value=avg_rating, subtitle="Across All Products" %}
+        {% include "components/stat_card.html" %}
+    {% endwith %}
+
+    {% with title="Average Price", value="₹ {:,.0f}".format(avg_price), subtitle="Current Average" %}
+        {% include "components/stat_card.html" %}
+    {% endwith %}
+
+</div>
+
+<!-- Welcome Card -->
+
+<div class="card shadow-sm border-0 mt-4">
+
+    <div class="card-body">
+
+        <h3 class="mb-3">
+            🚀 Welcome to DealHunterAI
+        </h3>
+
+        <p class="text-muted">
+
+            Your Amazon price tracking system is running successfully.
+
+            You can manage all your tracked products from the Products page.
+
+        </p>
+
+        <div class="mt-4">
+
+            <a href="/products" class="btn btn-primary me-2">
+
+                <i class="bi bi-box-seam"></i>
+
+                Products
+
+            </a>
+
+            <a href="/add-product" class="btn btn-success me-2">
+
+                <i class="bi bi-plus-circle"></i>
+
+                Add Product
+
+            </a>
+
+            <button class="btn btn-outline-primary" disabled>
+
+                <i class="bi bi-arrow-clockwise"></i>
+
+                Refresh All (Coming Soon)
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Quick System Status -->
+
 <div class="row mt-4">
 
-{% for product in products %}
+    <div class="col-lg-6">
 
-<div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm border-0">
 
-<div class="card h-100 shadow">
+            <div class="card-body">
 
-<img src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/300x300?text=No+Image' }}"
-     class="card-img-top product-image">
+                <h5>
 
-<div class="card-body">
+                    <i class="bi bi-check-circle-fill text-success"></i>
 
-<h5 class="card-title">
+                    System Status
 
-{{ product["name"] }}
+                </h5>
 
-</h5>
+                <hr>
 
-<p>
+                <p>
 
-⭐ {{ product["rating"] }}
-({{ product["reviews"] }} Reviews)
+                    ✅ Dashboard Online
 
-</p>
+                </p>
 
-<h4 class="text-success">
+                <p>
 
-₹ {{ product["current_price"] }}
+                    ✅ Database Connected
 
-</h4>
+                </p>
 
-<p>
+                <p>
 
-{% if product["prime"] %}
+                    ✅ Rainforest API Ready
 
-<span class="badge bg-success">
+                </p>
 
-Prime
+                <p>
 
-</span>
+                    ✅ Telegram Connected
 
-{% endif %}
+                </p>
 
-</p>
+            </div>
 
-<p>
+        </div>
 
-{{ product["availability"] }}
+    </div>
 
-</p>
+    <div class="col-lg-6">
 
-</div>
+        <div class="card shadow-sm border-0">
 
-<div class="card-footer bg-white">
+            <div class="card-body">
 
-<div class="d-grid gap-2">
+                <h5>
 
-<button class="btn btn-primary">
+                    <i class="bi bi-lightning-charge-fill text-warning"></i>
 
-🔄 Refresh
+                    Upcoming Features
 
-</button>
+                </h5>
 
-<button class="btn btn-danger">
+                <hr>
 
-🗑 Delete
+                <ul class="mb-0">
 
-</button>
+                    <li>📊 Analytics Dashboard</li>
 
-<a class="btn btn-warning"
-   href="{{ product['affiliate_url'] }}"
-   target="_blank">
+                    <li>📈 Price History Charts</li>
 
-🛒 Buy
+                    <li>🔔 Smart Telegram Alerts</li>
 
-</a>
+                    <li>🧠 AI Deal Score</li>
 
-</div>
+                    <li>🛍️ Flipkart Integration</li>
 
-</div>
+                </ul>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-{% endfor %}
+    </div>
 
 </div>
+
+{% endblock %}

@@ -12446,3 +12446,190 @@ sqlite3.ProgrammingError: Error binding parameter 6: type 'sqlite3.Row' is not s
 2026-07-09 00:34:41,777 | INFO |  * Debugger PIN: 564-549-531
 2026-07-09 00:34:46,216 | INFO | Database Connected
 2026-07-09 00:34:46,325 | INFO | 127.0.0.1 - - [09/Jul/2026 00:34:46] "GET / HTTP/1.1" 200 -
+2026-07-09 00:57:36,312 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:57:36,313 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 00:57:36,314 | INFO |  * Restarting with stat
+2026-07-09 00:57:36,726 | WARNING |  * Debugger is active!
+2026-07-09 00:57:36,732 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 00:57:40,460 | INFO | Database Connected
+2026-07-09 00:57:40,478 | INFO | 127.0.0.1 - - [09/Jul/2026 00:57:40] "GET / HTTP/1.1" 200 -
+2026-07-09 10:11:22,154 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 10:11:22,155 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 10:11:22,159 | INFO |  * Restarting with stat
+2026-07-09 10:11:22,618 | WARNING |  * Debugger is active!
+2026-07-09 10:11:22,623 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 10:11:29,089 | INFO | Database Connected
+2026-07-09 10:11:29,189 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:29] "GET / HTTP/1.1" 200 -
+2026-07-09 10:11:29,287 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:29] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 10:11:38,329 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:38] "[33mGET /products HTTP/1.1[0m" 404 -
+2026-07-09 10:11:41,965 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:41] "[33mGET /analytics HTTP/1.1[0m" 404 -
+2026-07-09 10:11:45,155 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:45] "[33mGET /settings HTTP/1.1[0m" 404 -
+2026-07-09 10:11:48,158 | INFO | Database Connected
+2026-07-09 10:11:48,162 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:48] "GET / HTTP/1.1" 200 -
+2026-07-09 10:11:48,217 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:48] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 10:11:50,215 | INFO | 127.0.0.1 - - [09/Jul/2026 10:11:50] "[33mGET /add-product HTTP/1.1[0m" 404 -
+2026-07-09 10:13:55,696 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 10:13:55,853 | INFO |  * Restarting with stat
+2026-07-09 10:13:56,244 | WARNING |  * Debugger is active!
+2026-07-09 10:13:56,247 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 10:15:52,228 | INFO | Database Connected
+2026-07-09 10:15:52,250 | INFO | 127.0.0.1 - - [09/Jul/2026 10:15:52] "GET / HTTP/1.1" 200 -
+2026-07-09 10:15:52,309 | INFO | 127.0.0.1 - - [09/Jul/2026 10:15:52] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 10:15:57,919 | INFO | Database Connected
+2026-07-09 10:15:57,922 | INFO | 127.0.0.1 - - [09/Jul/2026 10:15:57] "GET /products HTTP/1.1" 200 -
+2026-07-09 10:18:53,340 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 10:18:53,412 | INFO |  * Restarting with stat
+2026-07-09 10:18:53,885 | WARNING |  * Debugger is active!
+2026-07-09 10:18:53,887 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 10:18:57,993 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 10:18:58,038 | INFO |  * Restarting with stat
+2026-07-09 10:18:58,996 | WARNING |  * Debugger is active!
+2026-07-09 10:18:58,998 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 10:20:03,509 | INFO | Database Connected
+2026-07-09 10:20:03,514 | INFO | 127.0.0.1 - - [09/Jul/2026 10:20:03] "GET /products HTTP/1.1" 200 -
+2026-07-09 10:20:09,411 | INFO | Database Connected
+2026-07-09 10:20:09,432 | INFO | 127.0.0.1 - - [09/Jul/2026 10:20:09] "GET / HTTP/1.1" 200 -
+2026-07-09 10:20:09,480 | INFO | 127.0.0.1 - - [09/Jul/2026 10:20:09] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 10:20:11,773 | INFO | 127.0.0.1 - - [09/Jul/2026 10:20:11] "[33mGET /add-product HTTP/1.1[0m" 404 -
+2026-07-09 10:20:38,471 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 10:20:38,623 | INFO |  * Restarting with stat
+2026-07-09 10:28:10,741 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 10:28:10,742 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 10:28:10,743 | INFO |  * Restarting with stat
+2026-07-09 10:28:11,213 | WARNING |  * Debugger is active!
+2026-07-09 10:28:11,216 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 10:28:15,494 | INFO | Database Connected
+2026-07-09 10:28:15,517 | INFO | 127.0.0.1 - - [09/Jul/2026 10:28:15] "GET / HTTP/1.1" 200 -
+2026-07-09 10:28:15,598 | INFO | 127.0.0.1 - - [09/Jul/2026 10:28:15] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 10:28:28,805 | INFO | 127.0.0.1 - - [09/Jul/2026 10:28:28] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 10:28:38,476 | INFO | Database Connected
+2026-07-09 10:28:38,490 | INFO | 127.0.0.1 - - [09/Jul/2026 10:28:38] "GET /products HTTP/1.1" 200 -
+2026-07-09 10:28:38,530 | INFO | 127.0.0.1 - - [09/Jul/2026 10:28:38] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 10:52:51,286 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 10:52:51,496 | INFO |  * Restarting with stat
+2026-07-09 10:52:52,637 | WARNING |  * Debugger is active!
+2026-07-09 10:52:52,643 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 11:02:34,876 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 11:02:34,877 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 11:02:34,879 | INFO |  * Restarting with stat
+2026-07-09 11:02:35,409 | WARNING |  * Debugger is active!
+2026-07-09 11:02:35,412 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 11:02:46,979 | INFO | Database Connected
+2026-07-09 11:02:47,007 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:47] "GET / HTTP/1.1" 200 -
+2026-07-09 11:02:47,091 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:47] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 11:02:55,910 | INFO | Database Connected
+2026-07-09 11:02:55,913 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:55] "GET / HTTP/1.1" 200 -
+2026-07-09 11:02:55,969 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:55] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 11:02:56,495 | INFO | Database Connected
+2026-07-09 11:02:56,499 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:56] "GET / HTTP/1.1" 200 -
+2026-07-09 11:02:56,545 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:56] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 11:02:56,810 | INFO | Database Connected
+2026-07-09 11:02:56,813 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:56] "GET / HTTP/1.1" 200 -
+2026-07-09 11:02:56,860 | INFO | 127.0.0.1 - - [09/Jul/2026 11:02:56] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 11:06:49,298 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 11:06:49,397 | INFO |  * Restarting with stat
+2026-07-09 11:06:50,180 | WARNING |  * Debugger is active!
+2026-07-09 11:06:50,183 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 11:07:24,867 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 11:07:24,950 | INFO |  * Restarting with stat
+2026-07-09 11:07:25,569 | WARNING |  * Debugger is active!
+2026-07-09 11:07:25,571 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 11:17:36,895 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 11:17:36,895 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 11:17:36,897 | INFO |  * Restarting with stat
+2026-07-09 11:17:37,517 | WARNING |  * Debugger is active!
+2026-07-09 11:17:37,523 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 11:17:45,491 | INFO | Database Connected
+2026-07-09 11:17:45,576 | INFO | 127.0.0.1 - - [09/Jul/2026 11:17:45] "GET / HTTP/1.1" 200 -
+2026-07-09 11:17:45,627 | INFO | 127.0.0.1 - - [09/Jul/2026 11:17:45] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 11:18:49,864 | INFO | Database Connected
+2026-07-09 11:18:49,877 | INFO | 127.0.0.1 - - [09/Jul/2026 11:18:49] "GET /products HTTP/1.1" 200 -
+2026-07-09 11:18:49,935 | INFO | 127.0.0.1 - - [09/Jul/2026 11:18:49] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 11:49:34,436 | INFO |  * Detected change in 'C:\\Users\\Lenovo\\OneDrive\\Desktop\\DealHunterAI\\dashboard\\routes.py', reloading
+2026-07-09 11:49:34,667 | INFO |  * Restarting with stat
+2026-07-09 12:41:58,952 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 12:41:58,954 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 12:41:58,957 | INFO |  * Restarting with stat
+2026-07-09 12:41:59,757 | WARNING |  * Debugger is active!
+2026-07-09 12:41:59,763 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 12:42:04,156 | INFO | Database Connected
+2026-07-09 12:42:04,197 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:04] "GET /products HTTP/1.1" 200 -
+2026-07-09 12:42:04,292 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:04] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 12:42:08,326 | INFO | Database Connected
+2026-07-09 12:42:17,727 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:17] "[32mGET /refresh-product/1 HTTP/1.1[0m" 302 -
+2026-07-09 12:42:17,762 | INFO | Database Connected
+2026-07-09 12:42:17,765 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:17] "GET /products HTTP/1.1" 200 -
+2026-07-09 12:42:17,966 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:17] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 12:42:28,797 | INFO | Database Connected
+2026-07-09 12:42:28,817 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:28] "GET / HTTP/1.1" 200 -
+2026-07-09 12:42:28,871 | INFO | 127.0.0.1 - - [09/Jul/2026 12:42:28] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 12:43:28,790 | INFO | Database Connected
+2026-07-09 12:43:28,801 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:28] "GET /products HTTP/1.1" 200 -
+2026-07-09 12:43:28,854 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:28] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 12:43:33,040 | INFO | Database Connected
+2026-07-09 12:43:33,252 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:33] "GET / HTTP/1.1" 200 -
+2026-07-09 12:43:33,301 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:33] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 12:43:39,868 | INFO | Database Connected
+2026-07-09 12:43:39,872 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:39] "GET /products HTTP/1.1" 200 -
+2026-07-09 12:43:39,919 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:39] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 12:43:47,993 | INFO | 127.0.0.1 - - [09/Jul/2026 12:43:47] "[33mGET /analytics HTTP/1.1[0m" 404 -
+2026-07-09 13:37:47,684 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 13:37:47,686 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-09 13:37:47,688 | INFO |  * Restarting with stat
+2026-07-09 13:37:48,691 | WARNING |  * Debugger is active!
+2026-07-09 13:37:48,699 | INFO |  * Debugger PIN: 564-549-531
+2026-07-09 13:37:53,266 | INFO | Database Connected
+2026-07-09 13:37:53,322 | INFO | 127.0.0.1 - - [09/Jul/2026 13:37:53] "GET /products HTTP/1.1" 200 -
+2026-07-09 13:37:53,465 | INFO | 127.0.0.1 - - [09/Jul/2026 13:37:53] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:37:57,449 | INFO | Database Connected
+2026-07-09 13:37:57,482 | INFO | 127.0.0.1 - - [09/Jul/2026 13:37:57] "GET / HTTP/1.1" 200 -
+2026-07-09 13:37:57,604 | INFO | 127.0.0.1 - - [09/Jul/2026 13:37:57] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:00,894 | INFO | Database Connected
+2026-07-09 13:38:00,900 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:00] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:01,007 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:01] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:01,623 | INFO | Database Connected
+2026-07-09 13:38:01,629 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:01] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:01,722 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:01] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:02,078 | INFO | Database Connected
+2026-07-09 13:38:02,084 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:02] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:02,145 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:02] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:02,359 | INFO | Database Connected
+2026-07-09 13:38:02,363 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:02] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:02,493 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:02] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:02,573 | INFO | Database Connected
+2026-07-09 13:38:02,578 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:02] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:02,675 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:02] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:05,147 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:05] "[33mGET /settings HTTP/1.1[0m" 404 -
+2026-07-09 13:38:09,824 | INFO | Database Connected
+2026-07-09 13:38:09,829 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:09] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:09,922 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:09] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:10,334 | INFO | Database Connected
+2026-07-09 13:38:10,340 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:10] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:10,423 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:10] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:10,946 | INFO | Database Connected
+2026-07-09 13:38:10,951 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:10] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:11,025 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:11,132 | INFO | Database Connected
+2026-07-09 13:38:11,135 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:11,261 | INFO | Database Connected
+2026-07-09 13:38:11,266 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:11,276 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:11,348 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:11,660 | INFO | Database Connected
+2026-07-09 13:38:11,668 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:11,715 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:11] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:18,939 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:18] "GET /add-product HTTP/1.1" 200 -
+2026-07-09 13:38:27,028 | INFO | Database Connected
+2026-07-09 13:38:27,032 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:27] "GET /products HTTP/1.1" 200 -
+2026-07-09 13:38:27,129 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:27] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2026-07-09 13:38:41,591 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:41] "[33mGET /analytics HTTP/1.1[0m" 404 -
+2026-07-09 13:38:45,961 | INFO | Database Connected
+2026-07-09 13:38:45,967 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:45] "GET / HTTP/1.1" 200 -
+2026-07-09 13:38:46,079 | INFO | 127.0.0.1 - - [09/Jul/2026 13:38:46] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -

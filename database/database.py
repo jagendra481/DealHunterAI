@@ -24,6 +24,27 @@ class Database:
         logger.info("Database Connected")
 
     def create_tables(self):
+        self.cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users(
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            name TEXT NOT NULL,
+
+            email TEXT UNIQUE NOT NULL,
+
+            password_hash TEXT NOT NULL,
+
+            telegram_chat_id TEXT DEFAULT '',
+
+            is_admin INTEGER DEFAULT 0,
+
+            is_active INTEGER DEFAULT 1,
+
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+        )
+        """)
 
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS products(
@@ -32,31 +53,38 @@ class Database:
 
             name TEXT NOT NULL,
 
-            asin TEXT,
+            asin TEXT UNIQUE NOT NULL,
 
             product_url TEXT UNIQUE NOT NULL,
 
-            affiliate_url TEXT NOT NULL,
+            affiliate_url TEXT,
 
-            current_price REAL NOT NULL,
+            current_price REAL,
 
-            previous_price REAL DEFAULT 0,
+            previous_price REAL,
 
-            lowest_price REAL DEFAULT 0,
+            lowest_price REAL,
 
-            highest_price REAL DEFAULT 0,
+            highest_price REAL,
 
             source TEXT,
 
+            image TEXT DEFAULT '',
+
+            rating REAL DEFAULT 0,
+
+            reviews INTEGER DEFAULT 0,
+
+            availability TEXT DEFAULT '',
+
+            prime INTEGER DEFAULT 0,
+
             active INTEGER DEFAULT 1,
 
-            last_checked TEXT,
-
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            last_checked TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
         )
         """)
-
         self.connection.commit()
 
         # -------------------------------
@@ -169,6 +197,55 @@ class Database:
 
         return self.cursor.fetchone()
 
+    def get_product_by_id(self, product_id):
+
+        self.cursor.execute(
+            """
+            SELECT *
+            FROM products
+            WHERE id = ?
+            """,
+            (product_id,)
+        )
+
+        return self.cursor.fetchone()
+
+    def get_user_by_email(self, email):
+        self.cursor.execute(
+            """
+            SELECT *
+            FROM users
+            WHERE email = ?
+            """,
+            (email,)
+        )
+
+        return self.cursor.fetchone()
+
+    def add_user(self, user):
+        self.cursor.execute(
+            """
+            INSERT INTO users(
+
+                name,
+                email,
+                password_hash,
+                telegram_chat_id
+
+            )
+
+            VALUES(?,?,?,?)
+            """,
+            (
+                user.name,
+                user.email,
+                user.password_hash,
+                user.telegram_chat_id
+            )
+        )
+
+        self.connection.commit()
+
     def update_product(self, product):
 
         self.cursor.execute(
@@ -227,16 +304,25 @@ class Database:
             UPDATE products
             SET
                 name = ?,
+                current_price = ?,
+                previous_price = ?,
+                lowest_price = ?,
+                highest_price = ?,
                 affiliate_url = ?,
                 image = ?,
                 rating = ?,
                 reviews = ?,
                 availability = ?,
-                prime = ?
+                prime = ?,
+                last_checked = CURRENT_TIMESTAMP
             WHERE asin = ?
             """,
             (
                 product.name,
+                product.current_price,
+                product.previous_price,
+                product.lowest_price,
+                product.highest_price,
                 product.affiliate_url,
                 product.image,
                 product.rating,
