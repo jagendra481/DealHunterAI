@@ -7,19 +7,40 @@ load_dotenv()
 
 
 # ==========================================================
+# HELPER
+# ==========================================================
+
+def get_required_env(name):
+
+    value = os.getenv(name)
+
+    if not value:
+
+        raise ValueError(
+            f"{name} not found in environment variables"
+        )
+
+    return value
+
+
+# ==========================================================
 # TELEGRAM
 # ==========================================================
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = get_required_env(
+    "BOT_TOKEN"
+)
 
-CHAT_ID = os.getenv("CHAT_ID")
+CHAT_ID = get_required_env(
+    "CHAT_ID"
+)
 
 
 # ==========================================================
 # AMAZON / RAINFOREST
 # ==========================================================
 
-RAINFOREST_API_KEY = os.getenv(
+RAINFOREST_API_KEY = get_required_env(
     "RAINFOREST_API_KEY"
 )
 
@@ -28,9 +49,13 @@ RAINFOREST_API_KEY = os.getenv(
 # EMAIL / OTP
 # ==========================================================
 
-MAIL_EMAIL = os.getenv("MAIL_EMAIL")
+MAIL_EMAIL = get_required_env(
+    "MAIL_EMAIL"
+)
 
-MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
+MAIL_PASSWORD = get_required_env(
+    "MAIL_PASSWORD"
+)
 
 MAIL_HOST = os.getenv(
     "MAIL_HOST",
@@ -46,42 +71,16 @@ MAIL_PORT = int(
 
 
 # ==========================================================
-# VALIDATION
+# GOOGLE OAUTH
 # ==========================================================
 
-if BOT_TOKEN is None:
+GOOGLE_CLIENT_ID = get_required_env(
+    "GOOGLE_CLIENT_ID"
+)
 
-    raise ValueError(
-        "BOT_TOKEN not found in .env"
-    )
-
-
-if CHAT_ID is None:
-
-    raise ValueError(
-        "CHAT_ID not found in .env"
-    )
-
-
-if RAINFOREST_API_KEY is None:
-
-    raise ValueError(
-        "RAINFOREST_API_KEY not found in .env"
-    )
-
-
-if MAIL_EMAIL is None:
-
-    raise ValueError(
-        "MAIL_EMAIL not found in .env"
-    )
-
-
-if MAIL_PASSWORD is None:
-
-    raise ValueError(
-        "MAIL_PASSWORD not found in .env"
-    )
+GOOGLE_CLIENT_SECRET = get_required_env(
+    "GOOGLE_CLIENT_SECRET"
+)
 
 
 # ==========================================================
@@ -90,8 +89,30 @@ if MAIL_PASSWORD is None:
 
 DATABASE_NAME = "products.db"
 
+RAILWAY_VOLUME_MOUNT_PATH = os.getenv(
+    "RAILWAY_VOLUME_MOUNT_PATH"
+)
+
+
+if RAILWAY_VOLUME_MOUNT_PATH:
+
+    DATABASE_DIRECTORY = (
+        RAILWAY_VOLUME_MOUNT_PATH
+    )
+
+else:
+
+    DATABASE_DIRECTORY = "data"
+
+
+os.makedirs(
+    DATABASE_DIRECTORY,
+    exist_ok=True
+)
+
+
 DATABASE_PATH = os.path.join(
-    "data",
+    DATABASE_DIRECTORY,
     DATABASE_NAME
 )
 
@@ -100,26 +121,9 @@ DATABASE_PATH = os.path.join(
 # SCHEDULER
 # ==========================================================
 
-CHECK_INTERVAL_MINUTES = 60
-GOOGLE_CLIENT_ID = os.getenv(
-    "GOOGLE_CLIENT_ID"
-)
-
-GOOGLE_CLIENT_SECRET = os.getenv(
-    "GOOGLE_CLIENT_SECRET"
-)
-
-
-if not GOOGLE_CLIENT_ID:
-
-    raise ValueError(
-        "GOOGLE_CLIENT_ID not found in .env"
+CHECK_INTERVAL_MINUTES = int(
+    os.getenv(
+        "CHECK_INTERVAL_MINUTES",
+        "60"
     )
-
-
-if not GOOGLE_CLIENT_SECRET:
-
-    raise ValueError(
-        "GOOGLE_CLIENT_SECRET not found in .env"
-    )
-
+)
