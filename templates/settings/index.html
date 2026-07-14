@@ -1,0 +1,449 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+Settings | DealHunterAI
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+
+        <div class="col-xl-9 col-lg-10">
+
+            <!-- PAGE HEADER -->
+
+            <div class="mb-4">
+
+                <h2 class="fw-bold mb-1">
+                    ⚙ Settings
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Manage your account and DealHunterAI notification preferences.
+                </p>
+
+            </div>
+
+
+            <!-- SETTINGS FORM -->
+
+            <form
+                method="POST"
+                action="{{ url_for('settings') }}"
+            >
+
+                <!-- PROFILE SETTINGS -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <h5 class="fw-bold mb-4">
+
+                            <i class="bi bi-person-circle me-2"></i>
+
+                            Profile Settings
+
+                        </h5>
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="name"
+                                class="form-control form-control-lg"
+                                value="{{ user.name }}"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label class="form-label fw-semibold">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control form-control-lg"
+                                value="{{ user.email }}"
+                                disabled
+                            >
+
+                            <small class="text-muted">
+                                Your account email cannot currently be changed.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TELEGRAM CONNECTION -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <div
+                            class="d-flex justify-content-between align-items-start mb-4"
+                        >
+
+                            <div>
+
+                                <h5 class="fw-bold mb-1">
+
+                                    <i class="bi bi-telegram me-2"></i>
+
+                                    Telegram Connection
+
+                                </h5>
+
+                                <p class="text-muted mb-0">
+                                    Connect Telegram to receive DealHunterAI alerts.
+                                </p>
+
+                            </div>
+
+
+                            {% if user.telegram_chat_id %}
+
+                            <span class="badge bg-success">
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                Connected
+
+                            </span>
+
+                            {% else %}
+
+                            <span class="badge bg-secondary">
+
+                                Not Connected
+
+                            </span>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+                                Telegram Chat ID
+                            </label>
+
+                            <input
+                                type="text"
+                                name="telegram_chat_id"
+                                class="form-control form-control-lg"
+                                value="{{ user.telegram_chat_id or '' }}"
+                                placeholder="Enter Telegram Chat ID"
+                            >
+
+                            <small class="text-muted">
+                                Save your Chat ID before testing Telegram.
+                            </small>
+
+                        </div>
+
+
+                        <!-- CHAT ID GUIDE -->
+
+                        <div class="alert alert-light border mb-0">
+
+                            <h6 class="fw-bold mb-3">
+
+                                <i class="bi bi-question-circle-fill me-2"></i>
+
+                                How to get your Telegram Chat ID?
+
+                            </h6>
+
+                            <ol class="mb-3">
+
+                                <li class="mb-2">
+                                    Open Telegram.
+                                </li>
+
+                                <li class="mb-2">
+                                    Search for the DealHunterAI Telegram bot.
+                                </li>
+
+                                <li class="mb-2">
+                                    Open the bot and tap
+                                    <strong>Start</strong>.
+                                </li>
+
+                                <li class="mb-2">
+                                    Send the message
+                                    <code>/chatid</code>.
+                                </li>
+
+                                <li>
+                                    Copy the Chat ID provided by the bot
+                                    and paste it above.
+                                </li>
+
+                            </ol>
+
+                            <small class="text-muted">
+
+                                After saving your Chat ID, use the
+                                Telegram test button below to verify
+                                your connection.
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOTIFICATION PREFERENCES -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <h5 class="fw-bold mb-1">
+
+                            <i class="bi bi-bell-fill me-2"></i>
+
+                            Notification Preferences
+
+                        </h5>
+
+                        <p class="text-muted mb-4">
+                            Choose which DealHunterAI alerts you want to receive.
+                        </p>
+
+
+                        <!-- TELEGRAM MASTER SWITCH -->
+
+                        <div
+                            class="d-flex justify-content-between align-items-center py-3 border-bottom"
+                        >
+
+                            <div>
+
+                                <div class="fw-bold">
+                                    Telegram Notifications
+                                </div>
+
+                                <small class="text-muted">
+                                    Enable or disable all Telegram alerts.
+                                </small>
+
+                            </div>
+
+                            <div class="form-check form-switch">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    name="telegram_notifications"
+                                    id="telegramNotifications"
+                                    {% if user.telegram_notifications %}
+                                    checked
+                                    {% endif %}
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TARGET PRICE -->
+
+                        <div
+                            class="d-flex justify-content-between align-items-center py-3 border-bottom"
+                        >
+
+                            <div>
+
+                                <div class="fw-bold">
+                                    🎯 Target Price Alerts
+                                </div>
+
+                                <small class="text-muted">
+                                    Alert when a product reaches your target price.
+                                </small>
+
+                            </div>
+
+                            <div class="form-check form-switch">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    name="target_price_alerts"
+                                    {% if user.target_price_alerts %}
+                                    checked
+                                    {% endif %}
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DEAL SCORE -->
+
+                        <div
+                            class="d-flex justify-content-between align-items-center py-3 border-bottom"
+                        >
+
+                            <div>
+
+                                <div class="fw-bold">
+                                    🔥 Deal Score Alerts
+                                </div>
+
+                                <small class="text-muted">
+                                    Receive alerts for high-quality deals.
+                                </small>
+
+                            </div>
+
+                            <div class="form-check form-switch">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    name="deal_score_alerts"
+                                    {% if user.deal_score_alerts %}
+                                    checked
+                                    {% endif %}
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRICE DROP -->
+
+                        <div
+                            class="d-flex justify-content-between align-items-center py-3"
+                        >
+
+                            <div>
+
+                                <div class="fw-bold">
+                                    📉 Price Drop Alerts
+                                </div>
+
+                                <small class="text-muted">
+                                    Notify when a tracked product price falls.
+                                </small>
+
+                            </div>
+
+                            <div class="form-check form-switch">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    name="price_drop_alerts"
+                                    {% if user.price_drop_alerts %}
+                                    checked
+                                    {% endif %}
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVE BUTTON -->
+
+                <div class="d-grid mb-4">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg"
+                    >
+
+                        <i class="bi bi-check-circle-fill me-2"></i>
+
+                        Save Settings
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- TELEGRAM TEST -->
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <h5 class="fw-bold mb-1">
+
+                        <i class="bi bi-send-fill me-2"></i>
+
+                        Test Telegram Connection
+
+                    </h5>
+
+                    <p class="text-muted mb-4">
+                        Send a test alert to verify your Telegram connection.
+                    </p>
+
+
+                    <form
+                        method="POST"
+                        action="{{ url_for('test_telegram') }}"
+                    >
+
+                        <button
+                            type="submit"
+                            class="btn btn-outline-primary btn-lg"
+                        >
+
+                            <i class="bi bi-telegram me-2"></i>
+
+                            Send Test Telegram Alert
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

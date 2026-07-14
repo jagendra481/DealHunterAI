@@ -1,0 +1,527 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+Alerts | DealHunterAI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ====================================================== -->
+    <!-- PAGE HEADER -->
+    <!-- ====================================================== -->
+
+    <div class="mb-4">
+
+        <h2 class="fw-bold mb-2">
+
+            <i class="bi bi-bell-fill"></i>
+
+            Price Alerts
+
+        </h2>
+
+        <p class="text-muted mb-0">
+
+            Manage target price alerts for all your tracked products.
+
+        </p>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- SUMMARY CARDS -->
+    <!-- ====================================================== -->
+
+    <div class="row g-4 mb-4">
+
+        <!-- ACTIVE ALERTS -->
+
+        <div class="col-xl-4 col-md-6">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center justify-content-between">
+
+                        <div>
+
+                            <h6 class="text-muted mb-2">
+
+                                Active Alerts
+
+                            </h6>
+
+                            <h2 class="fw-bold mb-0">
+
+                                {{ active_alerts }}
+
+                            </h2>
+
+                        </div>
+
+                        <div class="fs-1">
+
+                            🔔
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WATCHING ALERTS -->
+
+        <div class="col-xl-4 col-md-6">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center justify-content-between">
+
+                        <div>
+
+                            <h6 class="text-muted mb-2">
+
+                                Watching
+
+                            </h6>
+
+                            <h2 class="fw-bold text-primary mb-0">
+
+                                {{ watching_alerts }}
+
+                            </h2>
+
+                        </div>
+
+                        <div class="fs-1">
+
+                            👀
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARGET REACHED -->
+
+        <div class="col-xl-4 col-md-6">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center justify-content-between">
+
+                        <div>
+
+                            <h6 class="text-muted mb-2">
+
+                                Target Reached
+
+                            </h6>
+
+                            <h2 class="fw-bold text-success mb-0">
+
+                                {{ reached_alerts }}
+
+                            </h2>
+
+                        </div>
+
+                        <div class="fs-1">
+
+                            🎯
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- ALERT MANAGEMENT TABLE -->
+    <!-- ====================================================== -->
+
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-body p-4">
+
+            <div
+                class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+
+                        🎯 Target Price Alerts
+
+                    </h4>
+
+                    <p class="text-muted mb-0">
+
+                        Edit, monitor, or remove your price targets.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="{{ url_for('products') }}"
+                    class="btn btn-outline-primary">
+
+                    <i class="bi bi-box-seam"></i>
+
+                    View Products
+
+                </a>
+
+            </div>
+
+
+            {% if products %}
+
+            <div class="table-responsive">
+
+                <table class="table align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Current Price</th>
+
+                            <th>Target Price</th>
+
+                            <th>Status</th>
+
+                            <th>Alert State</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for product in products %}
+
+                        <tr>
+
+                            <!-- ================================================== -->
+                            <!-- PRODUCT -->
+                            <!-- ================================================== -->
+
+                            <td style="min-width: 300px;">
+
+                                <div class="d-flex align-items-center">
+
+                                    <img
+                                        src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/60x60?text=Product' }}"
+                                        alt="{{ product['name'] }}"
+                                        width="60"
+                                        height="60"
+                                        class="rounded object-fit-contain me-3">
+
+                                    <div>
+
+                                        <div
+                                            class="fw-semibold text-truncate"
+                                            style="max-width: 300px;">
+
+                                            {{ product["name"] }}
+
+                                        </div>
+
+                                        <small class="text-muted">
+
+                                            {{ product["source"] or "Amazon" }}
+
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <!-- ================================================== -->
+                            <!-- CURRENT PRICE -->
+                            <!-- ================================================== -->
+
+                            <td>
+
+                                <strong class="fs-6">
+
+                                    ₹{{ "{:,.0f}".format(product["current_price"] or 0) }}
+
+                                </strong>
+
+                            </td>
+
+
+                            <!-- ================================================== -->
+                            <!-- TARGET PRICE -->
+                            <!-- ================================================== -->
+
+                            <td style="min-width: 240px;">
+
+                                <form
+                                    method="POST"
+                                    action="{{ url_for('update_target_price', product_id=product['id']) }}">
+
+                                    <input
+                                        type="hidden"
+                                        name="redirect_page"
+                                        value="alerts">
+
+                                    <div class="input-group input-group-sm">
+
+                                        <span class="input-group-text">
+
+                                            ₹
+
+                                        </span>
+
+                                        <input
+                                            type="number"
+                                            name="target_price"
+                                            min="0"
+                                            step="1"
+                                            value="{{ product['target_price'] or '' }}"
+                                            placeholder="Target price"
+                                            class="form-control"
+                                            required>
+
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary">
+
+                                            Save
+
+                                        </button>
+
+                                    </div>
+
+                                </form>
+
+                            </td>
+
+
+                            <!-- ================================================== -->
+                            <!-- STATUS -->
+                            <!-- ================================================== -->
+
+                            <td>
+
+                                {% if not product["target_price"] %}
+
+                                <span class="badge bg-secondary">
+
+                                    No Target
+
+                                </span>
+
+                                {% elif
+                                    (product["current_price"] or 0)
+                                    <= product["target_price"]
+                                %}
+
+                                <span class="badge bg-success">
+
+                                    🎯 Reached
+
+                                </span>
+
+                                {% else %}
+
+                                <span class="badge bg-primary">
+
+                                    👀 Watching
+
+                                </span>
+
+                                {% endif %}
+
+                            </td>
+
+
+                            <!-- ================================================== -->
+                            <!-- ALERT STATE -->
+                            <!-- ================================================== -->
+
+                            <td>
+
+                                {% if not product["target_price"] %}
+
+                                <span class="text-muted">
+
+                                    <i class="bi bi-bell-slash"></i>
+
+                                    Inactive
+
+                                </span>
+
+                                {% elif product["target_alert_sent"] %}
+
+                                <span class="text-success fw-semibold">
+
+                                    <i class="bi bi-check-circle-fill"></i>
+
+                                    Alert Sent
+
+                                </span>
+
+                                {% else %}
+
+                                <span class="text-primary fw-semibold">
+
+                                    <i class="bi bi-bell-fill"></i>
+
+                                    Armed
+
+                                </span>
+
+                                {% endif %}
+
+                            </td>
+
+
+                            <!-- ================================================== -->
+                            <!-- ACTIONS -->
+                            <!-- ================================================== -->
+
+                            <td style="min-width: 190px;">
+
+                                <div class="d-flex gap-2">
+
+                                    <a
+                                        href="{{ url_for('product_details', product_id=product['id']) }}"
+                                        class="btn btn-sm btn-outline-primary">
+
+                                        <i class="bi bi-eye"></i>
+
+                                        View
+
+                                    </a>
+
+
+                                    {% if product["target_price"] %}
+
+                                    <form
+                                        method="POST"
+                                        action="{{ url_for('update_target_price', product_id=product['id']) }}">
+
+                                        <input
+                                            type="hidden"
+                                            name="redirect_page"
+                                            value="alerts">
+
+                                        <input
+                                            type="hidden"
+                                            name="target_price"
+                                            value="0">
+
+                                        <button
+                                            type="submit"
+                                            class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Remove this target price alert?');">
+
+                                            <i class="bi bi-trash"></i>
+
+                                            Remove
+
+                                        </button>
+
+                                    </form>
+
+                                    {% endif %}
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            {% else %}
+
+            <!-- ====================================================== -->
+            <!-- EMPTY STATE -->
+            <!-- ====================================================== -->
+
+            <div class="text-center py-5">
+
+                <i class="bi bi-bell fs-1 text-muted"></i>
+
+                <h4 class="fw-bold mt-3">
+
+                    No Products Tracked
+
+                </h4>
+
+                <p class="text-muted">
+
+                    Add a product and set your target price
+                    to start receiving Telegram alerts.
+
+                </p>
+
+                <a
+                    href="{{ url_for('add_product') }}"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-plus-circle"></i>
+
+                    Add Product
+
+                </a>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

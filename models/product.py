@@ -14,24 +14,26 @@ class Product:
 
     affiliate_url: str = ""
 
-    current_price: float = 0
+    current_price: float = 0.0
 
-    previous_price: float = 0
+    previous_price: float = 0.0
 
-    lowest_price: float = 0
+    lowest_price: float = 0.0
 
-    highest_price: float = 0
+    highest_price: float = 0.0
 
     source: str = ""
 
     image: str = ""
 
-    rating: float = 0
+    rating: float = 0.0
 
     reviews: int = 0
 
     availability: str = ""
 
     prime: bool = False
+
+    active: bool = True
 
     last_checked: str = ""

@@ -1,120 +1,481 @@
+from engine.recommendation_engine import RecommendationEngine
 from engine.product_service import ProductService
 from sources.source_manager import SourceManager
 from engine.price_comparator import PriceComparator
 from engine.deal_scorer import DealScorer
-from engine.formatter import DealFormatter
+
 from services.telegram_service import TelegramService
+from services.user_service import UserService
+
 import traceback
 
 
 class DealEngine:
 
     def __init__(self):
+
         self.product_service = ProductService()
+        self.user_service = UserService()
+
+    # ==========================================================
+    # RUN ENGINE
+    # ==========================================================
 
     def run(self):
 
         print("\n========== DEAL ENGINE ==========\n")
 
-        products = self.product_service.get_all_products()
+        try:
 
-        print("\n" + "=" * 60)
-        print("TOTAL PRODUCTS:", len(products))
+            products = (
+                self.product_service
+                .get_all_active_products()
+            )
 
-        for p in products:
-            print(f"• {p['name']}")
+            print("=" * 60)
+            print("TOTAL PRODUCTS:", len(products))
 
-        print("=" * 60 + "\n")
+            for product in products:
 
-        if not products:
-            print("No Products Found")
+                print(f"• {product['name']}")
+
+            print("=" * 60)
+
+            if not products:
+
+                print("No Products Found")
+
+                return
+
+            for product in products:
+
+                self._check_product(product)
+
+        finally:
+
             self.product_service.close()
+            self.user_service.close()
+
+    # ==========================================================
+    # CHECK PRODUCT
+    # ==========================================================
+
+    def _check_product(self, product):
+
+        try:
+
+            print(
+                f"\nChecking: {product['name']}"
+            )
+
+            user = self.user_service.get_user_by_id(
+                product["user_id"]
+            )
+
+            if user is None:
+
+                print(
+                    "⚠️ Product owner not found."
+                )
+
+                return
+
+            source = SourceManager.get_source(
+                product["product_url"]
+            )
+
+            latest_product = source.fetch_product(
+                product
+            )
+
+            latest_product.user_id = (
+                product["user_id"]
+            )
+
+            latest_product.product_url = (
+                product["product_url"]
+            )
+
+            latest_product.affiliate_url = (
+                product["affiliate_url"]
+            )
+
+            old_price = float(
+                product["current_price"] or 0
+            )
+
+            new_price = float(
+                latest_product.current_price or 0
+            )
+
+            # ==================================================
+            # VALIDATE PRICE
+            # ==================================================
+
+            if new_price <= 0:
+
+                print(
+                    "⚠️ Invalid product price. "
+                    "Skipping product."
+                )
+
+                return
+
+            # ==================================================
+            # SAVE PRICE HISTORY
+            # ==================================================
+
+            self.product_service.add_price_history(
+                product["id"],
+                new_price
+            )
+
+            print(
+                f"📊 Price History Saved: "
+                f"₹{new_price:,.0f}"
+            )
+
+            # ==================================================
+            # COMPARE PRICE
+            # ==================================================
+            history = self.product_service.get_price_history(
+                product["id"],
+                product["user_id"]
+            )
+
+            recommendation = RecommendationEngine.analyze(
+                latest_product.current_price,
+                [
+                    row["price"]
+                    for row in history
+                ]
+            )
+
+            print(
+                "AI Recommendation:",
+                recommendation["recommendation"]
+            )
+            last_recommendation = (
+                product.get("last_recommendation")
+                or "COLLECTING"
+            )
+
+            alert_sent = bool(
+                product.get(
+                    "recommendation_alert_sent",
+                    0
+                )
+            )
+
+            if (
+                recommendation["recommendation"] == "BUY_NOW"
+                and last_recommendation != "BUY_NOW"
+                and not alert_sent
+            ):
+
+                if (
+                    user.telegram_notifications
+                    and user.telegram_chat_id
+                ):
+
+                    TelegramService.send_buy_now_alert(
+                        latest_product,
+                        recommendation,
+                        user.telegram_chat_id
+                    )
+
+                    self.product_service.mark_recommendation_alert_sent(
+                        product["id"]
+                    )
+
+                    print(
+                        "🟢 BUY NOW alert sent."
+                    )
+
+            self.product_service.update_recommendation_status(
+                product["id"],
+                recommendation["recommendation"]
+            )
+
+            status = PriceComparator.compare(
+                old_price,
+                new_price
+            )
+
+            score = DealScorer.calculate(
+                old_price,
+                new_price
+            )
+
+            print("--------------------------------------")
+            print("Product    :", latest_product.name)
+            print("Old Price  :", old_price)
+            print("New Price  :", new_price)
+            print("Status     :", status)
+            print("Deal Score :", score)
+            print("--------------------------------------")
+
+            # ==================================================
+            # TARGET PRICE ALERT
+            # ==================================================
+
+            self._check_target_price(
+                product,
+                latest_product,
+                user
+            )
+
+            # ==================================================
+            # PRICE DROP
+            # ==================================================
+
+            if status == "DROP":
+
+                self._handle_price_drop(
+                    product,
+                    latest_product,
+                    old_price,
+                    score,
+                    user
+                )
+
+            elif status == "SAME":
+
+                print("ℹ️ Price unchanged.")
+
+            else:
+
+                print("📈 Price increased.")
+
+                self._update_product_price(
+                    product,
+                    latest_product,
+                    old_price
+                )
+
+        except Exception:
+
+            print(
+                f"\n❌ Error checking "
+                f"{product['name']}"
+            )
+
+            traceback.print_exc()
+
+    # ==========================================================
+    # TARGET PRICE CHECK
+    # ==========================================================
+
+    def _check_target_price(
+        self,
+        product,
+        latest_product,
+        user
+    ):
+
+        target_price = float(
+            product["target_price"] or 0
+        )
+
+        current_price = float(
+            latest_product.current_price or 0
+        )
+
+        alert_sent = bool(
+            product["target_alert_sent"]
+        )
+
+        if target_price <= 0:
+
             return
 
-        for product in products:
+        if current_price > target_price:
 
-            try:
+            if alert_sent:
 
-                print(f"Checking: {product['name']}")
-
-                # Detect Source
-                source = SourceManager.get_source(
-                    product["product_url"]
+                self.product_service.reset_target_alert(
+                    product["id"]
                 )
 
-                # Fetch latest LIVE data
-                latest_product = source.fetch_product(product)
-
-                # Compare prices
-                status = PriceComparator.compare(
-                    product["current_price"],
-                    latest_product.current_price
+                print(
+                    "🔄 Target alert re-armed."
                 )
 
-                # Calculate deal score
-                score = DealScorer.calculate(
-                    product["current_price"],
-                    latest_product.current_price
-                )
+            return
 
-                print("--------------------------------------")
-                print("Product      :", latest_product.name)
-                print("Old Price    :", product["current_price"])
-                print("New Price    :", latest_product.current_price)
-                print("Status       :", status)
-                print("Deal Score   :", score)
-                print("--------------------------------------")
+        print(
+            f"🎯 Target reached: "
+            f"₹{current_price:,.0f} <= "
+            f"₹{target_price:,.0f}"
+        )
 
-                if status == "DROP":
+        if alert_sent:
 
-                    latest_product.previous_price = product["current_price"]
+            print(
+                "ℹ️ Target alert already sent."
+            )
 
-                    latest_product.lowest_price = min(
-                        product["lowest_price"],
-                        latest_product.current_price
-                    )
+            return
 
-                    latest_product.highest_price = max(
-                        product["highest_price"],
-                        latest_product.current_price
-                    )
+        if not user.telegram_notifications:
 
-                    latest_product.last_checked = "NOW"
+            print(
+                "🔕 Telegram notifications disabled."
+            )
 
-                    self.product_service.update_product(latest_product)
+            return
 
-                    print("✅ Database Updated")
+        if not user.target_price_alerts:
 
-                    if score >= 60:
+            print(
+                "🔕 Target price alerts disabled."
+            )
 
-                        message = DealFormatter.format(
-                            latest_product,
-                            product["current_price"],
-                            score
-                        )
+            return
 
-                        TelegramService.send_photo(
-                            latest_product,
-                            product["current_price"],
-                            score
-                        )
+        if not user.telegram_chat_id:
 
-                        print("✅ Telegram Notification Sent")
+            print(
+                "⚠️ Telegram Chat ID not configured."
+            )
 
-                    else:
-                        print("⚠️ Deal Score too low.")
+            return
 
-                elif status == "SAME":
+        TelegramService.send_target_price_alert(
+            latest_product,
+            target_price,
+            user.telegram_chat_id
+        )
 
-                    print("ℹ️ Price unchanged.")
+        self.product_service.mark_target_alert_sent(
+            product["id"]
+        )
 
-                else:
+        print(
+            f"✅ Target price alert sent "
+            f"to User {user.id}"
+        )
 
-                    print("📈 Price increased.")
+    # ==========================================================
+    # HANDLE PRICE DROP
+    # ==========================================================
 
-            except Exception:
+    def _handle_price_drop(
+        self,
+        product,
+        latest_product,
+        old_price,
+        score,
+        user
+    ):
 
-                print(f"\n❌ Error checking {product['name']}")
-                traceback.print_exc()
+        self._update_product_price(
+            product,
+            latest_product,
+            old_price
+        )
 
-        self.product_service.close()
+        print("✅ Database Updated")
+
+        if not user.telegram_notifications:
+
+            print(
+                "🔕 Telegram notifications disabled."
+            )
+
+            return
+
+        if not user.telegram_chat_id:
+
+            print(
+                "⚠️ Telegram Chat ID not configured."
+            )
+
+            return
+
+        # ======================================================
+        # DEAL SCORE ALERT
+        # ======================================================
+
+        if (
+            score >= 60
+            and user.deal_score_alerts
+        ):
+
+            TelegramService.send_photo(
+                latest_product,
+                old_price,
+                score,
+                user.telegram_chat_id
+            )
+
+            print(
+                f"🔥 Deal score alert sent "
+                f"to User {user.id}"
+            )
+
+            return
+
+        # ======================================================
+        # PRICE DROP ALERT
+        # ======================================================
+
+        if user.price_drop_alerts:
+
+            TelegramService.send_price_drop_alert(
+                latest_product,
+                old_price,
+                user.telegram_chat_id
+            )
+
+            print(
+                f"📉 Price drop alert sent "
+                f"to User {user.id}"
+            )
+
+            return
+
+        print(
+            "🔕 Price drop notification skipped."
+        )
+
+    # ==========================================================
+    # UPDATE PRODUCT PRICE
+    # ==========================================================
+
+    def _update_product_price(
+        self,
+        product,
+        latest_product,
+        old_price
+    ):
+
+        latest_product.previous_price = old_price
+
+        existing_lowest = (
+            product["lowest_price"]
+            or old_price
+            or latest_product.current_price
+        )
+
+        existing_highest = (
+            product["highest_price"]
+            or old_price
+            or latest_product.current_price
+        )
+
+        latest_product.lowest_price = min(
+            existing_lowest,
+            latest_product.current_price
+        )
+
+        latest_product.highest_price = max(
+            existing_highest,
+            latest_product.current_price
+        )
+
+        latest_product.last_checked = "NOW"
+
+        self.product_service.update_product(
+            latest_product
+        )

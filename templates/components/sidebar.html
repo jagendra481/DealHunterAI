@@ -1,19 +1,20 @@
 <div class="col-lg-2 col-md-3 sidebar">
 
+    <!-- Logo -->
     <div class="logo">
 
         <h3>
-
             🚀 DealHunterAI
-
         </h3>
 
     </div>
 
+
+    <!-- Navigation -->
     <div class="menu">
 
-        <a href="/"
-           class="menu-item">
+        <a href="{{ url_for('dashboard') }}"
+           class="menu-item {% if request.endpoint == 'dashboard' %}active{% endif %}">
 
             <i class="bi bi-grid-1x2-fill"></i>
 
@@ -21,8 +22,9 @@
 
         </a>
 
-        <a href="/products"
-           class="menu-item">
+
+        <a href="{{ url_for('products') }}"
+           class="menu-item {% if request.endpoint == 'products' %}active{% endif %}">
 
             <i class="bi bi-box-seam-fill"></i>
 
@@ -30,8 +32,9 @@
 
         </a>
 
-        <a href="/add-product"
-           class="menu-item">
+
+        <a href="{{ url_for('add_product') }}"
+           class="menu-item {% if request.endpoint == 'add_product' %}active{% endif %}">
 
             <i class="bi bi-plus-circle-fill"></i>
 
@@ -39,8 +42,9 @@
 
         </a>
 
-        <a href="/analytics"
-           class="menu-item">
+
+        <a href="{{ url_for('analytics') }}"
+           class="menu-item {% if request.endpoint == 'analytics' %}active{% endif %}">
 
             <i class="bi bi-bar-chart-fill"></i>
 
@@ -48,8 +52,29 @@
 
         </a>
 
-        <a href="/settings"
-           class="menu-item">
+
+        <a href="{{ url_for('alerts') }}"
+           class="menu-item {% if request.endpoint == 'alerts' %}active{% endif %}">
+
+            <i class="bi bi-bell-fill"></i>
+
+            <span>Alerts</span>
+
+        </a>
+
+
+        <a href="{{ url_for('profile') }}"
+           class="menu-item {% if request.endpoint == 'profile' %}active{% endif %}">
+
+            <i class="bi bi-person-circle"></i>
+
+            <span>Profile</span>
+
+        </a>
+
+
+        <a href="{{ url_for('settings') }}"
+           class="menu-item {% if request.endpoint == 'settings' %}active{% endif %}">
 
             <i class="bi bi-gear-fill"></i>
 
@@ -57,39 +82,49 @@
 
         </a>
 
+
+        <a href="{{ url_for('about') }}"
+           class="menu-item {% if request.endpoint == 'about' %}active{% endif %}">
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            <span>About</span>
+
+        </a>
+
     </div>
 
+
+    <!-- Sidebar Footer -->
     <div class="sidebar-footer">
 
-        <div class="user-card">
+        <a href="{{ url_for('profile') }}"
+           class="user-card text-decoration-none">
 
             <div class="avatar">
 
-                {{ current_user.name[0] }}
+                {{ current_user.name[0] | upper }}
 
             </div>
 
             <div>
 
                 <strong>
-
                     {{ current_user.name }}
-
                 </strong>
 
                 <br>
 
                 <small>
-
-                    Premium User
-
+                    DealHunter User
                 </small>
 
             </div>
 
-        </div>
+        </a>
 
-        <a href="/logout"
+
+        <a href="{{ url_for('logout') }}"
            class="logout-btn">
 
             <i class="bi bi-box-arrow-right"></i>

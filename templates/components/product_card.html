@@ -1,16 +1,23 @@
 <div class="col-xl-4 col-lg-6 mb-4">
 
-    <div class="card product-card h-100">
+    <div class="card product-card h-100 shadow-sm">
 
+        <!-- Product Image -->
         <div class="position-relative">
 
-            <img
-                src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/600x400?text=DealHunterAI' }}"
-                class="card-img-top product-image">
+            <a href="{{ url_for('product_details', product_id=product['id']) }}">
+
+                <img
+                    src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/600x400?text=DealHunterAI' }}"
+                    class="card-img-top product-image"
+                    alt="{{ product['name'] }}">
+
+            </a>
 
             {% if product["prime"] %}
 
-            <span class="badge bg-primary position-absolute top-0 end-0 m-3">
+            <span
+                class="badge bg-primary position-absolute top-0 end-0 m-3">
 
                 Prime
 
@@ -20,77 +27,121 @@
 
         </div>
 
+
+        <!-- Card Body -->
         <div class="card-body">
 
-            <h5 class="fw-bold">
+            <a
+                href="{{ url_for('product_details', product_id=product['id']) }}"
+                class="text-decoration-none text-dark">
 
-                {{ product["name"] }}
+                <h5 class="fw-bold mb-3">
 
-            </h5>
+                    {{ product["name"] }}
 
-            <div class="mb-3">
+                </h5>
 
-                ⭐ {{ product["rating"] }}
+            </a>
+
+
+            <p class="mb-2">
+
+                <i class="bi bi-star-fill text-warning"></i>
+
+                {{ product["rating"] }}
 
                 <span class="text-muted">
 
-                    ({{ product["reviews"] }})
+                    ({{ product["reviews"] }} Reviews)
 
                 </span>
 
-            </div>
+            </p>
 
-            <h3 class="fw-bold text-success">
 
-                ₹ {{ "{:,.0f}".format(product["current_price"]) }}
+            <h3 class="fw-bold text-success mb-2">
+
+                ₹ {{ "{:,.0f}".format(product["current_price"] or 0) }}
 
             </h3>
 
-            <small class="text-muted">
 
-                {{ product["availability"] }}
+            <p class="text-muted mb-0">
 
-            </small>
+                <i class="bi bi-box-seam"></i>
+
+                {{ product["availability"] or "Availability unknown" }}
+
+            </p>
 
         </div>
 
-        <div class="card-footer border-0 bg-white">
+
+        <!-- Card Footer -->
+        <div class="card-footer bg-white border-0">
 
             <div class="d-grid gap-2">
+
+                <!-- Amazon Button -->
 
                 <a
                     href="{{ product['affiliate_url'] }}"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-warning">
 
-                    🛒 Buy on Amazon
+                    <i class="bi bi-cart-fill"></i>
+
+                    Buy on Amazon
 
                 </a>
 
-                <div class="row">
+
+                <div class="row g-2">
+
+                    <!-- Refresh -->
 
                     <div class="col-6">
 
-                        <a
-                            href="/refresh-product/{{ product['id'] }}"
-                            class="btn btn-outline-primary w-100">
+                        <form
+                            method="POST"
+                            action="{{ url_for('refresh_product', product_id=product['id']) }}">
 
-                            Refresh
+                            <button
+                                type="submit"
+                                class="btn btn-outline-primary w-100">
 
-                        </a>
+                                <i class="bi bi-arrow-repeat"></i>
+
+                                Refresh
+
+                            </button>
+
+                        </form>
 
                     </div>
 
+
+                    <!-- Delete -->
+
                     <div class="col-6">
 
-                        <a
-                            href="/delete-product/{{ product['id'] }}"
-                            class="btn btn-outline-danger w-100"
-                            onclick="return confirm('Delete Product?')">
+                        <form
+                            method="POST"
+                            action="{{ url_for('delete_product', product_id=product['id']) }}"
+                            onsubmit="return confirm('Delete this product?');">
 
-                            Delete
+                            <button
+                                type="submit"
+                                class="btn btn-outline-danger w-100">
 
-                        </a>
+                                <i class="bi bi-trash"></i>
+
+                                Delete
+
+                            </button>
+
+                        </form>
 
                     </div>
 

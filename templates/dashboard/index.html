@@ -1,148 +1,109 @@
 {% extends "layouts/app.html" %}
 
 {% block title %}
-Dashboard
+Dashboard | DealHunterAI
 {% endblock %}
 
 {% block content %}
 
-<div class="mb-4">
+<div class="container-fluid">
 
-    <h1 class="fw-bold">
+    <!-- PAGE HEADER -->
 
-        👋 Welcome back, {{ current_user.name }}
+    <div class="mb-4">
 
-    </h1>
+        <h1 class="fw-bold">
+            👋 Welcome back, {{ current_user.name }}
+        </h1>
 
-    <p class="text-muted">
+        <p class="text-muted mb-0">
+            See your strongest buying opportunities
+            and tracked product activity.
+        </p>
 
-        Here's what's happening with your tracked deals today.
+    </div>
 
-    </p>
 
-</div>
+    <!-- DASHBOARD STATS -->
 
-<div class="row g-4">
+    <div class="row g-4 mb-5">
 
-    <div class="col-lg-3">
+        <div class="col-xl-3 col-md-6">
 
-        <div class="card shadow-sm border-0">
+            <div class="card shadow-sm border-0 h-100">
 
-            <div class="card-body">
+                <div class="card-body">
 
-                <h6 class="text-muted">
+                    <h6 class="text-muted">
+                        Tracked Products
+                    </h6>
 
-                    Products
+                    <h2 class="fw-bold mb-0">
+                        {{ total_products }}
+                    </h2>
 
-                </h6>
-
-                <h2 class="fw-bold">
-
-                    {{ total_products }}
-
-                </h2>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
 
-    <div class="col-lg-3">
+        <div class="col-xl-3 col-md-6">
 
-        <div class="card shadow-sm border-0">
+            <div class="card shadow-sm border-0 h-100">
 
-            <div class="card-body">
+                <div class="card-body">
 
-                <h6 class="text-muted">
+                    <h6 class="text-muted">
+                        Buy Opportunities
+                    </h6>
 
-                    Average Rating
+                    <h2 class="fw-bold text-success mb-0">
+                        {{ good_opportunities }}
+                    </h2>
 
-                </h6>
-
-                <h2 class="fw-bold">
-
-                    ⭐ {{ avg_rating }}
-
-                </h2>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
 
-    <div class="col-lg-3">
+        <div class="col-xl-3 col-md-6">
 
-        <div class="card shadow-sm border-0">
+            <div class="card shadow-sm border-0 h-100">
 
-            <div class="card-body">
+                <div class="card-body">
 
-                <h6 class="text-muted">
+                    <h6 class="text-muted">
+                        Falling Prices
+                    </h6>
 
-                    Average Price
+                    <h2 class="fw-bold text-primary mb-0">
+                        {{ falling_prices }}
+                    </h2>
 
-                </h6>
-
-                <h2 class="fw-bold">
-
-                    ₹ {{ "{:,.0f}".format(avg_price) }}
-
-                </h2>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
 
-    <div class="col-lg-3">
+        <div class="col-xl-3 col-md-6">
 
-        <div class="card shadow-sm border-0">
+            <div class="card shadow-sm border-0 h-100">
 
-            <div class="card-body">
+                <div class="card-body">
 
-                <h6 class="text-muted">
+                    <h6 class="text-muted">
+                        Average Rating
+                    </h6>
 
-                    Price Drops
-
-                </h6>
-
-                <h2 class="fw-bold text-success">
-
-                    Coming Soon
-
-                </h2>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<div class="row mt-5">
-
-    <div class="col-lg-8">
-
-        <div class="card shadow-sm border-0">
-
-            <div class="card-body">
-
-                <h4>
-
-                    📈 Analytics
-
-                </h4>
-
-                <hr>
-
-                <div
-                    style="height:250px;"
-                    class="d-flex align-items-center justify-content-center text-muted">
-
-                    Charts Coming Soon...
+                    <h2 class="fw-bold mb-0">
+                        ⭐ {{ avg_rating }}
+                    </h2>
 
                 </div>
 
@@ -152,33 +113,331 @@ Dashboard
 
     </div>
 
-    <div class="col-lg-4">
 
-        <div class="card shadow-sm border-0">
+    <!-- BUYING OPPORTUNITIES -->
 
-            <div class="card-body">
+    <div class="card shadow-sm border-0 mb-4">
 
-                <h4>
+        <div class="card-body p-4">
 
-                    ⚡ Quick Actions
+            <div
+                class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
 
-                </h4>
+                <div>
 
-                <hr>
+                    <h4 class="fw-bold mb-1">
+                        🎯 Price Intelligence Overview
+                    </h4>
 
-                <a href="/add-product"
-                   class="btn btn-primary w-100 mb-3">
+                    <p class="text-muted mb-0">
+                        Products ranked using tracked price
+                        history and buying opportunity analysis.
+                    </p>
 
-                    ➕ Add Product
+                </div>
+
+
+                <a
+                    href="{{ url_for('analytics') }}"
+                    class="btn btn-outline-primary">
+
+                    View Full Price Intelligence
+
+                    <i class="bi bi-arrow-right"></i>
 
                 </a>
 
-                <a href="/products"
-                   class="btn btn-outline-primary w-100">
+            </div>
 
-                    📦 View Products
+
+            {% if best_opportunities %}
+
+            <div class="table-responsive">
+
+                <table class="table align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Current</th>
+
+                            <th>Tracked Low</th>
+
+                            <th>Trend</th>
+
+                            <th>Confidence</th>
+
+                            <th>Recommendation</th>
+
+                            <th></th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for product in best_opportunities %}
+
+                        <tr>
+
+                            <!-- PRODUCT -->
+
+                            <td style="min-width: 300px;">
+
+                                <div class="d-flex align-items-center">
+
+                                    <img
+                                        src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/60x60?text=Product' }}"
+                                        alt="{{ product['name'] }}"
+                                        width="55"
+                                        height="55"
+                                        class="rounded object-fit-contain me-3">
+
+                                    <div
+                                        class="fw-semibold text-truncate"
+                                        style="max-width: 320px;">
+
+                                        {{ product["name"] }}
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <!-- CURRENT PRICE -->
+
+                            <td class="fw-bold">
+
+                                ₹{{ "{:,.0f}".format(product["current_price"]) }}
+
+                            </td>
+
+
+                            <!-- LOWEST PRICE -->
+
+                            <td class="fw-bold text-success">
+
+                                ₹{{ "{:,.0f}".format(product["lowest_price"]) }}
+
+                            </td>
+
+
+                            <!-- TREND -->
+
+                            <td>
+
+                                {% if product["trend"] == "FALLING" %}
+
+                                <span class="badge bg-success">
+                                    ↓ Falling
+                                </span>
+
+                                {% elif product["trend"] == "RISING" %}
+
+                                <span class="badge bg-danger">
+                                    ↑ Rising
+                                </span>
+
+                                {% else %}
+
+                                <span class="badge bg-secondary">
+                                    — Stable
+                                </span>
+
+                                {% endif %}
+
+                            </td>
+
+
+                            <!-- CONFIDENCE -->
+
+                            <td>
+
+                                {% if product["recommendation"] == "COLLECTING" %}
+
+                                <span class="badge bg-secondary">
+
+                                    {{ product["scan_count"] }}/5 scans
+
+                                </span>
+
+                                {% else %}
+
+                                <strong>
+
+                                    {{ product["confidence"] }}%
+
+                                </strong>
+
+                                {% endif %}
+
+                            </td>
+
+
+                            <!-- RECOMMENDATION -->
+
+                            <td>
+
+                                {% if product["recommendation"] == "BUY_NOW" %}
+
+                                <span class="badge bg-success">
+
+                                    🟢 BUY NOW
+
+                                </span>
+
+
+                                {% elif product["recommendation"] == "WAIT" %}
+
+                                <span class="badge bg-warning text-dark">
+
+                                    🟡 WAIT
+
+                                </span>
+
+
+                                {% elif product["recommendation"] == "EXPENSIVE" %}
+
+                                <span class="badge bg-danger">
+
+                                    🔴 EXPENSIVE
+
+                                </span>
+
+
+                                {% else %}
+
+                                <span class="badge bg-secondary">
+
+                                    📊 COLLECTING DATA
+
+                                </span>
+
+                                {% endif %}
+
+                            </td>
+
+
+                            <!-- VIEW -->
+
+                            <td>
+
+                                <a
+                                    href="{{ url_for('product_details', product_id=product['id']) }}"
+                                    class="btn btn-sm btn-outline-primary">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            {% else %}
+
+            <div class="text-center py-5">
+
+                <i class="bi bi-box-seam fs-1 text-muted"></i>
+
+                <h5 class="fw-bold mt-3">
+                    No Products Tracked
+                </h5>
+
+                <p class="text-muted">
+                    Add products to start building
+                    price intelligence.
+                </p>
+
+                <a
+                    href="{{ url_for('add_product') }}"
+                    class="btn btn-primary">
+
+                    Add Product
 
                 </a>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold mb-3">
+                ⚡ Quick Actions
+            </h4>
+
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+
+                    <a
+                        href="{{ url_for('add_product') }}"
+                        class="btn btn-primary w-100">
+
+                        <i class="bi bi-plus-circle-fill"></i>
+
+                        Add Product
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <a
+                        href="{{ url_for('products') }}"
+                        class="btn btn-outline-primary w-100">
+
+                        <i class="bi bi-box-seam-fill"></i>
+
+                        View Products
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <a
+                        href="{{ url_for('analytics') }}"
+                        class="btn btn-outline-primary w-100">
+
+                        <i class="bi bi-graph-up-arrow"></i>
+
+                        Price Intelligence
+
+                    </a>
+
+                </div>
 
             </div>
 

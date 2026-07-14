@@ -1,35 +1,666 @@
 {% extends "layouts/app.html" %}
 
 {% block title %}
-Analytics
+Price Intelligence | DealHunterAI
 {% endblock %}
+
 
 {% block content %}
 
-<h2 class="fw-bold">
+<div class="container-fluid">
 
-    📊 Analytics
+    <!-- PAGE HEADER -->
 
-</h2>
+    <div class="mb-4">
 
-<div class="card shadow-sm mt-4">
+        <h2 class="fw-bold mb-2">
 
-    <div class="card-body">
+            <i class="bi bi-graph-up-arrow"></i>
 
-        <h4>
+            Product Price Intelligence
 
-            Analytics Dashboard
+        </h2>
 
-        </h4>
+        <p class="text-muted mb-0">
 
-        <p class="text-muted">
-
-            Coming soon...
+            Compare tracked price history and discover
+            better buying opportunities.
 
         </p>
 
     </div>
 
+
+    {% if analytics_products %}
+
+    <div class="row g-4">
+
+        {% for product in analytics_products %}
+
+        <div class="col-xl-6">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <!-- PRODUCT HEADER -->
+
+                    <div class="d-flex align-items-start mb-4">
+
+                        <img
+                            src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/100x100?text=Product' }}"
+                            alt="{{ product['name'] }}"
+                            width="90"
+                            height="90"
+                            class="rounded object-fit-contain me-3">
+
+
+                        <div class="flex-grow-1">
+
+                            <h5 class="fw-bold mb-3">
+
+                                {{ product["name"] }}
+
+                            </h5>
+
+
+                            <!-- RECOMMENDATION -->
+
+                            {% if product["recommendation"] == "BUY_NOW" %}
+
+                            <span class="badge bg-success me-1">
+
+                                🟢 BUY NOW
+
+                            </span>
+
+
+                            {% elif product["recommendation"] == "WAIT" %}
+
+                            <span class="badge bg-warning text-dark me-1">
+
+                                🟡 WAIT
+
+                            </span>
+
+
+                            {% elif product["recommendation"] == "EXPENSIVE" %}
+
+                            <span class="badge bg-danger me-1">
+
+                                🔴 EXPENSIVE
+
+                            </span>
+
+
+                            {% else %}
+
+                            <span class="badge bg-secondary me-1">
+
+                                📊 COLLECTING DATA
+
+                            </span>
+
+                            {% endif %}
+
+
+                            <!-- TREND -->
+
+                            {% if product["trend"] == "FALLING" %}
+
+                            <span class="badge bg-success">
+
+                                ↓ Price Falling
+
+                            </span>
+
+
+                            {% elif product["trend"] == "RISING" %}
+
+                            <span class="badge bg-danger">
+
+                                ↑ Price Rising
+
+                            </span>
+
+
+                            {% else %}
+
+                            <span class="badge bg-secondary">
+
+                                — Price Stable
+
+                            </span>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRICE SUMMARY -->
+
+                    <div class="row g-3 mb-4">
+
+                        <div class="col-4">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <small class="text-muted">
+
+                                    Current
+
+                                </small>
+
+                                <h5 class="fw-bold mt-1 mb-0">
+
+                                    ₹{{ "{:,.0f}".format(product["current_price"]) }}
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-4">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <small class="text-muted">
+
+                                    Tracked Low
+
+                                </small>
+
+                                <h5 class="fw-bold text-success mt-1 mb-0">
+
+                                    ₹{{ "{:,.0f}".format(product["lowest_price"]) }}
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-4">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <small class="text-muted">
+
+                                    Tracked High
+
+                                </small>
+
+                                <h5 class="fw-bold text-danger mt-1 mb-0">
+
+                                    ₹{{ "{:,.0f}".format(product["highest_price"]) }}
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRICE CHART -->
+
+                    {% if product["prices"] %}
+
+                    <div class="price-chart-container">
+
+                        <canvas
+                            class="product-price-chart"
+                            data-labels='{{ product["labels"] | tojson }}'
+                            data-prices='{{ product["prices"] | tojson }}'>
+                        </canvas>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- PRICE INTELLIGENCE -->
+
+                    <div class="mt-4">
+
+                        {% if product["recommendation"] == "COLLECTING" %}
+
+                        <div class="alert alert-info mb-0">
+
+                            <h6 class="fw-bold">
+
+                                📊 Building Price Intelligence
+
+                            </h6>
+
+                            <p class="mb-3">
+
+                                {{ product["reason"] }}
+
+                            </p>
+
+
+                            <progress
+                                class="w-100"
+                                value="{{ product['scan_count'] }}"
+                                max="5">
+
+                                {{ product["scan_count"] }}/5
+
+                            </progress>
+
+
+                            <div class="text-center mt-2">
+
+                                <small class="text-muted">
+
+                                    {{ product["scan_count"] }}
+                                    tracked scans
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        {% elif product["recommendation"] == "BUY_NOW" %}
+
+                        <div class="alert alert-success mb-0">
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <strong>
+
+                                    🟢 Strong Buying Opportunity
+
+                                </strong>
+
+                                <span class="badge bg-success">
+
+                                    {{ product["confidence"] }}% confidence
+
+                                </span>
+
+                            </div>
+
+                            <p class="mt-2 mb-0">
+
+                                {{ product["reason"] }}
+
+                            </p>
+
+                        </div>
+
+
+                        {% elif product["recommendation"] == "WAIT" %}
+
+                        <div class="alert alert-warning mb-0">
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <strong>
+
+                                    🟡 Consider Waiting
+
+                                </strong>
+
+                                <span class="badge bg-warning text-dark">
+
+                                    {{ product["confidence"] }}% confidence
+
+                                </span>
+
+                            </div>
+
+                            <p class="mt-2 mb-0">
+
+                                {{ product["reason"] }}
+
+                            </p>
+
+
+                            {% if product["estimated_saving"] > 0 %}
+
+                            <p class="mt-2 mb-0">
+
+                                Tracked low difference:
+
+                                <strong>
+
+                                    ₹{{ "{:,.0f}".format(product["estimated_saving"]) }}
+
+                                </strong>
+
+                            </p>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        {% elif product["recommendation"] == "EXPENSIVE" %}
+
+                        <div class="alert alert-danger mb-0">
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <strong>
+
+                                    🔴 Price Currently High
+
+                                </strong>
+
+                                <span class="badge bg-danger">
+
+                                    {{ product["confidence"] }}% confidence
+
+                                </span>
+
+                            </div>
+
+                            <p class="mt-2 mb-0">
+
+                                {{ product["reason"] }}
+
+                            </p>
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- INTELLIGENCE METRICS -->
+
+                    {% if product["recommendation"] != "COLLECTING" %}
+
+                    <div class="row g-3 mt-1">
+
+                        <div class="col-md-4">
+
+                            <div class="border rounded p-3 text-center h-100">
+
+                                <small class="text-muted">
+
+                                    Above Tracked Low
+
+                                </small>
+
+                                <h5 class="fw-bold mt-2 mb-0">
+
+                                    {{ product["above_low_percent"] }}%
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="border rounded p-3 text-center h-100">
+
+                                <small class="text-muted">
+
+                                    Confidence
+
+                                </small>
+
+                                <h5 class="fw-bold mt-2 mb-0">
+
+                                    {{ product["confidence"] }}%
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="border rounded p-3 text-center h-100">
+
+                                <small class="text-muted">
+
+                                    Tracked Scans
+
+                                </small>
+
+                                <h5 class="fw-bold mt-2 mb-0">
+
+                                    {{ product["scan_count"] }}
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- DETAILS BUTTON -->
+
+                    <div class="d-grid mt-4">
+
+                        <a
+                            href="{{ url_for('product_details', product_id=product['id']) }}"
+                            class="btn btn-outline-primary">
+
+                            <i class="bi bi-graph-up-arrow"></i>
+
+                            View Full Price Intelligence
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% else %}
+
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-body text-center py-5">
+
+            <i class="bi bi-graph-up-arrow fs-1 text-muted"></i>
+
+            <h4 class="fw-bold mt-3">
+
+                No Tracked Products
+
+            </h4>
+
+            <p class="text-muted">
+
+                Add a product to start collecting
+                price intelligence.
+
+            </p>
+
+            <a
+                href="{{ url_for('add_product') }}"
+                class="btn btn-primary">
+
+                <i class="bi bi-plus-circle-fill"></i>
+
+                Add Product
+
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
 </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const charts = document.querySelectorAll(
+            ".product-price-chart"
+        );
+
+        charts.forEach(
+            function (canvas) {
+
+                const labels = JSON.parse(
+                    canvas.dataset.labels
+                );
+
+                const prices = JSON.parse(
+                    canvas.dataset.prices
+                );
+
+                new Chart(
+                    canvas,
+                    {
+
+                        type: "line",
+
+                        data: {
+
+                            labels: labels,
+
+                            datasets: [
+                                {
+
+                                    label: "Tracked Price (₹)",
+
+                                    data: prices,
+
+                                    borderWidth: 3,
+
+                                    tension: 0.3,
+
+                                    fill: false,
+
+                                    pointRadius: 4,
+
+                                    pointHoverRadius: 6
+
+                                }
+                            ]
+
+                        },
+
+                        options: {
+
+                            responsive: true,
+
+                            maintainAspectRatio: false,
+
+                            interaction: {
+
+                                intersect: false,
+
+                                mode: "index"
+
+                            },
+
+                            plugins: {
+
+                                legend: {
+
+                                    display: false
+
+                                },
+
+                                tooltip: {
+
+                                    callbacks: {
+
+                                        label: function (context) {
+
+                                            const price = Number(
+                                                context.raw
+                                            );
+
+                                            return (
+                                                "₹" +
+                                                price.toLocaleString(
+                                                    "en-IN"
+                                                )
+                                            );
+
+                                        }
+
+                                    }
+
+                                }
+
+                            },
+
+                            scales: {
+
+                                y: {
+
+                                    beginAtZero: false,
+
+                                    ticks: {
+
+                                        callback: function (value) {
+
+                                            return (
+                                                "₹" +
+                                                Number(value)
+                                                    .toLocaleString(
+                                                        "en-IN"
+                                                    )
+                                            );
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
 
 {% endblock %}

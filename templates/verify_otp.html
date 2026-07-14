@@ -1,0 +1,152 @@
+{% extends "layouts/auth.html" %}
+
+
+{% block title %}
+
+Verify Email | DealHunterAI
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="text-center">
+
+
+    <div class="mb-4">
+
+        <div
+            class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10"
+            style="
+                width: 82px;
+                height: 82px;
+            "
+        >
+
+            <i
+                class="bi bi-envelope-check-fill text-primary"
+                style="font-size: 38px;"
+            ></i>
+
+        </div>
+
+    </div>
+
+
+    <h3 class="auth-title">
+        Verify Your Email
+    </h3>
+
+
+    <p class="auth-subtitle mb-1">
+
+        We sent a 6-digit verification code to
+
+    </p>
+
+
+    <p class="fw-bold text-primary mb-4">
+
+        {{ email }}
+
+    </p>
+
+
+</div>
+
+
+<form
+    method="POST"
+    action="{{ url_for('verify_otp') }}"
+>
+
+
+    <div class="mb-4">
+
+        <input
+            type="text"
+            name="otp"
+            class="form-control text-center"
+            placeholder="000000"
+            maxlength="6"
+            minlength="6"
+            inputmode="numeric"
+            pattern="[0-9]{6}"
+            autocomplete="one-time-code"
+            autofocus
+            required
+            style="
+                font-size: 28px;
+                letter-spacing: 10px;
+                font-weight: 700;
+            "
+        >
+
+    </div>
+
+
+    <div class="d-grid">
+
+        <button
+            type="submit"
+            class="btn btn-primary auth-btn"
+        >
+
+            <i class="bi bi-shield-check me-2"></i>
+
+            Verify & Create Account
+
+        </button>
+
+    </div>
+
+
+</form>
+
+
+<div class="text-center mt-4">
+
+    <p class="text-muted mb-2">
+
+        Didn't receive the code?
+
+    </p>
+
+
+    <form
+        method="POST"
+        action="{{ url_for('resend_otp') }}"
+    >
+
+        <button
+            type="submit"
+            class="btn btn-outline-primary"
+        >
+
+            <i class="bi bi-arrow-clockwise me-1"></i>
+
+            Resend OTP
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<div class="alert alert-light border text-center mt-4 mb-0">
+
+    <small class="text-muted">
+
+        <i class="bi bi-clock me-1"></i>
+
+        Code expires in
+        <strong>10 minutes</strong>.
+
+    </small>
+
+</div>
+
+
+{% endblock %}

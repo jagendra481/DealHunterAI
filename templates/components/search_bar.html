@@ -1,48 +1,13 @@
-<form method="GET"
-      action="/products">
+<div class="position-relative mb-4">
 
-<div class="card shadow-sm border-0 mb-4">
+    <input
+        id="searchBox"
+        class="form-control form-control-lg"
+        placeholder="🔍 Search products...">
 
-    <div class="card-body">
-
-        <div class="row">
-
-            <div class="col-md-10">
-
-                <div class="input-group">
-
-                    <span class="input-group-text">
-
-                        <i class="bi bi-search"></i>
-
-                    </span>
-
-                    <input
-                        type="text"
-                        name="search"
-                        class="form-control"
-                        value="{{ search }}"
-                        placeholder="Search products...">
-
-                </div>
-
-            </div>
-
-            <div class="col-md-2">
-
-                <button
-                    class="btn btn-primary w-100">
-
-                    Search
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
+    <div
+        id="suggestions"
+        class="list-group position-absolute w-100 shadow"
+        style="z-index:1000;"></div>
 
 </div>
-
-</form>

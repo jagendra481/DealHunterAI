@@ -1,0 +1,829 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+Product Details | DealHunterAI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- PRODUCT DETAILS -->
+
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-5 text-center mb-4 mb-lg-0">
+
+                    <img
+                        src="{{ product['image'] if product['image'] else 'https://via.placeholder.com/600x400?text=DealHunterAI' }}"
+                        class="img-fluid rounded product-detail-image"
+                        alt="{{ product['name'] }}">
+
+                </div>
+
+
+                <div class="col-lg-7">
+
+                    <h2 class="fw-bold mb-3">
+
+                        {{ product["name"] }}
+
+                    </h2>
+
+
+                    <h2 class="text-success fw-bold mb-3">
+
+                        ₹ {{ "{:,.0f}".format(product["current_price"] or 0) }}
+
+                    </h2>
+
+
+                    <p>
+
+                        <i class="bi bi-star-fill text-warning"></i>
+
+                        {{ product["rating"] }}
+
+                        <span class="text-muted">
+
+                            ({{ product["reviews"] }} Reviews)
+
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>Availability:</strong>
+
+                        {{ product["availability"] or "Unknown" }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>Source:</strong>
+
+                        {{ product["source"] or "Amazon" }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>Lowest Price:</strong>
+
+                        <span class="text-success fw-bold">
+
+                            ₹ {{ "{:,.0f}".format(product["lowest_price"] or 0) }}
+
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>Highest Price:</strong>
+
+                        <span class="text-danger fw-bold">
+
+                            ₹ {{ "{:,.0f}".format(product["highest_price"] or 0) }}
+
+                        </span>
+
+                    </p>
+
+
+                    <div class="row g-2 mt-4">
+
+                        <div class="col-md-4">
+
+                            <a
+                                href="{{ product['affiliate_url'] }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-warning w-100">
+
+                                <i class="bi bi-cart-fill"></i>
+
+                                Buy on Amazon
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <form
+                                method="POST"
+                                action="{{ url_for('refresh_product', product_id=product['id']) }}">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100">
+
+                                    <i class="bi bi-arrow-repeat"></i>
+
+                                    Refresh
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <form
+                                method="POST"
+                                action="{{ url_for('delete_product', product_id=product['id']) }}"
+                                onsubmit="return confirm('Delete this product?');">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-danger w-100">
+
+                                    <i class="bi bi-trash"></i>
+
+                                    Delete
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUY RECOMMENDATION -->
+
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+
+                        <i class="bi bi-stars"></i>
+
+                        DealHunterAI Price Intelligence
+
+                    </h4>
+
+                    <p class="text-muted mb-0">
+
+                        Recommendation based on your tracked price history.
+
+                    </p>
+
+                </div>
+
+
+                {% if recommendation["recommendation"] == "BUY_NOW" %}
+
+                <span class="badge bg-success fs-6 px-4 py-3">
+
+                    🟢 BUY NOW
+
+                </span>
+
+
+                {% elif recommendation["recommendation"] == "WAIT" %}
+
+                <span class="badge bg-warning text-dark fs-6 px-4 py-3">
+
+                    🟡 WAIT
+
+                </span>
+
+
+                {% elif recommendation["recommendation"] == "EXPENSIVE" %}
+
+                <span class="badge bg-danger fs-6 px-4 py-3">
+
+                    🔴 EXPENSIVE
+
+                </span>
+
+
+                {% else %}
+
+                <span class="badge bg-secondary fs-6 px-4 py-3">
+
+                    📊 COLLECTING DATA
+
+                </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <hr class="my-4">
+
+
+            {% if recommendation["recommendation"] == "COLLECTING" %}
+
+            <div class="alert alert-info mb-0">
+
+                <h5 class="fw-bold">
+
+                    📊 Building Price Intelligence
+
+                </h5>
+
+                <p class="mb-2">
+
+                    {{ recommendation["reason"] }}
+
+                </p>
+
+                <div class="progress mt-3">
+
+    {% set scan_count = recommendation.get("scan_count", 0) %}
+
+    <progress
+        class="w-100"
+        value="{{ scan_count }}"
+        max="5">
+
+        {{ scan_count }}/5 scans
+
+    </progress>
+
+    <div class="text-center mt-2">
+
+        {{ scan_count }}/5 scans
+
+    </div>
+
+</div>
+            </div>
+
+
+            {% else %}
+
+            <div class="row g-4">
+
+                <div class="col-lg-8">
+
+                    <h5 class="fw-bold">
+
+                        Recommendation
+
+                    </h5>
+
+                    <p class="fs-5 mb-4">
+
+                        {{ recommendation["reason"] }}
+
+                    </p>
+
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <small class="text-muted">
+
+                                    Confidence Score
+
+                                </small>
+
+                                <h3 class="fw-bold mb-0 mt-2">
+
+                                    {{ recommendation["confidence"] }}%
+
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <small class="text-muted">
+
+                                    Price Trend
+
+                                </small>
+
+                                <h5 class="fw-bold mb-0 mt-2">
+
+                                    {% if recommendation["trend"] == "FALLING" %}
+
+                                    📉 Falling
+
+                                    {% elif recommendation["trend"] == "RISING" %}
+
+                                    📈 Rising
+
+                                    {% else %}
+
+                                    ➡️ Stable
+
+                                    {% endif %}
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <small class="text-muted">
+
+                                    Tracked Scans
+
+                                </small>
+
+                                <h3 class="fw-bold mb-0 mt-2">
+
+                                    {{ recommendation["scan_count"] }}
+
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="border rounded p-4 h-100">
+
+                        <h6 class="fw-bold">
+
+                            Price Opportunity
+
+                        </h6>
+
+
+                        <div class="mt-4">
+
+                            <small class="text-muted">
+
+                                Historical Low
+
+                            </small>
+
+                            <h4 class="text-success fw-bold">
+
+                                ₹ {{ "{:,.0f}".format(recommendation["lowest_price"]) }}
+
+                            </h4>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <small class="text-muted">
+
+                                Historical High
+
+                            </small>
+
+                            <h4 class="text-danger fw-bold">
+
+                                ₹ {{ "{:,.0f}".format(recommendation["highest_price"]) }}
+
+                            </h4>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <small class="text-muted">
+
+                                Above Historical Low
+
+                            </small>
+
+                            <h4 class="fw-bold">
+
+                                {{ recommendation["above_low_percent"] }}%
+
+                            </h4>
+
+                        </div>
+
+
+                        {% if recommendation["estimated_saving"] > 0 %}
+
+                        <div class="alert alert-warning mt-4 mb-0">
+
+                            Waiting for the tracked low again could save up to
+
+                            <strong>
+
+                                ₹{{ "{:,.0f}".format(recommendation["estimated_saving"]) }}
+
+                            </strong>
+
+                            based on recorded history.
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- TARGET PRICE ALERT -->
+
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h4 class="fw-bold">
+
+                        🎯 Target Price Alert
+
+                    </h4>
+
+                    <p class="text-muted mb-lg-0">
+
+                        Set your desired price and DealHunterAI
+                        will notify you on Telegram when the
+                        product reaches it.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <form
+                        method="POST"
+                        action="{{ url_for('update_target_price', product_id=product['id']) }}">
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+
+                                ₹
+
+                            </span>
+
+                            <input
+                                type="number"
+                                name="target_price"
+                                min="0"
+                                step="1"
+                                value="{{ product['target_price'] or '' }}"
+                                placeholder="Enter target price"
+                                class="form-control">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+
+                                Save Target
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    {% if product["target_price"] %}
+
+                    <div class="mt-3">
+
+                        {% if product["current_price"] <= product["target_price"] %}
+
+                        <div class="alert alert-success mb-0">
+
+                            🎉 Target reached! Current price is at or below your
+
+                            <strong>
+
+                                ₹{{ "{:,.0f}".format(product["target_price"]) }}
+
+                            </strong>
+
+                            target.
+
+                        </div>
+
+                        {% else %}
+
+                        <div class="alert alert-info mb-0">
+
+                            🔔 Watching for
+
+                            <strong>
+
+                                ₹{{ "{:,.0f}".format(product["target_price"]) }}
+
+                            </strong>
+
+                            or lower.
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRICE HISTORY -->
+
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-body p-4">
+
+            <div class="mb-4">
+
+                <h4 class="fw-bold">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+
+                    Price History
+
+                </h4>
+
+                <p class="text-muted mb-0">
+
+                    Amazon price recorded by DealHunterAI.
+
+                </p>
+
+            </div>
+
+
+            {% if history_prices %}
+
+            <div style="height: 400px;">
+
+                <canvas id="priceHistoryChart"></canvas>
+
+            </div>
+
+
+            <div
+                id="priceHistoryData"
+                data-labels='{{ history_labels | tojson }}'
+                data-prices='{{ history_prices | tojson }}'
+                hidden>
+            </div>
+
+            {% else %}
+
+            <div class="text-center py-5">
+
+                <i class="bi bi-bar-chart fs-1 text-muted"></i>
+
+                <h5 class="mt-3">
+
+                    No Price History Yet
+
+                </h5>
+
+                <p class="text-muted">
+
+                    Price data will appear after product scans.
+
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+
+
+{% if history_prices %}
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const historyData = document.getElementById(
+            "priceHistoryData"
+        );
+
+        const chartCanvas = document.getElementById(
+            "priceHistoryChart"
+        );
+
+        if (!historyData || !chartCanvas) {
+
+            console.error(
+                "Price history chart elements not found."
+            );
+
+            return;
+
+        }
+
+
+        const historyLabels = JSON.parse(
+            historyData.dataset.labels
+        );
+
+
+        const historyPrices = JSON.parse(
+            historyData.dataset.prices
+        );
+
+
+        new Chart(
+            chartCanvas,
+            {
+
+                type: "line",
+
+                data: {
+
+                    labels: historyLabels,
+
+                    datasets: [
+                        {
+
+                            label: "Amazon Price (₹)",
+
+                            data: historyPrices,
+
+                            borderWidth: 3,
+
+                            tension: 0.3,
+
+                            fill: false,
+
+                            pointRadius: 5,
+
+                            pointHoverRadius: 7
+
+                        }
+                    ]
+
+                },
+
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+                    interaction: {
+
+                        intersect: false,
+
+                        mode: "index"
+
+                    },
+
+
+                    plugins: {
+
+                        legend: {
+
+                            display: true
+
+                        },
+
+
+                        tooltip: {
+
+                            callbacks: {
+
+                                label: function (context) {
+
+                                    const price = Number(
+                                        context.raw
+                                    );
+
+                                    return (
+                                        "₹" +
+                                        price.toLocaleString(
+                                            "en-IN"
+                                        )
+                                    );
+
+                                }
+
+                            }
+
+                        }
+
+                    },
+
+
+                    scales: {
+
+                        y: {
+
+                            beginAtZero: false,
+
+                            ticks: {
+
+                                callback: function (value) {
+
+                                    return (
+                                        "₹" +
+                                        Number(
+                                            value
+                                        ).toLocaleString(
+                                            "en-IN"
+                                        )
+                                    );
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+{% endif %}
+
+{% endblock %}

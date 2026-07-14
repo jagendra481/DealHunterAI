@@ -1,0 +1,259 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+Profile | DealHunterAI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+
+        <div class="col-xl-8 col-lg-9">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <!-- Profile Header -->
+
+                    <div class="text-center mb-4">
+
+                        <div
+                            class="profile-avatar mx-auto mb-3 d-flex align-items-center justify-content-center">
+
+                            {{ user.name[0] | upper }}
+
+                        </div>
+
+                        <h2 class="fw-bold mb-1">
+
+                            {{ user.name }}
+
+                        </h2>
+
+                        <p class="text-muted mb-0">
+
+                            <i class="bi bi-envelope"></i>
+
+                            {{ user.email }}
+
+                        </p>
+
+                    </div>
+
+
+                    <hr class="my-4">
+
+
+                    <!-- User Statistics -->
+
+                    <div class="row g-4 text-center">
+
+                        <!-- Products -->
+
+                        <div class="col-md-4">
+
+                            <div class="profile-stat-card">
+
+                                <div class="profile-stat-icon">
+
+                                    <i class="bi bi-box-seam"></i>
+
+                                </div>
+
+                                <h3 class="fw-bold mt-3 mb-1">
+
+                                    {{ total_products }}
+
+                                </h3>
+
+                                <p class="text-muted mb-0">
+
+                                    Products Tracked
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Average Rating -->
+
+                        <div class="col-md-4">
+
+                            <div class="profile-stat-card">
+
+                                <div class="profile-stat-icon">
+
+                                    <i class="bi bi-star-fill"></i>
+
+                                </div>
+
+                                <h3 class="fw-bold mt-3 mb-1">
+
+                                    {{ avg_rating }}
+
+                                </h3>
+
+                                <p class="text-muted mb-0">
+
+                                    Average Rating
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Total Value -->
+
+                        <div class="col-md-4">
+
+                            <div class="profile-stat-card">
+
+                                <div class="profile-stat-icon">
+
+                                    <i class="bi bi-currency-rupee"></i>
+
+                                </div>
+
+                                <h3 class="fw-bold mt-3 mb-1">
+
+                                    ₹ {{ "{:,.0f}".format(total_value) }}
+
+                                </h3>
+
+                                <p class="text-muted mb-0">
+
+                                    Total Tracked Value
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <hr class="my-5">
+
+
+                    <!-- Account Information -->
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold mb-3">
+
+                            <i class="bi bi-person-lines-fill"></i>
+
+                            Account Information
+
+                        </h5>
+
+
+                        <div class="account-info-row">
+
+                            <span class="text-muted">
+
+                                Name
+
+                            </span>
+
+                            <strong>
+
+                                {{ user.name }}
+
+                            </strong>
+
+                        </div>
+
+
+                        <div class="account-info-row">
+
+                            <span class="text-muted">
+
+                                Email
+
+                            </span>
+
+                            <strong>
+
+                                {{ user.email }}
+
+                            </strong>
+
+                        </div>
+
+
+                        <div class="account-info-row">
+
+                            <span class="text-muted">
+
+                                Account Type
+
+                            </span>
+
+                            <span class="badge bg-primary">
+
+                                DealHunter User
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Actions -->
+
+                    <div class="d-grid gap-3">
+
+                        <a
+                            href="{{ url_for('settings') }}"
+                            class="btn btn-primary btn-lg">
+
+                            <i class="bi bi-gear-fill"></i>
+
+                            Account Settings
+
+                        </a>
+
+                        <a
+                            href="{{ url_for('products') }}"
+                            class="btn btn-outline-primary">
+
+                            <i class="bi bi-box-seam"></i>
+
+                            View My Products
+
+                        </a>
+
+                        <a
+                            href="{{ url_for('logout') }}"
+                            class="btn btn-outline-danger">
+
+                            <i class="bi bi-box-arrow-right"></i>
+
+                            Logout
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

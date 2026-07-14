@@ -1,20 +1,34 @@
-from dataclasses import dataclass
 from flask_login import UserMixin
 
 
-@dataclass
 class User(UserMixin):
 
-    id: int = None
+    def __init__(
+        self,
+        id=None,
+        name="",
+        email="",
+        password_hash="",
+        telegram_chat_id="",
+        auth_provider="password",
+        google_id="",
+        is_admin=0,
+        is_active=1
+    ):
 
-    name: str = ""
+        self.id = id
+        self.name = name
+        self.email = email
+        self.password_hash = password_hash
+        self.telegram_chat_id = telegram_chat_id
 
-    email: str = ""
+        self.auth_provider = auth_provider
+        self.google_id = google_id
 
-    password_hash: str = ""
+        self.is_admin = bool(is_admin)
+        self._is_active = bool(is_active)
 
-    telegram_chat_id: str = ""
+    @property
+    def is_active(self):
 
-    is_admin: bool = False
-
-    is_active: bool = True
+        return self._is_active
