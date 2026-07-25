@@ -377,9 +377,12 @@ def register_auth_routes(app):
             _scheme=scheme
         )
 
+        print(f"🔗 Google OAuth Redirect URI: {redirect_uri}")
+
         return google.authorize_redirect(
             redirect_uri
         )
+
 
     # ==========================================================
     # GOOGLE CALLBACK
@@ -457,14 +460,14 @@ def register_auth_routes(app):
             )
 
             flash(
-                "Google sign-in failed. "
-                "Please try again.",
+                f"Google sign-in failed: {error}",
                 "danger"
             )
 
             return redirect(
                 url_for("login")
             )
+
 
         finally:
 
