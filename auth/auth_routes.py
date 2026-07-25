@@ -366,9 +366,15 @@ def register_auth_routes(app):
                 url_for("dashboard")
             )
 
+        # Force HTTPS in production / behind proxies, keep HTTP for localhost
+        scheme = "https"
+        if "localhost" in request.host or "127.0.0.1" in request.host:
+            scheme = "http"
+
         redirect_uri = url_for(
             "google_callback",
-            _external=True
+            _external=True,
+            _scheme=scheme
         )
 
         return google.authorize_redirect(
