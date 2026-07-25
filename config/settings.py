@@ -16,11 +16,11 @@ def get_required_env(name):
 
     if not value:
 
-        raise ValueError(
-            f"{name} not found in environment variables"
-        )
+        print(f"⚠️ Warning: {name} not found in environment variables")
+        return ""
 
     return value
+
 
 
 # ==========================================================
