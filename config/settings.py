@@ -19,7 +19,8 @@ def get_required_env(name):
         print(f"⚠️ Warning: {name} not found in environment variables")
         return ""
 
-    return value
+    return value.strip().strip('"').strip("'")
+
 
 
 
