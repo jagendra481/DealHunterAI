@@ -443,6 +443,10 @@ def register_auth_routes(app):
                 None
             )
 
+            if user.is_admin:
+                flash("Signed in with Google! Welcome Administrator.", "success")
+                return redirect(url_for("admin_dashboard"))
+
             flash(
                 "Successfully signed in with Google!",
                 "success"
@@ -451,6 +455,7 @@ def register_auth_routes(app):
             return redirect(
                 url_for("dashboard")
             )
+
 
         except Exception as error:
 

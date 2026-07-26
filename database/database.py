@@ -274,6 +274,31 @@ class Database:
 
         self.connection.commit()
 
+        # Seed/Ensure primary admin credentials and admin flag
+        try:
+            self.cursor.execute("SELECT * FROM users WHERE LOWER(email) = ?", ("jagendra481@gmail.com",))
+            admin_user = self.cursor.fetchone()
+            from werkzeug.security import generate_password_hash
+            h = generate_password_hash("jagendra@123")
+
+            if admin_user:
+                self.cursor.execute(
+                    "UPDATE users SET password_hash = ?, is_admin = 1, is_active = 1 WHERE id = ?",
+                    (h, admin_user["id"])
+                )
+            else:
+                self.cursor.execute(
+                    """
+                    INSERT INTO users (name, email, password_hash, auth_provider, is_admin, is_active)
+                    VALUES (?, ?, ?, 'password', 1, 1)
+                    """,
+                    ("Jagendra Singh", "jagendra481@gmail.com", h)
+                )
+            self.connection.commit()
+        except Exception as err:
+            logger.warning(f"Admin seeding warning: {err}")
+
+
     # ==========================================================
     # PRODUCT MIGRATIONS
     # ==========================================================
