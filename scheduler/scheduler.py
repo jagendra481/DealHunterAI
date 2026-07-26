@@ -15,7 +15,10 @@ from engine.deal_engine import DealEngine
 
 
 
-CHECK_INTERVAL_MINUTES = 60
+import os
+
+CHECK_INTERVAL_MINUTES = int(os.getenv("SCAN_INTERVAL_MINUTES", "15"))
+
 
 
 class DealScheduler:
