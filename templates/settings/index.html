@@ -346,39 +346,6 @@ Settings | DealHunterAI
                 </div>
 
 
-                <!-- CHANGE PASSWORD -->
-                <div class="card border-0 shadow-sm mb-4">
-                    <div class="card-body p-4 p-md-5">
-                        <h5 class="fw-bold mb-1">
-                            <i class="bi bi-key-fill me-2"></i>
-                            Security & Password
-                        </h5>
-                        <p class="text-muted mb-4">
-                            Update your login password securely.
-                        </p>
-
-                        <form method="POST" action="{{ url_for('change_password_route') }}">
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Current Password</label>
-                                <input type="password" name="current_password" class="form-control form-control-lg" placeholder="Enter current password">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">New Password</label>
-                                <input type="password" name="new_password" class="form-control form-control-lg" placeholder="Enter new password (min. 6 characters)" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Confirm New Password</label>
-                                <input type="password" name="confirm_password" class="form-control form-control-lg" placeholder="Confirm new password" required>
-                            </div>
-                            <button type="submit" class="btn btn-outline-primary">
-                                <i class="bi bi-shield-lock me-1"></i> Update Password
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-
-
                 <!-- SAVE BUTTON -->
 
                 <div class="d-grid mb-4">
@@ -397,6 +364,39 @@ Settings | DealHunterAI
                 </div>
 
             </form>
+
+
+            <!-- CHANGE PASSWORD -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4 p-md-5">
+                    <h5 class="fw-bold mb-1">
+                        <i class="bi bi-key-fill me-2"></i>
+                        Security & Password
+                    </h5>
+                    <p class="text-muted mb-4">
+                        Update your login password securely.
+                    </p>
+
+                    <form method="POST" action="{{ url_for('change_password_route') }}">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Current Password</label>
+                            <input type="password" name="current_password" class="form-control form-control-lg" placeholder="Enter current password">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">New Password</label>
+                            <input type="password" name="new_password" class="form-control form-control-lg" placeholder="Enter new password (min. 6 characters)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Confirm New Password</label>
+                            <input type="password" name="confirm_password" class="form-control form-control-lg" placeholder="Confirm new password" required>
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="bi bi-shield-lock me-1"></i> Update Password
+                        </button>
+                    </form>
+                </div>
+            </div>
+
 
 
             <!-- TELEGRAM TEST -->
