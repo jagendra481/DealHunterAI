@@ -91,143 +91,91 @@ Settings | DealHunterAI
 
 
                 <!-- TELEGRAM CONNECTION -->
-
                 <div class="card border-0 shadow-sm mb-4">
-
                     <div class="card-body p-4 p-md-5">
 
-                        <div
-                            class="d-flex justify-content-between align-items-start mb-4"
-                        >
-
+                        <!-- HEADER -->
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 pb-3 border-bottom">
                             <div>
-
-                                <h5 class="fw-bold mb-1">
-
-                                    <i class="bi bi-telegram me-2"></i>
-
-                                    Telegram Connection
-
+                                <h5 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                                    <i class="bi bi-telegram text-primary fs-4"></i>
+                                    Telegram Price Drop Alerts
                                 </h5>
-
-                                <p class="text-muted mb-0">
-                                    Connect Telegram to receive DealHunterAI alerts.
+                                <p class="text-muted mb-0 small">
+                                    Connect your Telegram account to receive instant price drop and deal notifications.
                                 </p>
-
                             </div>
-
 
                             {% if user.telegram_chat_id %}
-
-                            <span class="badge bg-success">
-
-                                <i class="bi bi-check-circle-fill"></i>
-
-                                Connected
-
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill font-monospace fw-bold">
+                                <i class="bi bi-check-circle-fill me-1"></i> Connected
                             </span>
-
                             {% else %}
-
-                            <span class="badge bg-secondary">
-
-                                Not Connected
-
+                            <span class="badge bg-secondary-subtle text-secondary border px-3 py-2 rounded-pill font-monospace fw-bold">
+                                <i class="bi bi-x-circle me-1"></i> Not Connected
                             </span>
-
                             {% endif %}
+                        </div>
 
-                        <!-- 1-CLICK DIRECT TELEGRAM CONNECT -->
-                        <div class="p-3 bg-primary-subtle border border-primary-subtle rounded-4 mb-4">
-                            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                                <div>
-                                    <strong class="d-block text-primary-emphasis mb-1">
-                                        <i class="bi bi-telegram me-1"></i> 1-Click Direct Telegram Connect
-                                    </strong>
-                                    <span class="small text-secondary">
-                                        Tap below to open Telegram & instantly link your account for price drop alerts.
-                                    </span>
+                        <!-- 1-CLICK ACTION BANNER -->
+                        <div class="p-4 bg-primary-subtle border border-primary-subtle rounded-4 mb-4">
+                            <div class="row align-items-center g-3">
+                                <div class="col-lg-8">
+                                    <h6 class="fw-bold text-primary-emphasis mb-1">
+                                        <i class="bi bi-lightning-charge-fill text-warning me-1"></i> 1-Click Telegram Channel & Bot Link
+                                    </h6>
+                                    <p class="small text-secondary mb-0">
+                                        Open the official DealHunterAI Telegram channel to join instantly or connect your personal chat.
+                                    </p>
                                 </div>
-                                <a href="https://t.me/c/3941006827/1" target="_blank" class="btn btn-primary btn-sm fw-bold px-3 py-2 shadow-sm rounded-3">
-                                    <i class="bi bi-send-fill me-1"></i> Open Telegram Channel
-                                </a>
+                                <div class="col-lg-4 text-lg-end">
+                                    <a href="https://t.me/c/3941006827/1" target="_blank" class="btn btn-primary btn-md fw-bold shadow-sm rounded-3 px-4 py-2 w-100 w-lg-auto">
+                                        <i class="bi bi-send-fill me-2"></i> Join Telegram Channel
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="mb-4">
+                        <!-- INPUT & INSTRUCTIONS -->
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">
+                                        Telegram Chat ID
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="telegram_chat_id"
+                                        class="form-control form-control-lg"
+                                        value="{{ user.telegram_chat_id or '' }}"
+                                        placeholder="e.g. -1003941006827 or your Chat ID"
+                                    >
+                                    <small class="text-muted mt-1 d-block">
+                                        Enter your Telegram Chat ID or Group/Channel ID to receive direct alerts.
+                                    </small>
+                                </div>
+                            </div>
 
-
-                            <label class="form-label fw-semibold">
-                                Telegram Chat ID
-                            </label>
-
-                            <input
-                                type="text"
-                                name="telegram_chat_id"
-                                class="form-control form-control-lg"
-                                value="{{ user.telegram_chat_id or '' }}"
-                                placeholder="Enter Telegram Chat ID"
-                            >
-
-                            <small class="text-muted">
-                                Save your Chat ID before testing Telegram.
-                            </small>
-
-                        </div>
-
-
-                        <!-- CHAT ID GUIDE -->
-
-                        <div class="alert alert-light border mb-0">
-
-                            <h6 class="fw-bold mb-3">
-
-                                <i class="bi bi-question-circle-fill me-2"></i>
-
-                                How to get your Telegram Chat ID?
-
-                            </h6>
-
-                            <ol class="mb-3">
-
-                                <li class="mb-2">
-                                    Open Telegram.
-                                </li>
-
-                                <li class="mb-2">
-                                    Search for the DealHunterAI Telegram bot.
-                                </li>
-
-                                <li class="mb-2">
-                                    Open the bot and tap
-                                    <strong>Start</strong>.
-                                </li>
-
-                                <li class="mb-2">
-                                    Send the message
-                                    <code>/chatid</code>.
-                                </li>
-
-                                <li>
-                                    Copy the Chat ID provided by the bot
-                                    and paste it above.
-                                </li>
-
-                            </ol>
-
-                            <small class="text-muted">
-
-                                After saving your Chat ID, use the
-                                Telegram test button below to verify
-                                your connection.
-
-                            </small>
-
+                            <div class="col-lg-6">
+                                <div class="p-3 bg-light rounded-4 border">
+                                    <h6 class="fw-bold mb-2 small text-uppercase text-muted">
+                                        <i class="bi bi-question-circle-fill me-1"></i> How to get your Chat ID?
+                                    </h6>
+                                    <ol class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1">Open Telegram & search for <strong>@userinfobot</strong> or <strong>DealHunterAI Bot</strong>.</li>
+                                        <li class="mb-1">Send the message <code>/start</code> or <code>/chatid</code>.</li>
+                                        <li>Copy your Chat ID (e.g. <code>123456789</code>) and paste it on the left.</li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
-
                 </div>
+
+
+                <!-- NOTIFICATION PREFERENCES -->
+
 
 
                 <!-- NOTIFICATION PREFERENCES -->
