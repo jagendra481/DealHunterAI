@@ -6,7 +6,9 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 
 from dashboard.routes import register_routes
 from auth.auth_routes import register_auth_routes
+from admin.admin_routes import register_admin_routes
 from auth.login_manager import login_manager
+
 
 
 # ==========================================================
@@ -73,6 +75,8 @@ login_manager.init_app(app)
 
 register_routes(app)
 register_auth_routes(app)
+register_admin_routes(app)
+
 
 
 # ==========================================================

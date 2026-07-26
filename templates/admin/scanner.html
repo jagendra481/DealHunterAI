@@ -1,0 +1,104 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}Scan Engine Diagnostics - Admin Portal{% endblock %}
+
+{% block content %}
+<div class="container-fluid pb-5">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-cpu-fill text-warning me-2"></i>Scanner Engine Diagnostics
+            </h2>
+            <p class="text-muted mb-0">Monitor background scan execution logs, duration performance, and manual controls</p>
+        </div>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary btn-sm">
+            &larr; Back to Admin Overview
+        </a>
+    </div>
+
+    <!-- Manual Scan Banner -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4 p-4 text-white" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h4 class="fw-bold mb-2">⚡ Trigger On-Demand System Scan</h4>
+                <p class="mb-0 text-white-50">
+                    Instantly starts a full scanning run across all active user products in a background worker thread. Price changes will generate price history entries and alert notifications automatically.
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <form action="{{ url_for('admin_trigger_scan') }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-warning btn-lg fw-semibold shadow-sm">
+                        <i class="bi bi-play-fill me-2"></i>Trigger Scan Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scan Runs Table -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold mb-0">Historical Scan Runs</h5>
+            <span class="badge bg-light text-dark">{{ scans|length }} Runs Recorded</span>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Run ID</th>
+                            <th>Started At</th>
+                            <th>Status</th>
+                            <th>Checked / Total</th>
+                            <th>Failed</th>
+                            <th>Duration (s)</th>
+                            <th>Error Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for scan in scans %}
+                        <tr>
+                            <td class="fw-bold text-muted">#{{ scan.id }}</td>
+                            <td class="fw-semibold">{{ scan.started_at[:19] }}</td>
+                            <td>
+                                {% if scan.status == 'COMPLETED' %}
+                                <span class="badge bg-success-subtle text-success"><i class="bi bi-check-circle me-1"></i>Completed</span>
+                                {% elif scan.status == 'RUNNING' %}
+                                <span class="badge bg-warning-subtle text-warning"><i class="bi bi-hourglass-split me-1"></i>Running</span>
+                                {% else %}
+                                <span class="badge bg-danger-subtle text-danger"><i class="bi bi-exclamation-triangle me-1"></i>{{ scan.status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <span class="fw-bold">{{ scan.checked_products or 0 }}</span> / {{ scan.total_products or 0 }}
+                            </td>
+                            <td>
+                                {% if scan.failed_products and scan.failed_products > 0 %}
+                                <span class="badge bg-danger-subtle text-danger">{{ scan.failed_products }}</span>
+                                {% else %}
+                                <span class="text-muted">0</span>
+                                {% endif %}
+                            </td>
+                            <td class="font-monospace">
+                                {{ "%.2f"|format(scan.duration_seconds or 0) }}s
+                            </td>
+                            <td class="small text-danger text-truncate" style="max-width: 250px;">
+                                {{ scan.error_message or '-' }}
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="7" class="text-center py-5 text-muted">
+                                <i class="bi bi-cpu fs-1 d-block mb-2 text-muted"></i>
+                                No scan runs recorded yet. Click "Trigger Scan Now" to perform the initial scan.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -92,7 +92,18 @@
 
         </a>
 
+        {% if current_user.is_admin %}
+        <a href="{{ url_for('admin_dashboard') }}"
+           class="menu-item {% if request.endpoint and 'admin' in request.endpoint %}active{% endif %}">
+
+            <i class="bi bi-shield-lock-fill text-warning"></i>
+
+            <span>Admin Portal</span>
+
+        </a>
+        {% endif %}
     </div>
+
 
 
     <!-- Sidebar Footer -->

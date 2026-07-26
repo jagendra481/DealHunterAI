@@ -1348,6 +1348,112 @@ class Database:
         self.connection.commit()
 
     # ==========================================================
+    # ADMIN METHODS
+    # ==========================================================
+
+    def get_admin_stats(self):
+        self.cursor.execute("SELECT COUNT(*) AS count FROM users")
+        total_users = self.cursor.fetchone()["count"]
+
+        self.cursor.execute("SELECT COUNT(*) AS count FROM users WHERE is_active = 1")
+        active_users = self.cursor.fetchone()["count"]
+
+        self.cursor.execute("SELECT COUNT(*) AS count FROM products WHERE active = 1")
+        total_products = self.cursor.fetchone()["count"]
+
+        self.cursor.execute("SELECT COUNT(*) AS count FROM price_history")
+        total_price_checks = self.cursor.fetchone()["count"]
+
+        self.cursor.execute("SELECT COUNT(*) AS count FROM scan_runs")
+        total_scan_runs = self.cursor.fetchone()["count"]
+
+        self.cursor.execute("SELECT * FROM scan_runs ORDER BY id DESC LIMIT 1")
+        last_scan = self.cursor.fetchone()
+
+        return {
+            "total_users": total_users,
+            "active_users": active_users,
+            "total_products": total_products,
+            "total_price_checks": total_price_checks,
+            "total_scan_runs": total_scan_runs,
+            "last_scan": dict(last_scan) if last_scan else None
+        }
+
+    def get_all_users_admin(self, search=None):
+        if search and search.strip():
+            query_param = f"%{search.strip().lower()}%"
+            self.cursor.execute(
+                """
+                SELECT u.*, COUNT(p.id) AS product_count
+                FROM users u
+                LEFT JOIN products p ON u.id = p.user_id AND p.active = 1
+                WHERE LOWER(u.name) LIKE ? OR LOWER(u.email) LIKE ?
+                GROUP BY u.id
+                ORDER BY u.id DESC
+                """,
+                (query_param, query_param)
+            )
+        else:
+            self.cursor.execute(
+                """
+                SELECT u.*, COUNT(p.id) AS product_count
+                FROM users u
+                LEFT JOIN products p ON u.id = p.user_id AND p.active = 1
+                GROUP BY u.id
+                ORDER BY u.id DESC
+                """
+            )
+        return self.cursor.fetchall()
+
+    def toggle_user_active_status(self, user_id):
+        user = self.get_user_by_id(user_id)
+        if not user:
+            raise Exception("User not found.")
+        new_status = 0 if user["is_active"] else 1
+        self.cursor.execute(
+            "UPDATE users SET is_active = ? WHERE id = ?",
+            (new_status, user_id)
+        )
+        self.connection.commit()
+        return new_status
+
+    def toggle_user_admin_status(self, user_id):
+        user = self.get_user_by_id(user_id)
+        if not user:
+            raise Exception("User not found.")
+        new_status = 0 if user["is_admin"] else 1
+        self.cursor.execute(
+            "UPDATE users SET is_admin = ? WHERE id = ?",
+            (new_status, user_id)
+        )
+        self.connection.commit()
+        return new_status
+
+    def get_all_global_products_admin(self, search=None):
+        if search and search.strip():
+            query_param = f"%{search.strip().lower()}%"
+            self.cursor.execute(
+                """
+                SELECT p.*, u.name AS user_name, u.email AS user_email
+                FROM products p
+                JOIN users u ON p.user_id = u.id
+                WHERE LOWER(p.name) LIKE ? OR LOWER(p.asin) LIKE ? OR LOWER(u.email) LIKE ?
+                ORDER BY p.id DESC
+                """,
+                (query_param, query_param, query_param)
+            )
+        else:
+            self.cursor.execute(
+                """
+                SELECT p.*, u.name AS user_name, u.email AS user_email
+                FROM products p
+                JOIN users u ON p.user_id = u.id
+                ORDER BY p.id DESC
+                """
+            )
+        return self.cursor.fetchall()
+
+    # ==========================================================
     # CLOSE
     # ==========================================================
 
@@ -1362,3 +1468,4 @@ class Database:
             logger.info(
                 "Database Connection Closed"
             )
+

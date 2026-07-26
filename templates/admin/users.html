@@ -1,0 +1,128 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}User Management - Admin Portal{% endblock %}
+
+{% block content %}
+<div class="container-fluid pb-5">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-people-fill text-primary me-2"></i>User Management
+            </h2>
+            <p class="text-muted mb-0">Audit user accounts, permissions, and status controls</p>
+        </div>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary btn-sm">
+            &larr; Back to Admin Overview
+        </a>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4 p-3 bg-white">
+        <form action="{{ url_for('admin_users') }}" method="GET" class="row g-2 align-items-center">
+            <div class="col-md-10">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-0"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" name="q" class="form-control bg-light border-0" placeholder="Search users by name or email..." value="{{ search_query }}">
+                </div>
+            </div>
+            <div class="col-md-2 d-grid">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Users Table -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>User Name</th>
+                            <th>Email Address</th>
+                            <th>Auth Provider</th>
+                            <th>Tracked Products</th>
+                            <th>Role</th>
+                            <th>Account Status</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for u in users %}
+                        <tr>
+                            <td class="fw-bold text-muted">#{{ u.id }}</td>
+                            <td>
+                                <div class="fw-semibold">{{ u.name }}</div>
+                            </td>
+                            <td>{{ u.email }}</td>
+                            <td>
+                                {% if u.auth_provider == 'google' %}
+                                <span class="badge bg-danger-subtle text-danger"><i class="bi bi-google me-1"></i>Google</span>
+                                {% else %}
+                                <span class="badge bg-secondary-subtle text-secondary"><i class="bi bi-key me-1"></i>Password</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <span class="badge bg-primary-subtle text-primary fw-bold">{{ u.product_count }} items</span>
+                            </td>
+                            <td>
+                                {% if u.is_admin %}
+                                <span class="badge bg-warning text-dark"><i class="bi bi-shield-check me-1"></i>Admin</span>
+                                {% else %}
+                                <span class="badge bg-light text-dark">User</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if u.is_active %}
+                                <span class="badge bg-success-subtle text-success">Active</span>
+                                {% else %}
+                                <span class="badge bg-danger-subtle text-danger">Blocked</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-end">
+                                <div class="d-inline-flex gap-1">
+                                    <!-- Toggle Active/Block -->
+                                    <form action="{{ url_for('admin_toggle_user_status', user_id=u.id) }}" method="POST" class="d-inline">
+                                        {% if u.is_active %}
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Block User" {% if u.id == current_user.id %}disabled{% endif %}>
+                                            <i class="bi bi-slash-circle me-1"></i>Block
+                                        </button>
+                                        {% else %}
+                                        <button type="submit" class="btn btn-outline-success btn-sm" title="Unblock User">
+                                            <i class="bi bi-check-circle me-1"></i>Unblock
+                                        </button>
+                                        {% endif %}
+                                    </form>
+
+                                    <!-- Toggle Admin Role -->
+                                    <form action="{{ url_for('admin_toggle_user_admin', user_id=u.id) }}" method="POST" class="d-inline">
+                                        {% if u.is_admin %}
+                                        <button type="submit" class="btn btn-outline-warning btn-sm" title="Revoke Admin" {% if u.id == current_user.id %}disabled{% endif %}>
+                                            <i class="bi bi-shield-minus me-1"></i>Remove Admin
+                                        </button>
+                                        {% else %}
+                                        <button type="submit" class="btn btn-outline-primary btn-sm" title="Make Admin">
+                                            <i class="bi bi-shield-plus me-1"></i>Grant Admin
+                                        </button>
+                                        {% endif %}
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="8" class="text-center py-5 text-muted">
+                                <i class="bi bi-people fs-1 d-block mb-2 text-muted"></i>
+                                No users found matching your search query.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}Global Product Control - Admin Portal{% endblock %}
+
+{% block content %}
+<div class="container-fluid pb-5">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-box-seam-fill text-success me-2"></i>Global Product Control
+            </h2>
+            <p class="text-muted mb-0">Audit, refresh metadata, or remove tracked products across all user accounts</p>
+        </div>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary btn-sm">
+            &larr; Back to Admin Overview
+        </a>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4 p-3 bg-white">
+        <form action="{{ url_for('admin_products') }}" method="GET" class="row g-2 align-items-center">
+            <div class="col-md-10">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-0"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" name="q" class="form-control bg-light border-0" placeholder="Search products by title, ASIN, or owner email..." value="{{ search_query }}">
+                </div>
+            </div>
+            <div class="col-md-2 d-grid">
+                <button type="submit" class="btn btn-success">Filter Products</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Products Table -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Info</th>
+                            <th>Owner</th>
+                            <th>Source</th>
+                            <th>Current Price</th>
+                            <th>Lowest / Highest</th>
+                            <th>Last Checked</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in products %}
+                        <tr>
+                            <td class="fw-bold text-muted">#{{ p.id }}</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    {% if p.image %}
+                                    <img src="{{ p.image }}" alt="" style="width: 42px; height: 42px; object-fit: contain;" class="rounded border p-1">
+                                    {% else %}
+                                    <div class="bg-light rounded p-2 text-muted"><i class="bi bi-box fs-4"></i></div>
+                                    {% endif %}
+                                    <div style="max-width: 300px;">
+                                        <a href="{{ url_for('product_details', product_id=p.id) }}" class="fw-semibold text-dark text-decoration-none text-truncate d-block" title="{{ p.name }}">
+                                            {{ p.name }}
+                                        </a>
+                                        <small class="text-muted">ASIN: <code class="text-dark">{{ p.asin or 'N/A' }}</code></small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-semibold small">{{ p.user_name }}</div>
+                                <div class="text-muted fs-8">{{ p.user_email }}</div>
+                            </td>
+                            <td>
+                                <span class="badge bg-primary-subtle text-primary text-uppercase">{{ p.source or 'Amazon' }}</span>
+                            </td>
+                            <td>
+                                <span class="fw-bold fs-6 text-success">₹{{ "%.2f"|format(p.current_price or 0) }}</span>
+                            </td>
+                            <td class="small">
+                                <div class="text-success"><i class="bi bi-arrow-down-short"></i>₹{{ "%.2f"|format(p.lowest_price or 0) }}</div>
+                                <div class="text-danger"><i class="bi bi-arrow-up-short"></i>₹{{ "%.2f"|format(p.highest_price or 0) }}</div>
+                            </td>
+                            <td class="small text-muted">
+                                {{ p.last_checked[:16] if p.last_checked else 'Pending' }}
+                            </td>
+                            <td class="text-end">
+                                <div class="d-inline-flex gap-1">
+                                    <!-- Force Refresh -->
+                                    <form action="{{ url_for('admin_refresh_product', product_id=p.id) }}" method="POST" class="d-inline">
+                                        <button type="submit" class="btn btn-outline-primary btn-sm" title="Force Refresh Metadata">
+                                            <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+                                        </button>
+                                    </form>
+
+                                    <!-- Delete Product -->
+                                    <form action="{{ url_for('admin_delete_product', product_id=p.id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to permanently delete this product?');">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Product">
+                                            <i class="bi bi-trash me-1"></i>Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="8" class="text-center py-5 text-muted">
+                                <i class="bi bi-box-seam fs-1 d-block mb-2 text-muted"></i>
+                                No products found matching criteria.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
