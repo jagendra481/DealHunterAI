@@ -146,14 +146,22 @@ Settings | DealHunterAI
                                     <input
                                         type="text"
                                         name="telegram_chat_id"
-                                        class="form-control form-control-lg"
+                                        class="form-control form-control-lg mb-2"
                                         value="{{ user.telegram_chat_id or '' }}"
                                         placeholder="e.g. -1003941006827 or your Chat ID"
                                     >
-                                    <small class="text-muted mt-1 d-block">
+                                    <small class="text-muted mb-3 d-block">
                                         Enter your Telegram Chat ID or Group/Channel ID to receive direct alerts.
                                     </small>
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-outline-primary fw-bold shadow-sm w-100"
+                                    >
+                                        <i class="bi bi-shield-check me-1"></i> Save Telegram Settings
+                                    </button>
                                 </div>
+
                             </div>
 
                             <div class="col-lg-6">
