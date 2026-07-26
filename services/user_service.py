@@ -441,6 +441,22 @@ class UserService:
             price_drop_alerts
         )
 
+    def change_password(self, user_id, current_password, new_password):
+        user_row = self.db.get_user_by_id(user_id)
+        if not user_row:
+            raise Exception("User not found.")
+
+        if user_row["password_hash"]:
+            if not check_password_hash(user_row["password_hash"], current_password or ""):
+                raise Exception("Current password is incorrect.")
+
+        if len(new_password or "") < 6:
+            raise Exception("New password must be at least 6 characters long.")
+
+        new_hash = generate_password_hash(new_password)
+        self.db.update_user_password(user_id, new_hash)
+
+
     # ==========================================================
     # VALIDATE REGISTRATION
     # ==========================================================

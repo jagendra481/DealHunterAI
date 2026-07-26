@@ -924,3 +924,26 @@ Notification preferences are configured in your account.
 
             service.close()
 
+    @app.route("/change-password", methods=["POST"])
+    @login_required
+    def change_password_route():
+        current_pass = request.form.get("current_password", "").strip()
+        new_pass = request.form.get("new_password", "").strip()
+        confirm_pass = request.form.get("confirm_password", "").strip()
+
+        if new_pass != confirm_pass:
+            flash("New passwords do not match.", "danger")
+            return redirect(url_for("settings"))
+
+        service = UserService()
+        try:
+            service.change_password(current_user.id, current_pass, new_pass)
+            flash("Password updated successfully!", "success")
+        except Exception as error:
+            flash(str(error), "danger")
+        finally:
+            service.close()
+
+        return redirect(url_for("settings"))
+
+

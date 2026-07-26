@@ -488,6 +488,18 @@ class Database:
                 "User not found."
             )
 
+    def update_user_password(self, user_id, password_hash):
+        self.cursor.execute(
+            """
+            UPDATE users
+            SET password_hash = ?
+            WHERE id = ?
+            """,
+            (password_hash, user_id)
+        )
+        self.connection.commit()
+
+
     # ==========================================================
     # PRODUCT CREATE
     # ==========================================================

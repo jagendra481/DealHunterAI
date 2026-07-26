@@ -199,11 +199,15 @@ Profile | DealHunterAI
 
                             </span>
 
-                            <span class="badge bg-primary">
-
-                                DealHunter User
-
+                            {% if current_user.is_admin %}
+                            <span class="badge bg-warning text-dark fw-bold fs-7">
+                                <i class="bi bi-shield-check me-1"></i>DealHunter Administrator
                             </span>
+                            {% else %}
+                            <span class="badge bg-primary">
+                                DealHunter User
+                            </span>
+                            {% endif %}
 
                         </div>
 
@@ -213,6 +217,16 @@ Profile | DealHunterAI
                     <!-- Actions -->
 
                     <div class="d-grid gap-3">
+
+                        {% if current_user.is_admin %}
+                        <a
+                            href="{{ url_for('admin_dashboard') }}"
+                            class="btn btn-warning btn-lg fw-bold shadow-sm">
+
+                            <i class="bi bi-shield-lock-fill me-2"></i>Continue to Admin Portal
+
+                        </a>
+                        {% endif %}
 
                         <a
                             href="{{ url_for('settings') }}"
@@ -245,6 +259,7 @@ Profile | DealHunterAI
                         </a>
 
                     </div>
+
 
                 </div>
 
