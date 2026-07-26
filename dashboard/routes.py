@@ -30,13 +30,11 @@ def build_price_intelligence(
 ):
 
     intelligence_products = []
+    histories_by_product = service.get_all_price_histories_for_user(user_id)
 
     for product in products:
 
-        history = service.get_price_history(
-            product["id"],
-            user_id
-        )
+        history = histories_by_product.get(product["id"], [])
 
         valid_history = [
             row
@@ -46,6 +44,7 @@ def build_price_intelligence(
                 and row["price"] > 0
             )
         ]
+
 
         prices = [
             float(row["price"])

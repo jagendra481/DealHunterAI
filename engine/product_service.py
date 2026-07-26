@@ -21,7 +21,11 @@ class ProductService:
     def get_all_products(self, user_id):
         return self.db.get_all_products(user_id)
 
+    def get_all_price_histories_for_user(self, user_id):
+        return self.db.get_all_price_histories_for_user(user_id)
+
     def get_all_active_products(self):
+
         return self.db.get_all_active_products()
 
     def get_product_by_id(

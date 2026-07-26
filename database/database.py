@@ -639,6 +639,26 @@ class Database:
 
         return self.cursor.fetchall()
 
+    def get_all_price_histories_for_user(self, user_id):
+        self.cursor.execute(
+            """
+            SELECT ph.product_id, ph.price, ph.checked_at
+            FROM price_history ph
+            JOIN products p ON ph.product_id = p.id
+            WHERE p.user_id = ? AND p.active = 1
+            ORDER BY ph.id ASC
+            """,
+            (user_id,)
+        )
+        rows = self.cursor.fetchall()
+        histories = {}
+        for row in rows:
+            pid = row["product_id"]
+            if pid not in histories:
+                histories[pid] = []
+            histories[pid].append(row)
+        return histories
+
     def get_all_active_products(self):
 
         self.cursor.execute(
@@ -653,6 +673,7 @@ class Database:
         )
 
         return self.cursor.fetchall()
+
 
     def get_product_by_id(
         self,
