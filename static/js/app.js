@@ -8,12 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function init3DTiltEffects() {
+    // Target cards, stat boxes, and hero banners for 3D tilt
     const tiltTargets = document.querySelectorAll(".card, .profile-stat-card, .tilt-3d");
 
     tiltTargets.forEach(card => {
+        // Enable 3D perspective wrapper
         card.style.transformStyle = "preserve-3d";
         card.style.perspective = "1000px";
 
+        // Add specular glare overlay element
         let glare = card.querySelector(".glare-3d");
         if (!glare) {
             glare = document.createElement("div");
@@ -33,6 +36,7 @@ function init3DTiltEffects() {
             card.appendChild(glare);
         }
 
+        // Mouse Move Event - Calculate 3D Rotation & Glare Light
         card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -41,18 +45,20 @@ function init3DTiltEffects() {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 
-            const rotateX = ((y - centerY) / centerY) * -12;
-            const rotateY = ((x - centerX) / centerX) * 12;
+            const rotateX = ((y - centerY) / centerY) * -12; // Rotate X axis (deg)
+            const rotateY = ((x - centerX) / centerX) * 12;  // Rotate Y axis (deg)
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px) scale3d(1.02, 1.02, 1.02)`;
             card.style.transition = "transform 0.1s cubic-bezier(0.03, 0.98, 0.52, 0.99)";
 
+            // Update glare position
             const glareX = (x / rect.width) * 100;
             const glareY = (y / rect.height) * 100;
             glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 65%)`;
             glare.style.opacity = "1";
         });
 
+        // Mouse Leave Event - Smooth Reset to Neutral State
         card.addEventListener("mouseleave", () => {
             card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale3d(1, 1, 1)";
             card.style.transition = "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)";

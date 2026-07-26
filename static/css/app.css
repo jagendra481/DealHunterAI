@@ -450,25 +450,62 @@ body {
     box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1), 0 8px 12px -4px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* 3D Glassmorphic Icon Containers */
+/* 3D Glassmorphic Icon Containers & Floating Depth */
 .profile-stat-icon, .rounded-circle.p-3 {
-    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 6px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), 0 8px 20px -3px rgba(37, 99, 235, 0.25);
+    transform-style: preserve-3d;
+    transform: translateZ(25px);
+}
+
+/* Inner 3D Element Pop-Out Effect */
+.card h2, .card h3, .card .badge, .card .btn, .card .avatar-circle {
+    transform: translateZ(20px);
+    transition: transform 0.3s ease;
+}
+
+.card:hover h2, .card:hover h3, .card:hover .profile-stat-icon {
+    transform: translateZ(35px) scale(1.05);
+}
+
+/* Ambient 3D Floating Animation for Hero Badges */
+@keyframes float3D {
+    0% {
+        transform: translateY(0px) rotate(0deg) translateZ(10px);
+    }
+    50% {
+        transform: translateY(-8px) rotate(1deg) translateZ(20px);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg) translateZ(10px);
+    }
+}
+
+.animate-float-3d {
+    animation: float3D 4s ease-in-out infinite;
 }
 
 /* 3D Gradient Action Banners */
 .card.text-white {
-    box-shadow: 0 15px 35px -10px rgba(30, 41, 59, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transform-style: preserve-3d;
 }
 
 .btn {
     border-radius: 12px !important;
     transition: all 0.2s ease-in-out !important;
+    transform-style: preserve-3d;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px) translateZ(15px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+.btn:active {
+    transform: translateY(1px) translateZ(5px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 
 
 /* =====================================================
