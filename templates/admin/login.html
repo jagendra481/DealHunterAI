@@ -1,0 +1,74 @@
+{% extends "layouts/auth.html" %}
+
+{% block title %}Admin Login | DealHunterAI{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <div class="badge bg-warning text-dark px-3 py-2 rounded-pill font-monospace fw-bold mb-3 shadow-sm">
+        <i class="bi bi-shield-lock-fill me-1"></i> ADMIN PORTAL ACCESS
+    </div>
+    <h3 class="auth-title fw-bold">
+        Administrator Login
+    </h3>
+    <p class="auth-subtitle mb-0 text-muted">
+        Enter your admin email and admin password to access the system control center.
+    </p>
+</div>
+
+<!-- ======================================================
+     ADMIN LOGIN FORM
+====================================================== -->
+<form method="POST" action="{{ url_for('admin_login') }}">
+
+    <div class="mb-3 text-start">
+        <label class="form-label fw-semibold">
+            <i class="bi bi-envelope me-1"></i> Admin Email Address
+        </label>
+        <input
+            class="form-control form-control-lg bg-light"
+            name="email"
+            type="email"
+            placeholder="Enter admin email"
+            autocomplete="email"
+            value="jagendra481@gmail.com"
+            required
+        >
+    </div>
+
+    <div class="mb-4 text-start">
+        <label class="form-label fw-semibold">
+            <i class="bi bi-key me-1"></i> Admin Password
+        </label>
+        <input
+            class="form-control form-control-lg bg-light"
+            name="password"
+            type="password"
+            placeholder="Enter admin password"
+            autocomplete="current-password"
+            required
+        >
+    </div>
+
+    <div class="d-grid mb-3">
+        <button
+            type="submit"
+            class="btn btn-warning btn-lg fw-bold shadow-sm"
+        >
+            <i class="bi bi-shield-check me-2"></i>
+            Authenticate & Open Admin Portal
+        </button>
+    </div>
+
+</form>
+
+<div class="text-center mt-4">
+    <a href="{{ url_for('dashboard') }}" class="text-muted text-decoration-none small">
+        &larr; Return to User Dashboard
+    </a>
+</div>
+
+<p class="security-text mt-4 mb-0 text-center text-muted fs-8">
+    <i class="bi bi-shield-fill-check text-success me-1"></i>
+    Protected by DealHunterAI Role-Based Access Control (RBAC).
+</p>
+{% endblock %}

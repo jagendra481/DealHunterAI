@@ -10,25 +10,57 @@ from flask import (
     jsonify
 )
 
-from flask_login import login_required, current_user
+from flask_login import login_required, current_user, login_user
+
 
 from database.database import Database
 from engine.deal_engine import DealEngine
 from engine.product_service import ProductService
 
 
+from services.user_service import UserService
+
+
 def admin_required(f):
     @wraps(f)
-    @login_required
     def decorated_function(*args, **kwargs):
         if not current_user.is_authenticated or not getattr(current_user, "is_admin", False):
-            flash("Access denied. Administrator privileges required.", "danger")
-            return redirect(url_for("dashboard"))
+            flash("Administrator authentication required. Please enter admin email and password.", "warning")
+            return redirect(url_for("admin_login"))
         return f(*args, **kwargs)
     return decorated_function
 
 
 def register_admin_routes(app):
+
+    # ==========================================================
+    # ADMIN LOGIN ROUTE
+    # ==========================================================
+    @app.route("/admin/login", methods=["GET", "POST"])
+    def admin_login():
+        if current_user.is_authenticated and getattr(current_user, "is_admin", False):
+            return redirect(url_for("admin_dashboard"))
+
+        if request.method == "POST":
+            email = request.form.get("email", "").strip().lower()
+            password = request.form.get("password", "").strip()
+
+            service = UserService()
+            try:
+                user = service.login(email, password)
+                if user and user.is_admin:
+                    login_user(user)
+                    flash("Admin Authentication Successful! Welcome to Admin Portal.", "success")
+                    return redirect(url_for("admin_dashboard"))
+                elif user and not user.is_admin:
+                    flash("This account does not have Administrator privileges.", "danger")
+                else:
+                    flash("Invalid admin email or password.", "danger")
+            finally:
+                service.close()
+
+        return render_template("admin/login.html")
+
 
     # ==========================================================
     # ADMIN DASHBOARD OVERVIEW

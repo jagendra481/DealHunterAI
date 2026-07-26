@@ -220,13 +220,14 @@ Profile | DealHunterAI
 
                         {% if current_user.is_admin %}
                         <a
-                            href="{{ url_for('admin_dashboard') }}"
+                            href="{{ url_for('admin_login') }}"
                             class="btn btn-warning btn-lg fw-bold shadow-sm">
 
                             <i class="bi bi-shield-lock-fill me-2"></i>Continue to Admin Portal
 
                         </a>
                         {% endif %}
+
 
                         <a
                             href="{{ url_for('settings') }}"
