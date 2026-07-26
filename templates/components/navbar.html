@@ -1,44 +1,45 @@
-<nav class="navbar bg-white shadow-sm rounded mt-3">
+<nav class="navbar bg-white shadow-sm rounded-4 mt-2 mb-3 px-3 py-2 border">
+    <div class="container-fluid px-0">
+        <!-- Mobile Sidebar Toggle -->
+        <button class="btn btn-light border d-lg-none me-2 shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+            <i class="bi bi-list fs-4"></i>
+        </button>
 
-    <div class="container-fluid">
-
-        <span class="navbar-brand fw-bold">
-
-            Dashboard
-
+        <span class="navbar-brand fw-bold mb-0 text-primary">
+            🚀 DealHunterAI
         </span>
 
-        <div class="d-flex align-items-center gap-3">
-
+        <div class="d-flex align-items-center gap-2 ms-auto">
             {% if current_user.is_admin %}
-            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-warning btn-sm font-monospace fw-bold me-2">
+            <a href="{{ url_for('admin_login') }}" class="btn btn-warning btn-sm font-monospace fw-bold d-none d-sm-inline-block shadow-sm">
                 <i class="bi bi-shield-lock-fill me-1"></i> Admin Portal
+            </a>
+            <a href="{{ url_for('admin_login') }}" class="btn btn-warning btn-sm d-sm-none p-1 px-2 shadow-sm" title="Admin Portal">
+                <i class="bi bi-shield-lock-fill"></i>
             </a>
             {% endif %}
 
-            <i class="bi bi-bell fs-4"></i>
-
-            <div>
-
-                <strong>
-
-                    {{ current_user.name }}
-
-                </strong>
-
-                <br>
-
-                <small class="text-muted">
-
-                    Logged In
-
-                </small>
-
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="avatar-circle bg-primary text-white fw-bold d-flex align-items-center justify-content-center rounded-circle me-2 shadow-sm" style="width: 38px; height: 38px; font-size: 16px; background: linear-gradient(135deg, #2563eb, #4f46e5);">
+                        {{ current_user.name[0] | upper }}
+                    </div>
+                    <div class="d-none d-md-block text-start me-1">
+                        <strong class="d-block lh-1 text-truncate" style="max-width: 140px;">{{ current_user.name }}</strong>
+                        <small class="text-muted fs-8">{% if current_user.is_admin %}Administrator{% else %}Logged In{% endif %}</small>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item py-2" href="{{ url_for('profile') }}"><i class="bi bi-person-circle me-2 text-primary"></i>Profile</a></li>
+                    <li><a class="dropdown-item py-2" href="{{ url_for('settings') }}"><i class="bi bi-gear-fill me-2 text-secondary"></i>Settings</a></li>
+                    {% if current_user.is_admin %}
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item py-2 text-warning fw-bold" href="{{ url_for('admin_login') }}"><i class="bi bi-shield-lock-fill me-2"></i>Admin Control Center</a></li>
+                    {% endif %}
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="{{ url_for('logout') }}"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                </ul>
             </div>
-
         </div>
-
-
     </div>
-
 </nav>

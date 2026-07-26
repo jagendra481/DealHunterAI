@@ -1,149 +1,82 @@
-<div class="col-lg-2 col-md-3 sidebar">
-
-    <!-- Logo -->
-    <div class="logo">
-
-        <h3>
-            🚀 DealHunterAI
-        </h3>
-
+<div class="offcanvas-lg offcanvas-start sidebar text-white" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+    <!-- Mobile Drawer Header -->
+    <div class="offcanvas-header d-lg-none border-bottom border-secondary pb-3 mb-3">
+        <h5 class="offcanvas-title fw-bold" id="mobileSidebarLabel">🚀 DealHunterAI</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#mobileSidebar" aria-label="Close"></button>
     </div>
 
+    <div class="offcanvas-body d-flex flex-column h-100 p-0">
+        <!-- Logo -->
+        <div class="logo d-none d-lg-block mb-4">
+            <h3>🚀 DealHunterAI</h3>
+        </div>
 
-    <!-- Navigation -->
-    <div class="menu">
+        <!-- Navigation Menu -->
+        <div class="menu flex-grow-1">
+            <a href="{{ url_for('dashboard') }}" class="menu-item {% if request.endpoint == 'dashboard' %}active{% endif %}">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
 
-        <a href="{{ url_for('dashboard') }}"
-           class="menu-item {% if request.endpoint == 'dashboard' %}active{% endif %}">
+            <a href="{{ url_for('products') }}" class="menu-item {% if request.endpoint == 'products' %}active{% endif %}">
+                <i class="bi bi-box-seam-fill"></i>
+                <span>Products</span>
+            </a>
 
-            <i class="bi bi-grid-1x2-fill"></i>
+            <a href="{{ url_for('add_product') }}" class="menu-item {% if request.endpoint == 'add_product' %}active{% endif %}">
+                <i class="bi bi-plus-circle-fill"></i>
+                <span>Add Product</span>
+            </a>
 
-            <span>Dashboard</span>
+            <a href="{{ url_for('analytics') }}" class="menu-item {% if request.endpoint == 'analytics' %}active{% endif %}">
+                <i class="bi bi-bar-chart-fill"></i>
+                <span>Analytics</span>
+            </a>
 
-        </a>
+            <a href="{{ url_for('alerts') }}" class="menu-item {% if request.endpoint == 'alerts' %}active{% endif %}">
+                <i class="bi bi-bell-fill"></i>
+                <span>Alerts</span>
+            </a>
 
+            <a href="{{ url_for('profile') }}" class="menu-item {% if request.endpoint == 'profile' %}active{% endif %}">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+            </a>
 
-        <a href="{{ url_for('products') }}"
-           class="menu-item {% if request.endpoint == 'products' %}active{% endif %}">
+            <a href="{{ url_for('settings') }}" class="menu-item {% if request.endpoint == 'settings' %}active{% endif %}">
+                <i class="bi bi-gear-fill"></i>
+                <span>Settings</span>
+            </a>
 
-            <i class="bi bi-box-seam-fill"></i>
+            <a href="{{ url_for('about') }}" class="menu-item {% if request.endpoint == 'about' %}active{% endif %}">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About</span>
+            </a>
 
-            <span>Products</span>
+            {% if current_user.is_admin %}
+            <a href="{{ url_for('admin_login') }}" class="menu-item {% if request.endpoint and 'admin' in request.endpoint %}active{% endif %}">
+                <i class="bi bi-shield-lock-fill text-warning"></i>
+                <span>Admin Portal</span>
+            </a>
+            {% endif %}
+        </div>
 
-        </a>
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer mt-auto pt-3 border-top border-secondary border-opacity-25">
+            <a href="{{ url_for('profile') }}" class="user-card text-decoration-none text-white d-flex align-items-center gap-2 mb-2 p-2 rounded">
+                <div class="avatar bg-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 36px; height: 36px;">
+                    {{ current_user.name[0] | upper }}
+                </div>
+                <div class="text-truncate" style="max-width: 140px;">
+                    <strong class="d-block text-truncate small">{{ current_user.name }}</strong>
+                    <small class="text-muted fs-8">{% if current_user.is_admin %}Administrator{% else %}DealHunter User{% endif %}</small>
+                </div>
+            </a>
 
-
-        <a href="{{ url_for('add_product') }}"
-           class="menu-item {% if request.endpoint == 'add_product' %}active{% endif %}">
-
-            <i class="bi bi-plus-circle-fill"></i>
-
-            <span>Add Product</span>
-
-        </a>
-
-
-        <a href="{{ url_for('analytics') }}"
-           class="menu-item {% if request.endpoint == 'analytics' %}active{% endif %}">
-
-            <i class="bi bi-bar-chart-fill"></i>
-
-            <span>Analytics</span>
-
-        </a>
-
-
-        <a href="{{ url_for('alerts') }}"
-           class="menu-item {% if request.endpoint == 'alerts' %}active{% endif %}">
-
-            <i class="bi bi-bell-fill"></i>
-
-            <span>Alerts</span>
-
-        </a>
-
-
-        <a href="{{ url_for('profile') }}"
-           class="menu-item {% if request.endpoint == 'profile' %}active{% endif %}">
-
-            <i class="bi bi-person-circle"></i>
-
-            <span>Profile</span>
-
-        </a>
-
-
-        <a href="{{ url_for('settings') }}"
-           class="menu-item {% if request.endpoint == 'settings' %}active{% endif %}">
-
-            <i class="bi bi-gear-fill"></i>
-
-            <span>Settings</span>
-
-        </a>
-
-
-        <a href="{{ url_for('about') }}"
-           class="menu-item {% if request.endpoint == 'about' %}active{% endif %}">
-
-            <i class="bi bi-info-circle-fill"></i>
-
-            <span>About</span>
-
-        </a>
-
-        {% if current_user.is_admin %}
-        <a href="{{ url_for('admin_dashboard') }}"
-           class="menu-item {% if request.endpoint and 'admin' in request.endpoint %}active{% endif %}">
-
-            <i class="bi bi-shield-lock-fill text-warning"></i>
-
-            <span>Admin Portal</span>
-
-        </a>
-        {% endif %}
+            <a href="{{ url_for('logout') }}" class="logout-btn btn btn-outline-light btn-sm w-100 d-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+        </div>
     </div>
-
-
-
-    <!-- Sidebar Footer -->
-    <div class="sidebar-footer">
-
-        <a href="{{ url_for('profile') }}"
-           class="user-card text-decoration-none">
-
-            <div class="avatar">
-
-                {{ current_user.name[0] | upper }}
-
-            </div>
-
-            <div>
-
-                <strong>
-                    {{ current_user.name }}
-                </strong>
-
-                <br>
-
-                <small>
-                    DealHunter User
-                </small>
-
-            </div>
-
-        </a>
-
-
-        <a href="{{ url_for('logout') }}"
-           class="logout-btn">
-
-            <i class="bi bi-box-arrow-right"></i>
-
-            Logout
-
-        </a>
-
-    </div>
-
 </div>
