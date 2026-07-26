@@ -60,14 +60,15 @@ class TelegramService:
 
         except requests.RequestException as error:
 
-            print(f"⚠️ Telegram Alert Notice (Network/ISP restriction): {error}")
-            print("ℹ️ Note: Telegram notifications run automatically on Azure cloud servers.")
+            print(f"[Telegram Notice] Network/ISP restriction on local environment: {error}")
+            print("[Telegram Notice] Note: Production Telegram alerts execute automatically on Azure cloud servers.")
             return False
 
         except ValueError as error:
 
-            print(f"⚠️ Telegram response format error: {error}")
+            print(f"[Telegram Notice] Response format error: {error}")
             return False
+
 
 
     # ==========================================================
