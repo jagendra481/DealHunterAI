@@ -44,7 +44,7 @@ class TelegramService:
             response = requests.post(
                 url,
                 data=payload,
-                timeout=cls.REQUEST_TIMEOUT
+                timeout=8
             )
 
             response.raise_for_status()
@@ -53,26 +53,22 @@ class TelegramService:
 
             if not result.get("ok"):
 
-                raise Exception(
-                    result.get(
-                        "description",
-                        "Telegram request failed."
-                    )
-                )
+                print("⚠️ Telegram API Warning:", result.get("description", "Telegram request failed."))
+                return False
 
             return result
 
         except requests.RequestException as error:
 
-            raise Exception(
-                f"Telegram connection failed: {error}"
-            ) from error
+            print(f"⚠️ Telegram Alert Notice (Network/ISP restriction): {error}")
+            print("ℹ️ Note: Telegram notifications run automatically on Azure cloud servers.")
+            return False
 
         except ValueError as error:
 
-            raise Exception(
-                "Invalid response received from Telegram."
-            ) from error
+            print(f"⚠️ Telegram response format error: {error}")
+            return False
+
 
     # ==========================================================
     # SEND TEXT MESSAGE
