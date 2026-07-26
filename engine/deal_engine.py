@@ -5,7 +5,9 @@ from engine.price_comparator import PriceComparator
 from engine.deal_scorer import DealScorer
 
 from services.telegram_service import TelegramService
+from services.email_service import EmailService
 from services.user_service import UserService
+
 
 import traceback
 
@@ -317,35 +319,24 @@ class DealEngine:
 
             return
 
-        if not user.telegram_notifications:
-
-            print(
-                "🔕 Telegram notifications disabled."
+        # Send Gmail Email Notification
+        try:
+            EmailService.send_target_price_alert(
+                user.email,
+                user.name,
+                latest_product,
+                target_price
             )
+            print(f"📧 Gmail Target Price alert sent to {user.email}")
+        except Exception as err:
+            print("❌ Gmail target price alert error:", err)
 
-            return
-
-        if not user.target_price_alerts:
-
-            print(
-                "🔕 Target price alerts disabled."
+        if user.telegram_notifications and user.target_price_alerts and user.telegram_chat_id:
+            TelegramService.send_target_price_alert(
+                latest_product,
+                target_price,
+                user.telegram_chat_id
             )
-
-            return
-
-        if not user.telegram_chat_id:
-
-            print(
-                "⚠️ Telegram Chat ID not configured."
-            )
-
-            return
-
-        TelegramService.send_target_price_alert(
-            latest_product,
-            target_price,
-            user.telegram_chat_id
-        )
 
         self.product_service.mark_target_alert_sent(
             product["id"]
@@ -355,6 +346,7 @@ class DealEngine:
             f"✅ Target price alert sent "
             f"to User {user.id}"
         )
+
 
     # ==========================================================
     # HANDLE PRICE DROP
@@ -376,6 +368,20 @@ class DealEngine:
         )
 
         print("✅ Database Updated")
+
+        # Send Gmail Price Drop Email Alert
+        try:
+            EmailService.send_price_drop_alert(
+                user.email,
+                user.name,
+                latest_product,
+                old_price,
+                latest_product.current_price
+            )
+            print(f"📧 Gmail Price Drop alert sent to {user.email}")
+        except Exception as err:
+            print("❌ Gmail price drop alert error:", err)
+
 
         if not user.telegram_notifications:
 
