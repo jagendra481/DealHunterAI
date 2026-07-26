@@ -61,6 +61,16 @@ class DealScheduler:
             replace_existing=True
         )
 
+        from services.telegram_service import TelegramService
+        self.scheduler.add_job(
+            TelegramService.process_updates,
+            trigger="interval",
+            seconds=15,
+            id="telegram_update_listener",
+            replace_existing=True
+        )
+
+
         print(
             f"\n✅ Scheduler Started — "
             f"checking every "

@@ -97,7 +97,75 @@ class TelegramService:
         )
 
     # ==========================================================
+    # PROCESS UPDATES & AUTO-REPLY CHAT ID
+    # ==========================================================
+
+    @classmethod
+    def process_updates(cls):
+        try:
+            url = f"{cls.BASE_URL}/getUpdates"
+            res = requests.get(url, timeout=5)
+            if not res.ok:
+                return
+
+            data = res.json()
+            if not data.get("ok"):
+                return
+
+            updates = data.get("result", [])
+            for update in updates:
+                update_id = update.get("update_id")
+                msg = update.get("message") or update.get("channel_post")
+                if not msg:
+                    continue
+
+                chat = msg.get("chat", {})
+                chat_id = chat.get("id")
+                text = msg.get("text", "").strip()
+                from_user = msg.get("from", {})
+                user_id_param = None
+
+                if text.startswith("/start"):
+                    parts = text.split()
+                    if len(parts) > 1 and parts[1].isdigit():
+                        user_id_param = int(parts[1])
+
+                if user_id_param:
+                    from database.database import Database
+                    db = Database()
+                    try:
+                        db.cursor.execute(
+                            "UPDATE users SET telegram_chat_id = ?, telegram_notifications = 1 WHERE id = ?",
+                            (str(chat_id), user_id_param)
+                        )
+                        db.connection.commit()
+                    finally:
+                        db.close()
+
+                    reply_text = (
+                        f"🎉 <b>Account Connected Successfully!</b>\n\n"
+                        f"Your Telegram account has been linked to DealHunterAI User #{user_id_param}.\n\n"
+                        f"Your Chat ID: <code>{chat_id}</code>\n\n"
+                        f"You will now receive instant price drop and deal alerts here!"
+                    )
+                else:
+                    reply_text = (
+                        f"👋 <b>Hello {from_user.get('first_name', 'there')}!</b>\n\n"
+                        f"Your Telegram Chat ID is:\n<code>{chat_id}</code>\n\n"
+                        f"Copy this Chat ID and paste it in DealHunterAI Settings (dealhunterai.in/settings) to receive price drop alerts!"
+                    )
+
+                cls.send_message(reply_text, chat_id)
+
+                # Confirm update offset to prevent duplicate replies
+                requests.get(f"{cls.BASE_URL}/getUpdates", params={"offset": update_id + 1, "timeout": 1}, timeout=5)
+
+        except Exception as err:
+            pass
+
+    # ==========================================================
     # SEND DEAL SCORE ALERT
+
     # ==========================================================
 
     @classmethod
