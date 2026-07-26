@@ -80,8 +80,26 @@ register_admin_routes(app)
 
 
 # ==========================================================
+# BACKGROUND SCHEDULER & TELEGRAM LISTENER
+# ==========================================================
+
+def _start_background_scheduler():
+    try:
+        from scheduler.scheduler import DealScheduler
+        scheduler = DealScheduler()
+        scheduler.start()
+        print("🚀 Auto-started 15-Minute DealScheduler in Gunicorn App Process")
+    except Exception as err:
+        print(f"⚠️ Scheduler startup warning: {err}")
+
+# Auto-start scheduler in production / main process
+_start_background_scheduler()
+
+
+# ==========================================================
 # START APPLICATION
 # ==========================================================
 
 if __name__ == "__main__":
     app.run(debug=True)
+

@@ -9,7 +9,7 @@ if sys.stderr and hasattr(sys.stderr, 'reconfigure'):
 
 from datetime import datetime
 
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 from engine.deal_engine import DealEngine
 
@@ -25,13 +25,14 @@ class DealScheduler:
 
     def __init__(self):
 
-        self.scheduler = BlockingScheduler(
+        self.scheduler = BackgroundScheduler(
             job_defaults={
                 "coalesce": True,
                 "max_instances": 1,
                 "misfire_grace_time": 300
             }
         )
+
 
     # ==========================================================
     # START SCHEDULER

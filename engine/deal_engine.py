@@ -25,38 +25,78 @@ class DealEngine:
 
     def run(self):
 
+        import time
+        from datetime import datetime
+        from database.database import Database
+
         print("\n========== DEAL ENGINE ==========\n")
 
+        start_time = time.time()
+        started_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        scan_id = None
+        checked_count = 0
+        failed_count = 0
+        status = "COMPLETED"
+        error_msg = ""
+        products = []
+
         try:
+            products = self.product_service.get_all_active_products()
 
-            products = (
-                self.product_service
-                .get_all_active_products()
-            )
+            db_conn = Database()
+            scan_id = db_conn.create_scan_run(started_at=started_at, total_products=len(products))
+            db_conn.close()
+        except Exception as err:
+            print(f"[Scan Log Warning] {err}")
 
+        try:
             print("=" * 60)
             print("TOTAL PRODUCTS:", len(products))
 
             for product in products:
-
                 print(f"• {product['name']}")
 
             print("=" * 60)
 
-            if not products:
-
-                print("No Products Found")
-
-                return
-
             for product in products:
+                try:
+                    self._check_product(product)
+                    checked_count += 1
+                except Exception as prod_err:
+                    failed_count += 1
+                    print(f"[Product Check Failed] {product.get('name')}: {prod_err}")
 
-                self._check_product(product)
+            if failed_count > 0:
+                status = "PARTIAL_SUCCESS" if checked_count > 0 else "FAILED"
+
+        except Exception as err:
+            status = "FAILED"
+            error_msg = str(err)
+            traceback.print_exc()
 
         finally:
+            duration = round(time.time() - start_time, 2)
+            completed_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            if scan_id:
+                try:
+                    db_conn = Database()
+                    db_conn.complete_scan_run(
+                        scan_run_id=scan_id,
+                        completed_at=completed_at,
+                        status=status,
+                        checked_products=checked_count,
+                        failed_products=failed_count,
+                        duration_seconds=duration,
+                        error_message=error_msg
+                    )
+                    db_conn.close()
+                except Exception as log_err:
+                    print(f"[Scan Log Update Warning] {log_err}")
 
             self.product_service.close()
             self.user_service.close()
+
+
 
     # ==========================================================
     # CHECK PRODUCT
