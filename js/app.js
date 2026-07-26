@@ -3,9 +3,38 @@
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+    init3DAssembly();
     init3DTiltEffects();
     initSearchBox();
 });
+
+// 3D "Assemble into Place" Staggered Fly-In Entrance Effect
+function init3DAssembly() {
+    const elements = document.querySelectorAll(".card, .profile-stat-card, .btn-lg, .table-responsive, .nav-pills");
+
+    elements.forEach((el, index) => {
+        const colIndex = index % 3;
+        let offsetX = 0;
+        if (colIndex === 0) offsetX = -70;
+        else if (colIndex === 2) offsetX = 70;
+
+        const offsetY = 60 + (index * 8);
+        const offsetZ = -180;
+        const rotateX = 15;
+        const rotateY = colIndex === 0 ? -12 : (colIndex === 2 ? 12 : 0);
+
+        el.style.opacity = "0";
+        el.style.transformStyle = "preserve-3d";
+        el.style.transform = `perspective(1200px) translate3d(${offsetX}px, ${offsetY}px, ${offsetZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.75)`;
+        el.style.transition = "none";
+
+        setTimeout(() => {
+            el.style.transition = "transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease-out";
+            el.style.opacity = "1";
+            el.style.transform = "perspective(1000px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)";
+        }, 80 + (index * 60));
+    });
+}
 
 function init3DTiltEffects() {
     const tiltTargets = document.querySelectorAll(".card, .profile-stat-card, .tilt-3d");
