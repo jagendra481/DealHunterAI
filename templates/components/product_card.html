@@ -92,7 +92,8 @@
 
                     <i class="bi bi-cart-fill"></i>
 
-                    Buy on Amazon
+                    Buy on {{ (product['source'] or 'Amazon') | capitalize }}
+
 
                 </a>
 
