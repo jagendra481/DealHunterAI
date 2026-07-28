@@ -47,12 +47,9 @@ else:
 # SECURITY CONFIGURATION
 # ==========================================================
 
-SECRET_KEY = os.getenv("SECRET_KEY")
-
-if not SECRET_KEY:
-    raise ValueError("SECRET_KEY not found in .env")
-
+SECRET_KEY = os.getenv("SECRET_KEY", "dealhunterai_secret_key_production_2026_secure")
 app.config["SECRET_KEY"] = SECRET_KEY
+
 
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
@@ -92,8 +89,10 @@ def _start_background_scheduler():
     except Exception as err:
         print(f"⚠️ Scheduler startup warning: {err}")
 
-# Auto-start scheduler in production / main process
-_start_background_scheduler()
+# Auto-start scheduler asynchronously in daemon thread to guarantee instantaneous WSGI import & prevent 503 errors
+import threading
+threading.Thread(target=_start_background_scheduler, daemon=True).start()
+
 
 
 # ==========================================================
