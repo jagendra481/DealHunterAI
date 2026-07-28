@@ -133,5 +133,7 @@ CHECK_INTERVAL_MINUTES = int(
 
 EARNKARO_ID = os.getenv("EARNKARO_ID", "1554365").strip()
 AMAZON_ASSOCIATE_TAG = os.getenv("AMAZON_ASSOCIATE_TAG", "dealhunterai-21").strip()
+SCRAPERAPI_KEY = os.getenv("SCRAPERAPI_KEY", "e8c1c45ecae909ed7321c4e7615a2fb0").strip()
+
 
 

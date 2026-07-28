@@ -44,17 +44,23 @@ class FlipkartProvider:
         match_slug = re.search(r"flipkart\.com/([^/]+)/p/", clean_url)
         slug_title = match_slug.group(1).replace("-", " ").title() if match_slug else "Flipkart Product"
 
+        from config.settings import EARNKARO_ID, SCRAPERAPI_KEY
+
         aff_url = f"https://topurl.in/c/{EARNKARO_ID}?url={quote(url)}" if EARNKARO_ID else url
+
+        fetch_url = clean_url
+        if SCRAPERAPI_KEY:
+            fetch_url = f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={quote(clean_url)}&country_code=in"
 
         headers = {
             "User-Agent": random.choice(USER_AGENTS),
             "Accept-Language": "en-US,en;q=0.9",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Referer": "https://www.flipkart.com/"
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
         }
 
         try:
-            res = requests.get(clean_url, headers=headers, timeout=12)
+            res = requests.get(fetch_url, headers=headers, timeout=25)
+
             soup = BeautifulSoup(res.text, "html.parser")
             
             title = ""
