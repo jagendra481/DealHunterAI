@@ -1,17 +1,12 @@
-from database.models import Product
+from providers.flipkart_provider import FlipkartProvider
 from sources.base_source import BaseSource
 
 
 class FlipkartSource(BaseSource):
 
-    def fetch_product(self, url):
+    def __init__(self):
+        self.provider = FlipkartProvider()
 
-        return Product(
-            name="Nothing Phone 3",
-            url=url,
-            current_price=34999,
-            previous_price=37999,
-            lowest_price=33999,
-            highest_price=39999,
-            source="Flipkart"
-        )
+    def fetch_product(self, product):
+        return self.provider.fetch_product(product)
+
