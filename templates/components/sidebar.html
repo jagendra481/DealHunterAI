@@ -2,15 +2,22 @@
 
     <!-- Mobile Drawer Header -->
     <div class="offcanvas-header d-lg-none border-bottom border-secondary pb-3 mb-3">
-        <h5 class="offcanvas-title fw-bold" id="mobileSidebarLabel">🚀 DealHunterAI</h5>
+        <h5 class="offcanvas-title fw-bold d-flex align-items-center gap-2" id="mobileSidebarLabel">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="rounded-circle border border-secondary" style="height: 30px; width: 30px; object-fit: cover;">
+            <span>DealHunterAI</span>
+        </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#mobileSidebar" aria-label="Close"></button>
     </div>
 
     <div class="offcanvas-body d-flex flex-column h-100 p-0">
         <!-- Logo -->
         <div class="logo d-none d-lg-block mb-4">
-            <h3>🚀 DealHunterAI</h3>
+            <h3 class="d-flex align-items-center gap-2">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="rounded-circle shadow-sm border border-secondary" style="height: 38px; width: 38px; object-fit: cover;">
+                <span>DealHunterAI</span>
+            </h3>
         </div>
+
 
         <!-- Navigation Menu -->
         <div class="menu flex-grow-1">
