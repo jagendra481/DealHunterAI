@@ -754,14 +754,16 @@ document.addEventListener(
 
 
         const historyLabels = JSON.parse(
-            historyData.dataset.labels
-        );
-
-
-        const historyPrices = JSON.parse(
+        const rawPrices = JSON.parse(
             historyData.dataset.prices
         );
 
+        const historyPrices = rawPrices.map(p => Math.round(Number(p)));
+
+        const minP = historyPrices.length ? Math.min(...historyPrices) : 0;
+        const maxP = historyPrices.length ? Math.max(...historyPrices) : 0;
+        const diff = maxP - minP;
+        const pad = diff === 0 ? Math.max(200, Math.round(minP * 0.05)) : Math.max(Math.round(diff * 0.3), 50);
 
         new Chart(
             chartCanvas,
@@ -782,13 +784,17 @@ document.addEventListener(
 
                             borderWidth: 3,
 
+                            borderColor: "#3b82f6",
+
+                            backgroundColor: "rgba(59, 130, 246, 0.1)",
+
                             tension: 0.3,
 
-                            fill: false,
+                            fill: true,
 
                             pointRadius: 5,
 
-                            pointHoverRadius: 7
+                            pointHoverRadius: 8
 
                         }
                     ]
@@ -826,12 +832,12 @@ document.addEventListener(
 
                                 label: function (context) {
 
-                                    const price = Number(
+                                    const price = Math.round(Number(
                                         context.raw
-                                    );
+                                    ));
 
                                     return (
-                                        "₹" +
+                                        "Amazon Price: ₹" +
                                         price.toLocaleString(
                                             "en-IN"
                                         )
@@ -852,15 +858,21 @@ document.addEventListener(
 
                             beginAtZero: false,
 
+                            suggestedMin: Math.max(0, Math.floor((minP - pad) / 10) * 10),
+
+                            suggestedMax: Math.ceil((maxP + pad) / 10) * 10,
+
                             ticks: {
+
+                                precision: 0,
 
                                 callback: function (value) {
 
+                                    if (value % 1 !== 0) return '';
+
                                     return (
                                         "₹" +
-                                        Number(
-                                            value
-                                        ).toLocaleString(
+                                        Math.round(value).toLocaleString(
                                             "en-IN"
                                         )
                                     );
@@ -874,7 +886,6 @@ document.addEventListener(
                     }
 
                 }
-
             }
         );
 
@@ -886,3 +897,4 @@ document.addEventListener(
 {% endif %}
 
 {% endblock %}
+
