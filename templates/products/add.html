@@ -1,65 +1,165 @@
 {% extends "layouts/app.html" %}
 
 {% block title %}
-Add Product
+Add Product - DealHunterAI
 {% endblock %}
 
 {% block content %}
 
+<style>
+.store-tab-btn {
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 14px 10px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    text-align: center;
+}
+.store-tab-btn:hover {
+    transform: translateY(-3px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.12);
+}
+.store-tab-btn.active {
+    border-color: #2563eb;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+}
+.store-tab-btn .store-icon {
+    font-size: 26px;
+    margin-bottom: 6px;
+    display: block;
+}
+</style>
+
 <div class="row justify-content-center">
 
-    <div class="col-lg-8">
+    <div class="col-lg-9 col-xl-8">
 
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
 
-            <div class="card-body p-5">
+            <div class="card-body p-4 p-md-5">
 
-                <h2 class="fw-bold mb-2">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="avatar-circle bg-primary text-white rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 48px; height: 48px; font-size: 22px;">
+                        ➕
+                    </div>
+                    <div>
+                        <h2 class="fw-bold mb-0 text-dark" id="pageMainHeading">
+                            Track New Product
+                        </h2>
+                        <p class="text-muted mb-0 small">
+                            Paste any product link below. DealHunterAI will automatically monitor its live price every 15 minutes.
+                        </p>
+                    </div>
+                </div>
 
-                    ➕ Add Amazon Product
+                <hr class="my-4 text-muted opacity-25">
 
-                </h2>
+                <!-- E-COMMERCE PLATFORM SELECTOR TABS -->
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-dark mb-2">
+                        Select E-Commerce Store Platform:
+                    </label>
+                    <div class="row g-2 id="storePlatformTabs">
+                        
+                        <!-- Amazon -->
+                        <div class="col-4 col-sm-4 col-md-2">
+                            <div class="store-tab-btn active" data-store="amazon" data-label="Amazon Product URL" data-placeholder="https://www.amazon.in/dp/B0..." onclick="selectStore(this)">
+                                <span class="store-icon" style="color: #ff9900;">📦</span>
+                                <span class="fw-bold d-block small text-dark">Amazon</span>
+                            </div>
+                        </div>
 
-                <p class="text-muted mb-4">
+                        <!-- Flipkart -->
+                        <div class="col-4 col-sm-4 col-md-2">
+                            <div class="store-tab-btn" data-store="flipkart" data-label="Flipkart Product URL" data-placeholder="https://www.flipkart.com/.../p/itm..." onclick="selectStore(this)">
+                                <span class="store-icon" style="color: #2874f0;">🛍️</span>
+                                <span class="fw-bold d-block small text-dark">Flipkart</span>
+                            </div>
+                        </div>
 
-                    Paste an Amazon product link below. DealHunterAI will automatically fetch the product details and start tracking its price.
+                        <!-- Myntra -->
+                        <div class="col-4 col-sm-4 col-md-2">
+                            <div class="store-tab-btn" data-store="myntra" data-label="Myntra Product URL" data-placeholder="https://www.myntra.com/..." onclick="selectStore(this)">
+                                <span class="store-icon" style="color: #ff3f6c;">👗</span>
+                                <span class="fw-bold d-block small text-dark">Myntra</span>
+                            </div>
+                        </div>
 
-                </p>
+                        <!-- Meesho -->
+                        <div class="col-4 col-sm-4 col-md-2">
+                            <div class="store-tab-btn" data-store="meesho" data-label="Meesho Product URL" data-placeholder="https://www.meesho.com/s/p/..." onclick="selectStore(this)">
+                                <span class="store-icon" style="color: #f43397;">🛍️</span>
+                                <span class="fw-bold d-block small text-dark">Meesho</span>
+                            </div>
+                        </div>
 
-                <form method="POST">
+                        <!-- Ajio -->
+                        <div class="col-4 col-sm-4 col-md-2">
+                            <div class="store-tab-btn" data-store="ajio" data-label="Ajio Product URL" data-placeholder="https://www.ajio.com/p/..." onclick="selectStore(this)">
+                                <span class="store-icon" style="color: #2c4152;">💃</span>
+                                <span class="fw-bold d-block small text-dark">Ajio</span>
+                            </div>
+                        </div>
+
+                        <!-- Reliance Digital -->
+                        <div class="col-4 col-sm-4 col-md-2">
+                            <div class="store-tab-btn" data-store="reliancedigital" data-label="Reliance Digital Product URL" data-placeholder="https://www.reliancedigital.in/p/..." onclick="selectStore(this)">
+                                <span class="store-icon" style="color: #e42529;">⚡</span>
+                                <span class="fw-bold d-block small text-dark">Reliance</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ADD PRODUCT FORM -->
+                <form method="POST" id="addProductForm">
 
                     <div class="mb-4">
 
-                        <label class="form-label fw-semibold">
-
+                        <label class="form-label fw-bold text-dark" id="inputLinkLabel">
                             Amazon Product URL
-
                         </label>
 
-                        <input
-                            type="url"
-                            name="url"
-                            class="form-control form-control-lg"
-                            placeholder="https://www.amazon.in/..."
-                            required>
+                        <div class="input-group input-group-lg shadow-sm rounded-3 overflow-hidden">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="bi bi-link-45deg text-primary fs-4"></i>
+                            </span>
+                            <input
+                                type="url"
+                                name="url"
+                                id="productUrlInput"
+                                class="form-control border-start-0 ps-0"
+                                placeholder="https://www.amazon.in/..."
+                                oninput="autoDetectStore(this.value)"
+                                required>
+                        </div>
+
+                        <div class="form-text mt-2 text-muted">
+                            <i class="bi bi-shield-check text-success me-1"></i>
+                            Supported Stores: <strong>Amazon, Flipkart, Myntra, Meesho, Ajio, Reliance Digital</strong>
+                        </div>
 
                     </div>
 
-                    <div class="d-flex gap-3">
+                    <div class="d-flex align-items-center gap-3 mt-4">
 
                         <button
                             type="submit"
-                            class="btn btn-primary btn-lg">
+                            class="btn btn-primary btn-lg px-4 rounded-3 fw-bold shadow-sm d-flex align-items-center gap-2">
 
-                            <i class="bi bi-plus-circle"></i>
+                            <i class="bi bi-plus-circle-fill"></i>
 
-                            Add Product
+                            <span>Add Product</span>
 
                         </button>
 
                         <a
                             href="/products"
-                            class="btn btn-outline-secondary btn-lg">
+                            class="btn btn-outline-secondary btn-lg px-4 rounded-3">
 
                             Cancel
 
@@ -76,5 +176,38 @@ Add Product
     </div>
 
 </div>
+
+<script>
+function selectStore(element) {
+    document.querySelectorAll('.store-tab-btn').forEach(btn => btn.classList.remove('active'));
+    element.classList.add('active');
+
+    const label = element.getAttribute('data-label');
+    const placeholder = element.getAttribute('data-placeholder');
+
+    document.getElementById('inputLinkLabel').innerText = label;
+    document.getElementById('productUrlInput').placeholder = placeholder;
+}
+
+function autoDetectStore(url) {
+    if (!url) return;
+    const lowerUrl = url.lower ? url.lower() : url.toLowerCase();
+    
+    let targetStore = '';
+    if (lowerUrl.includes('amazon') || lowerUrl.includes('amzn')) targetStore = 'amazon';
+    else if (lowerUrl.includes('flipkart') || lowerUrl.includes('fkrt')) targetStore = 'flipkart';
+    else if (lowerUrl.includes('myntra')) targetStore = 'myntra';
+    else if (lowerUrl.includes('meesho')) targetStore = 'meesho';
+    else if (lowerUrl.includes('ajio')) targetStore = 'ajio';
+    else if (lowerUrl.includes('reliancedigital') || lowerUrl.includes('reliance')) targetStore = 'reliancedigital';
+
+    if (targetStore) {
+        const matchingBtn = document.querySelector(`.store-tab-btn[data-store="${targetStore}"]`);
+        if (matchingBtn && !matchingBtn.classList.contains('active')) {
+            selectStore(matchingBtn);
+        }
+    }
+}
+</script>
 
 {% endblock %}
