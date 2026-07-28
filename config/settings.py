@@ -75,13 +75,16 @@ MAIL_PORT = int(
 # GOOGLE OAUTH
 # ==========================================================
 
-GOOGLE_CLIENT_ID = get_required_env(
-    "GOOGLE_CLIENT_ID"
-)
+GOOGLE_CLIENT_ID = os.getenv(
+    "GOOGLE_CLIENT_ID",
+    ""
+).strip().strip('"').strip("'")
 
-GOOGLE_CLIENT_SECRET = get_required_env(
-    "GOOGLE_CLIENT_SECRET"
-)
+GOOGLE_CLIENT_SECRET = os.getenv(
+    "GOOGLE_CLIENT_SECRET",
+    ""
+).strip().strip('"').strip("'")
+
 
 
 # ==========================================================
