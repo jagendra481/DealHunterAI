@@ -331,18 +331,21 @@ def register_routes(app):
                         "Product URL is required."
                     )
 
-                product = AmazonProvider.get_product(
-                    product_url
-                )
+                from sources.source_manager import SourceManager
+
+                source_handler = SourceManager.get_source(product_url)
+                if hasattr(source_handler, "fetch_product"):
+                    product = source_handler.fetch_product({"product_url": product_url, "user_id": current_user.id})
+                elif hasattr(source_handler, "get_product"):
+                    product = source_handler.get_product(product_url)
+                else:
+                    product = AmazonProvider.get_product(product_url)
+
+                if not product or not getattr(product, 'name', None):
+                    raise Exception("Unable to fetch product details automatically. Please check the URL and try again.")
 
                 product.user_id = current_user.id
 
-                product.affiliate_url = (
-                    AffiliateService
-                    .generate_amazon_link(
-                        product_url
-                    )
-                )
 
                 service = ProductService()
 
