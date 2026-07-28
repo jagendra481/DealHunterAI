@@ -98,9 +98,16 @@ class AmazonScraper:
                     if title and price and price > 0:
                         print(f"[Amazon Scraper Success] '{title[:30]}...' -> Rs. {price:,.0f}")
                         from urllib.parse import quote
-                        from config.settings import EARNKARO_ID
+                        from config.settings import EARNKARO_ID, AMAZON_ASSOCIATE_TAG
 
-                        aff_url = f"https://topurl.in/c/{EARNKARO_ID}?url={quote(expanded_url)}" if EARNKARO_ID else expanded_url
+                        if AMAZON_ASSOCIATE_TAG:
+                            sep = "&" if "?" in expanded_url else "?"
+                            aff_url = f"{expanded_url}{sep}tag={AMAZON_ASSOCIATE_TAG}"
+                        elif EARNKARO_ID:
+                            aff_url = f"https://topurl.in/c/{EARNKARO_ID}?url={quote(expanded_url)}"
+                        else:
+                            aff_url = expanded_url
+
 
                         return Product(
                             name=title,
