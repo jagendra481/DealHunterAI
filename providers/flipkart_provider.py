@@ -116,12 +116,17 @@ class FlipkartProvider:
             if not image:
                 image = product.get("image") if isinstance(product, dict) else getattr(product, "image", "")
 
+            from urllib.parse import quote
+            from config.settings import EARNKARO_ID
+
+            aff_url = f"https://topurl.in/c/{EARNKARO_ID}?url={quote(url)}" if EARNKARO_ID else url
+
             # Construct standardized Product object
             result_product = Product(
                 user_id=product.get("user_id", 0) if isinstance(product, dict) else getattr(product, "user_id", 0),
                 name=title,
                 product_url=url,
-                affiliate_url=url,
+                affiliate_url=aff_url,
                 asin=re.search(r"/p/([a-zA-Z0-9]+)", url).group(1) if re.search(r"/p/([a-zA-Z0-9]+)", url) else "",
                 current_price=price,
                 previous_price=product.get("current_price", 0.0) if isinstance(product, dict) else getattr(product, "current_price", 0.0),
@@ -134,6 +139,7 @@ class FlipkartProvider:
                 availability=availability,
                 prime=False
             )
+
 
             logger.info(f"[Flipkart Scraper Success] '{title[:35]}...' -> Rs. {price:,.2f}")
             return result_product

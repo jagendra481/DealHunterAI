@@ -130,3 +130,6 @@ CHECK_INTERVAL_MINUTES = int(
         "60"
     )
 )
+
+EARNKARO_ID = os.getenv("EARNKARO_ID", "1554365").strip()
+

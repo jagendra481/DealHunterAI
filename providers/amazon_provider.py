@@ -97,10 +97,15 @@ class AmazonScraper:
 
                     if title and price and price > 0:
                         print(f"[Amazon Scraper Success] '{title[:30]}...' -> Rs. {price:,.0f}")
+                        from urllib.parse import quote
+                        from config.settings import EARNKARO_ID
+
+                        aff_url = f"https://topurl.in/c/{EARNKARO_ID}?url={quote(expanded_url)}" if EARNKARO_ID else expanded_url
+
                         return Product(
                             name=title,
                             product_url=url,
-                            affiliate_url=expanded_url,
+                            affiliate_url=aff_url,
                             asin=asin,
                             current_price=price,
                             previous_price=0,
@@ -114,6 +119,7 @@ class AmazonScraper:
                             prime=prime,
                             last_checked=""
                         )
+
                 except Exception as err:
                     print(f"[Amazon Scraper Notice] Scraping attempt notice: {err}")
 
