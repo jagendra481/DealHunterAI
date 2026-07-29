@@ -319,17 +319,18 @@ def register_routes(app):
             service = None
 
             try:
+                import re
 
-                product_url = request.form.get(
-                    "url",
-                    ""
-                ).strip()
+                raw_input = request.form.get("url", "").strip()
+                if not raw_input:
+                    raise Exception("Product URL is required.")
 
-                if not product_url:
+                url_match = re.search(r'(https?://[^\s"]+)', raw_input)
+                if not url_match:
+                    raise Exception("Valid product URL not found. Please paste a valid product web link.")
 
-                    raise Exception(
-                        "Product URL is required."
-                    )
+                product_url = url_match.group(1).rstrip('.,;)!">')
+
 
                 from sources.source_manager import SourceManager
 
