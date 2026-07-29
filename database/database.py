@@ -324,10 +324,19 @@ class Database:
                 )
 
             except sqlite3.OperationalError:
-
                 pass
 
+        # Repair zero lowest_price and highest_price
+        try:
+            self.cursor.execute("UPDATE products SET lowest_price = current_price WHERE lowest_price IS NULL OR lowest_price <= 0")
+            self.cursor.execute("UPDATE products SET highest_price = current_price WHERE highest_price IS NULL OR highest_price <= 0")
+            self.connection.commit()
+        except Exception as err:
+            logger.warning(f"Product price bounds repair warning: {err}")
+
         self.connection.commit()
+
+
 
     # ==========================================================
     # USERS
@@ -570,8 +579,9 @@ class Database:
                     product.affiliate_url,
                     product.current_price,
                     product.previous_price,
-                    product.lowest_price,
-                    product.highest_price,
+                    product.lowest_price if (product.lowest_price and product.lowest_price > 0) else product.current_price,
+                    product.highest_price if (product.highest_price and product.highest_price > 0) else product.current_price,
+
                     product.source,
                     product.image,
                     product.rating,

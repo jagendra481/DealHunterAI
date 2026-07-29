@@ -282,8 +282,13 @@ class DealEngine:
                 )
 
             elif status == "SAME":
-
                 print("ℹ️ Price unchanged.")
+                self._update_product_price(
+                    product,
+                    latest_product,
+                    old_price
+                )
+
 
             else:
 
@@ -498,22 +503,24 @@ class DealEngine:
 
         latest_product.previous_price = old_price
 
-        existing_lowest = (
-            product["lowest_price"]
-            or old_price
-            or latest_product.current_price
-        )
+        existing_lowest = float(product.get("lowest_price") or 0)
+        if existing_lowest <= 0:
+            existing_lowest = latest_product.current_price
 
-        existing_highest = (
-            product["highest_price"]
-            or old_price
-            or latest_product.current_price
-        )
+        existing_highest = float(product.get("highest_price") or 0)
+        if existing_highest <= 0:
+            existing_highest = latest_product.current_price
 
         latest_product.lowest_price = min(
             existing_lowest,
             latest_product.current_price
         )
+
+        latest_product.highest_price = max(
+            existing_highest,
+            latest_product.current_price
+        )
+
 
         latest_product.highest_price = max(
             existing_highest,
