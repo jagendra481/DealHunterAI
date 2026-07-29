@@ -384,7 +384,8 @@ Smarter price tracking. Better buying decisions.
                 server.ehlo()
                 server.login(MAIL_EMAIL, MAIL_PASSWORD)
                 server.send_message(message)
-                print(f"📧 Gmail Notification Sent to {message['To']}")
+                print(f"[EmailService Success] Gmail Notification Sent to {message['To']}")
         except (smtplib.SMTPException, OSError) as error:
-            print("\n❌ EMAIL SMTP ERROR:", repr(error))
+            print("[EmailService Error] EMAIL SMTP ERROR:", repr(error))
+
 
